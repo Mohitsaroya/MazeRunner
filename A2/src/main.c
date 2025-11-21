@@ -2,17 +2,17 @@
 #include <stdio.h>
 #include <string.h>
 #include "main.h"
-
+#include "title.h"
 
 void title_screen() {
     // when ran, this is going to be the title screen that when interacted with takes you to the main menu
     initscr();
-    WINDOW *win = newwin(25,120,2,2);
+    WINDOW *win = newwin(40,100,2,2);
     refresh();
 
     box(win, '-', '/');
     wrefresh(win);
-
+    MazaRunner(win);
     getch();
     endwin();
     return;
@@ -34,12 +34,12 @@ void second_level() {
 }
 
 void main_menu() {
-    // the main menu, gives the option to start the game or end the program
+    title_screen();
     return;
 }
 
 int main(void) {
     // only going to call the functions
-    title_screen();
+    main_menu();
     return 0;
 }

@@ -2,14 +2,19 @@ CC = gcc
 CFLAGS = -Wall -std=c11
 LDFLAGS = -lncurses
 
-App: main.o
-	$(CC) $(CFLAGS) main.o -o App $(LDFLAGS)
+SRC = main.c title.c
+OBJ = $(SRC:.c=.o)
 
-main.o: main.c main.h
-	$(CC) $(CFLAGS) -c main.c
+App: $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o App $(LDFLAGS)
+
+%.o: %.c %.h
+	$(CC) $(CFLAGS) -c $<
+
+.PHONY: run clean
 
 run: App
 	./App
 
 clean:
-	rm -f App main.o
+	rm -f App *.o
