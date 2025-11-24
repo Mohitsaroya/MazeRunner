@@ -47,13 +47,13 @@ void menuCard(WINDOW *win) {
 
 // ASCII art for quit confirmation
 void quitCard(WINDOW *win) {
-    mvwprintw(win, 15, 20, " ________    __    __");
-    mvwprintw(win, 16, 20, "/   __   \\  |  |  |  |");
-    mvwprintw(win, 17, 20, "|  |  |  |  |  |  |  |");
-    mvwprintw(win, 18, 20, "|  |  |  |  |  |  |  |");
-    mvwprintw(win, 19, 20, "|  | _|  |  |  |  |  |");
-    mvwprintw(win, 20, 20, "|  \\_\\ \\ |  |  \\__/  |");
-    mvwprintw(win, 21, 20, "\\_____\\ \\    \\______/");
-    mvwprintw(win, 22, 20, "       \\_\\");
+    mvwprintw(win, 15, 25, " ________    __    __    ______    ______    _____");
+    mvwprintw(win, 16, 25, "/   __   \\  |  |  |  |  |__  __|  |__  __|  |__   \\");
+    mvwprintw(win, 17, 25, "|  |  |  |  |  |  |  |    |  |      |  |       \\   |");
+    mvwprintw(win, 18, 25, "|  |  |  |  |  |  |  |    |  |      |  |       /  /");
+    mvwprintw(win, 19, 25, "|  | _|  |  |  |  |  |    |  |      |  |      |__|");
+    mvwprintw(win, 20, 25, "|  \\_\\ \\ |  |  \\__/  |  __|  |__    |  |       __");
+    mvwprintw(win, 21, 25, "\\_____\\ \\    \\______/   |______|    |__|      |__|");
+    mvwprintw(win, 22, 25, "       \\_\\");
     
 }
