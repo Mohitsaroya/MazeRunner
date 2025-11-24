@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -std=c11
 LDFLAGS = -lncurses
 
-SRC = main.c title.c
+SRC = main.c interface.c gameCards.c
 OBJ = $(SRC:.c=.o)
 
 App: $(OBJ)
