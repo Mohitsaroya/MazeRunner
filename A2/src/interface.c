@@ -2,7 +2,10 @@
 #include "interface.h"
 #include "gameCards.h"
 
-// Create a reusable window with border
+/* ----------------------------------------------------
+   WINDOW HELPERS
+---------------------------------------------------- */
+
 WINDOW *make_window(int h, int w, int y, int x) {
     WINDOW *win = newwin(h, w, y, x);
     box(win, '-', '/');
@@ -10,77 +13,85 @@ WINDOW *make_window(int h, int w, int y, int x) {
     return win;
 }
 
-// Show the title screen
-void title_screen(void) {
+/* ----------------------------------------------------
+   TITLE SCREEN
+---------------------------------------------------- */
+
+void title_screen() {
     WINDOW *titlewin = make_window(40, 100, 2, 2);
     titleCard(titlewin);
     wrefresh(titlewin);
-    getch();
+
+    getch();  
     delwin(titlewin);
 }
 
-// Show the quit confirmation screen
-int quitScreen(WINDOW *win) {
-    werase(win);
-    box(win, '-', '/');
-    quitCard(win);
-    mvwprintw(win, 26, 48, "(Y/N)");
-    wrefresh(win);
+/* ----------------------------------------------------
+   QUIT CONFIRMATION SCREEN
+   Only accepts: Y or N
+---------------------------------------------------- */
 
-    int ch = getch();
-    return (ch == 'y' || ch == 'Y') ? 1 : 0;
+int quitScreen(WINDOW *win) {
+    while (1) {
+        werase(win);
+        box(win, '-', '/');
+
+        quitCard(win);
+        mvwprintw(win, 26, 48, "(Y/N)");
+        wrefresh(win);
+
+        char ch = getch();
+
+        if (ch == 'y' || ch == 'Y')
+            return 1;
+        if (ch == 'n' || ch == 'N')
+            return 0;
+
+        // Invalid input → stay on screen
+    }
 }
 
-// Main menu logic
-int main_menu(void) {
+/* ----------------------------------------------------
+   MAIN MENU
+   Only accepts: P or Q
+---------------------------------------------------- */
+
+int main_menu() {
     title_screen();
 
     WINDOW *menuwin = make_window(40, 100, 2, 2);
     menuCard(menuwin);
     wrefresh(menuwin);
 
-    int ch;
     while (1) {
-        ch = wgetch(menuwin);
+        int ch = wgetch(menuwin);
 
         if (ch == 'p' || ch == 'P') {
             delwin(menuwin);
-            return 1;  // Start level 1
+            return 1;
         }
 
         if (ch == 'q' || ch == 'Q') {
             int confirm = quitScreen(menuwin);
             delwin(menuwin);
-
-            return confirm ? 0 : 2; // 0 = quit, 2 = loop back to menu
+            return confirm ? 0 : 2;
         }
+
+        // Invalid input → ignore and remain on this screen
     }
 }
 
-// Goodbye screen
-void goodBye(WINDOW *win) {
+/* ----------------------------------------------------
+   GOODBYE SCREEN
+---------------------------------------------------- */
+
+void goodBye(WINDOW *parent) {
     WINDOW *goodbyewin = make_window(40, 100, 2, 2);
+
     mvwprintw(goodbyewin, 20, 50, "Thanks for playing!");
     mvwprintw(goodbyewin, 21, 50, "Goodbye :)");
     wrefresh(goodbyewin);
-    getch();
+
+    getch(); // any key to close
     delwin(goodbyewin);
-}
-
-// Placeholder first level
-void first_level(void) {
-    WINDOW *lvl1 = make_window(40, 100, 2, 2);
-    mvwprintw(lvl1, 1, 1, "First Level - TODO");
-    wrefresh(lvl1);
-    getch();
-    delwin(lvl1);
-}
-
-// Placeholder second level
-void second_level(void) {
-    WINDOW *lvl2 = make_window(40, 100, 2, 2);
-    mvwprintw(lvl2, 1, 1, "Second Level - TODO");
-    wrefresh(lvl2);
-    getch();
-    delwin(lvl2);
 }

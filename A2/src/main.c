@@ -8,19 +8,23 @@ int main(void) {
     curs_set(0);
     refresh();
 
-    int decision;
-
-    do {
-        decision = main_menu();
+    while (1) {
+        int decision = main_menu();
 
         if (decision == 1) {
             first_level();
-        } else if (decision == 0) {
-            goodBye(stdscr);
+            break;  
         }
-
-        // if decision == 2, loop back to main menu automatically
-    } while (decision == 2);
+        else if (decision == 0) {
+            goodBye(stdscr);
+            break;  
+        }
+        else if (decision == 2) {
+            // Go back to title + main menu
+            // Loop continues
+            continue;
+        }
+    }
 
     endwin();
     return 0;
