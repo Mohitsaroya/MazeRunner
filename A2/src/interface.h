@@ -2,6 +2,9 @@
 #define INTERFACE_H
 
 #include <ncurses.h>
+#define WIDTH_MAX 100
+#define HEIGTH_MAX 40
+#define BORDER 2
 
 WINDOW *make_window(int h, int w, int y, int x);
 void title_screen(void);

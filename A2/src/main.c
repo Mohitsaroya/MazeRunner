@@ -7,8 +7,10 @@ int main(void) {
     cbreak();
     curs_set(0);
     refresh();
-
+    title_screen();
+    
     while (1) {
+        
         int decision = main_menu();
 
         if (decision == 1) {
@@ -20,8 +22,6 @@ int main(void) {
             break;  
         }
         else if (decision == 2) {
-            // Go back to title + main menu
-            // Loop continues
             continue;
         }
     }

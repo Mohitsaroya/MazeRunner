@@ -12,7 +12,7 @@ WINDOW *make_window(int h, int w, int y, int x) {
 
 
 void title_screen() {
-    WINDOW *titlewin = make_window(40, 100, 2, 2);
+    WINDOW *titlewin = make_window(HEIGTH_MAX, WIDTH_MAX, BORDER, BORDER);
     titleCard(titlewin);
     wrefresh(titlewin);
 
@@ -42,9 +42,8 @@ int quitScreen(WINDOW *win) {
 
 
 int main_menu() {
-    title_screen();
-
-    WINDOW *menuwin = make_window(40, 100, 2, 2);
+    
+    WINDOW *menuwin = make_window(HEIGTH_MAX, WIDTH_MAX, BORDER, BORDER);
     menuCard(menuwin);
     wrefresh(menuwin);
 
@@ -67,7 +66,7 @@ int main_menu() {
 
 
 void goodBye(WINDOW *parent) {
-    WINDOW *goodbyewin = make_window(40, 100, 2, 2);
+    WINDOW *goodbyewin = make_window(HEIGTH_MAX, WIDTH_MAX, BORDER, BORDER);
 
     mvwprintw(goodbyewin, 20, 50, "Thanks for playing!");
     mvwprintw(goodbyewin, 21, 50, "Goodbye :)");
