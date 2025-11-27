@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "level1.h"
 #include "interface.h"  
+#include "movement.h"
 
 void first_level(void) {
     // Create a window for level 1
