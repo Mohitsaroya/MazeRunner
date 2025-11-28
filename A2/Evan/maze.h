@@ -1,5 +1,5 @@
-#ifndef MAZE_H
-#define MAZE_H
+#ifndef MAZE2_H
+#define MAZE2_H
 #include<ncurses.h>
 typedef struct movement
 {
@@ -13,6 +13,7 @@ movement move_right(movement m);
 movement move_left(movement m);
 movement move_up(movement m);
 movement move_down(movement m);
-void maze(void);
+void maze2(void);
 
 #endif
+
