@@ -21,6 +21,7 @@ void titleCard(WINDOW *win) {
 
 
     mvwprintw(win, 35, 60, "Press any key to continue...");
+    wrefresh(win);
 }
 
 // ASCII art for menu
@@ -43,6 +44,7 @@ void menuCard(WINDOW *win) {
 
     mvwprintw(win, 25, 46, "PLAY_(P)");
     mvwprintw(win, 28, 46, "QUIT_(Q)");
+    wrefresh(win);
 }
 
 // ASCII art for quit confirmation
@@ -55,5 +57,47 @@ void quitCard(WINDOW *win) {
     mvwprintw(win, 20, 25, "|  \\_\\ \\ |  |  \\__/  |  __|  |__    |  |       __");
     mvwprintw(win, 21, 25, "\\_____\\ \\    \\______/   |______|    |__|      |__|");
     mvwprintw(win, 22, 25, "       \\_\\");
+
+    mvwprintw(win, 26, 48, "(Y/N)");
+    wrefresh(win);
     
+}
+
+void level1Card(WINDOW *win) {
+    mvwprintw(win, 15, 17, " __         _______    __     __    _______    __         __________");
+    mvwprintw(win, 16, 17, "|  |       |   ____|  |  |   /  /  |   ____|  |  |       |___    ___|");
+    mvwprintw(win, 17, 17, "|  |       |  |__     |  |  /  /   |  |__     |  |           |  |");
+    mvwprintw(win, 18, 17, "|  |       |   __|    |  | /  /    |   __|    |  |           |  |");
+    mvwprintw(win, 19, 17, "|  |       |  |       |  |/  /     |  |       |  |           |  |");
+    mvwprintw(win, 20, 17, "|  |____   |  |____   |     /      |  |____   |  |____    ___|  |___");
+    mvwprintw(win, 21, 17, "|_______|  |_______|  |____/       |_______|  |_______|  |__________|");
+
+    mvwprintw(win, 35, 60, "Press any key to continue...");
+    wrefresh(win);
+}
+
+void level2Card(WINDOW *win) {
+    mvwprintw(win, 15, 15, " __         _______    __     __    _______    __         ______________");
+    mvwprintw(win, 16, 15, "|  |       |   ____|  |  |   /  /  |   ____|  |  |       |___    _    __|");
+    mvwprintw(win, 17, 15, "|  |       |  |__     |  |  /  /   |  |__     |  |           |  | |  |");
+    mvwprintw(win, 18, 15, "|  |       |   __|    |  | /  /    |   __|    |  |           |  | |  |");
+    mvwprintw(win, 19, 15, "|  |       |  |       |  |/  /     |  |       |  |           |  | |  |");
+    mvwprintw(win, 20, 15, "|  |____   |  |____   |     /      |  |____   |  |____    ___|  |_|  |__");
+    mvwprintw(win, 21, 15, "|_______|  |_______|  |____/       |_______|  |_______|  |______________|");
+
+    mvwprintw(win, 35, 60, "Press any key to continue...");
+    wrefresh(win);
+}
+
+void retryCard(WINDOW *win) {
+    mvwprintw(win, 15, 20, " ______     _______    ______    ______    ___       __   _____");
+    mvwprintw(win, 16, 20, "|      \\   |   ____|  |__  __|  |      \\   \\  \\    /  /  |__   \\");
+    mvwprintw(win, 17, 20, "|  |0|  |  |  |__       |  |    |  |0|  |   \\  \\  /  /      \\   |");
+    mvwprintw(win, 18, 20, "|    __/   |   __|      |  |    |    __/     \\  \\/  /       /  /");
+    mvwprintw(win, 19, 20, "|  |\\  \\   |  |         |  |    |  |\\  \\      \\    /       |__|");
+    mvwprintw(win, 20, 20, "|  | |  |  |  |____     |  |    |  | |  |     /   /         __");
+    mvwprintw(win, 21, 20, "|__| |__|  |_______|    |__|    |__| |__|    /___/         |__|");
+    
+    mvwprintw(win, 26, 48, "(Y/N)");
+    wrefresh(win);
 }

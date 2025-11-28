@@ -1,5 +1,6 @@
 #include <ncurses.h>
 #include "interface.h"
+#include "level1.h"
 
 int main(void) {
     initscr();
