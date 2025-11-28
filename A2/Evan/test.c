@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<ncurses.h>
 #include<unistd.h>
-#include"maze.h"
+#include"maze2.h"
 movement make_player() // makes the character
 {
  movement m;
@@ -85,6 +85,10 @@ int main(void)
   else if (ch == 'q')
   {
    break;// allows to quit the game
+  }
+  if(m.y == 30 && m.x == 89)
+  {
+   mvwprintw(stdscr,95,35,"escaped");
   }
   ch=getch();// after the first user input is taken, this takes the next one
   refresh();// refreshes the page to move the player if the next spot is empty
