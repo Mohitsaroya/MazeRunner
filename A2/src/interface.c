@@ -2,7 +2,6 @@
 #include "interface.h"
 #include "gameCards.h"
 
-
 WINDOW *make_window(int h, int w, int y, int x) {
     WINDOW *win = newwin(h, w, y, x);
     box(win, '-', '/');
@@ -10,16 +9,14 @@ WINDOW *make_window(int h, int w, int y, int x) {
     return win;
 }
 
-
 void title_screen() {
-    WINDOW *titlewin = make_window(HEIGTH_MAX, WIDTH_MAX, BORDER, BORDER);
+    WINDOW *titlewin = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
     titleCard(titlewin);
     wrefresh(titlewin);
 
-    getch();  
+    wgetch(titlewin);   // FIXED
     delwin(titlewin);
 }
-
 
 int quitScreen(WINDOW *win) {
     while (1) {
@@ -30,20 +27,17 @@ int quitScreen(WINDOW *win) {
         mvwprintw(win, 26, 48, "(Y/N)");
         wrefresh(win);
 
-        char ch = getch();
+        char ch = wgetch(win);  // FIXED
 
         if (ch == 'y' || ch == 'Y')
             return 1;
         if (ch == 'n' || ch == 'N')
             return 0;
-
     }
 }
 
-
 int main_menu() {
-    
-    WINDOW *menuwin = make_window(HEIGTH_MAX, WIDTH_MAX, BORDER, BORDER);
+    WINDOW *menuwin = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
     menuCard(menuwin);
     wrefresh(menuwin);
 
@@ -60,18 +54,16 @@ int main_menu() {
             delwin(menuwin);
             return confirm ? 0 : 2;
         }
-
     }
 }
 
-
 void goodBye(WINDOW *parent) {
-    WINDOW *goodbyewin = make_window(HEIGTH_MAX, WIDTH_MAX, BORDER, BORDER);
+    WINDOW *goodbyewin = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
 
     mvwprintw(goodbyewin, 20, 50, "Thanks for playing!");
     mvwprintw(goodbyewin, 21, 50, "Goodbye :)");
     wrefresh(goodbyewin);
 
-    getch(); // any key to close
+    wgetch(goodbyewin); // FIXED
     delwin(goodbyewin);
 }
