@@ -1,38 +1,46 @@
-#include <ncurses.h>
 #include "movement.h"
+#include <ncurses.h>
 
-movement make_player() {
-    movement m;
-    m.x = 1;
-    m.y = 1;
-    mvaddch(m.y, m.x, '@');
+movement make_player(int y, int x, WINDOW *win)
+{
+    movement m = { x, y, win };
+    mvwaddch(win, y, x, '@');
+    wrefresh(win);
     return m;
 }
 
-movement move_right(movement m) {
-    mvaddch(m.y, m.x, ' ');
-    mvaddch(m.y, m.x + 1, '@');
-    m.x += 1;
+movement move_right(movement m)
+{
+    mvwaddch(m.win, m.y, m.x, ' ');
+    m.x++;
+    mvwaddch(m.win, m.y, m.x, '@');
+    wrefresh(m.win);
     return m;
 }
 
-movement move_left(movement m) {
-    mvaddch(m.y, m.x, ' ');
-    mvaddch(m.y, m.x - 1, '@');
-    m.x -= 1;
+movement move_left(movement m)
+{
+    mvwaddch(m.win, m.y, m.x, ' ');
+    m.x--;
+    mvwaddch(m.win, m.y, m.x, '@');
+    wrefresh(m.win);
     return m;
 }
 
-movement move_up(movement m) {
-    mvaddch(m.y, m.x, ' ');
-    mvaddch(m.y - 1, m.x, '@');
-    m.y -= 1;
+movement move_up(movement m)
+{
+    mvwaddch(m.win, m.y, m.x, ' ');
+    m.y--;
+    mvwaddch(m.win, m.y, m.x, '@');
+    wrefresh(m.win);
     return m;
 }
 
-movement move_down(movement m) {
-    mvaddch(m.y, m.x, ' ');
-    mvaddch(m.y + 1, m.x, '@');
-    m.y += 1;
+movement move_down(movement m)
+{
+    mvwaddch(m.win, m.y, m.x, ' ');
+    m.y++;
+    mvwaddch(m.win, m.y, m.x, '@');
+    wrefresh(m.win);
     return m;
 }
