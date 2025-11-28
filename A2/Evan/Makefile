@@ -1,15 +1,15 @@
-CC:=gcc
-CFLAGS:=-Wall -std=c11
-target:=test.out
-source:= test.c maze2.c
+CC := gcc
+CFLAGS := -Wall -std=c11
+target := test.out
+source := test.c maze2.c
 
-$(TARGET): $(SOURCES)
-	$(CC) $(CFLAGS) $(SOURCES) -lm -lncurses -ltinfo -o $(TARGET)
+$(target): $(source)
+	$(CC) $(CFLAGS) $(source) -lm -lncurses -ltinfo -o $(target)
 
 .PHONY: clean run
 
-run: $(TARGET)
-	./$(TARGET)
+run: $(target)
+	./$(target)
 
 clean:
-	rm -f $(TARGET)
+	rm -f $(target)
