@@ -1,7 +1,7 @@
 CC:=gcc
 CFLAGS:=-Wall -std=c11
 target:=test.out
-source:= test.c maze.c
+source:= test.c maze2.c
 
 
 $(target):$(source)
