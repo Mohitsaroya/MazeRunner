@@ -22,10 +22,7 @@ int quitScreen(WINDOW *win) {
     while (1) {
         werase(win);
         box(win, '-', '/');
-
-        quitCard(win);
-        mvwprintw(win, 26, 48, "(Y/N)");
-        wrefresh(win);
+        quitCard(win); 
 
         char ch = wgetch(win);  // FIXED
 
@@ -60,10 +57,13 @@ int main_menu() {
 void goodBye(WINDOW *parent) {
     WINDOW *goodbyewin = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
 
-    mvwprintw(goodbyewin, 20, 50, "Thanks for playing!");
-    mvwprintw(goodbyewin, 21, 50, "Goodbye :)");
+    mvwprintw(goodbyewin, 20, 25, "Thanks for playing!");
+    mvwprintw(goodbyewin, 21, 25, "Press any key to exit...");
+    mvwprintw(goodbyewin, 22, 25, "Goodbye :)");
     wrefresh(goodbyewin);
 
-    wgetch(goodbyewin); // FIXED
+    // Wait for any key press from the user
+    wgetch(goodbyewin);
+
     delwin(goodbyewin);
 }
