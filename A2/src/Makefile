@@ -2,11 +2,11 @@ CC = gcc
 CFLAGS = -Wall -std=c11
 LDFLAGS = -lncurses
 
-SRC = main.c interface.c gameCards.c level1.c
+SRC = main.c interface.c gameCards.c level1.c movement.c maze.c
 OBJ = $(SRC:.c=.o)
 
 App: $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o App $(LDFLAGS)
+	$(CC) $(CFLAGS) $(OBJ) -o App -lncurses
 
 %.o: %.c %.h
 	$(CC) $(CFLAGS) -c $<
