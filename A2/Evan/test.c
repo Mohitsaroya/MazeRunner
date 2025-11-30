@@ -2,6 +2,7 @@
 #include<ncurses.h>
 #include<unistd.h>
 #include"maze2.h"
+#include"maze1.h"
 movement make_player() // makes the character
 {
  movement m;
@@ -47,11 +48,17 @@ int main(void)
 {
  int ch;// initialized the user input
  movement m;// allows access to the x & y
- maze();
+ maze1();
  m=make_player();// makes the player character
  keypad(stdscr,TRUE);// make it so it can read special keys like the arrow pad
  ch=getch();// gets the user input
  refresh();
+
+ mvprintw(22,1,"dave has trapped you in this maze, you must find a way to escape");
+ getch();
+ mvprintw(22,1,"                                                                      ");
+
+
  while(1)//runs forever until you press q
  {
   if (ch == KEY_RIGHT)// reads the user input and prompt the apporiprated if statement
@@ -86,9 +93,24 @@ int main(void)
   {
    break;// allows to quit the game
   }
-  if(m.y == 30 && m.x == 89)
+
+  if(m.y == 19 && m.x == 39)
   {
-   mvwprintw(stdscr,95,35,"escaped");
+   mvprintw(25,25,"escaped");
+  }
+
+  if(m.y == 18 && m.x == 30)
+  {
+   mvprintw(22,1,"opps, you went the wrong way. Do you think it was that simple.");
+   getch();
+   mvprintw(22,1,"                                                                 ");
+  }
+
+  if(m.y == 16 && m.x ==36)
+  {
+   mvprintw(22,1,"you found the exit, you can finally leave this maze");
+   getch();
+   mvprintw(22,1,"                                                       " );
   }
   ch=getch();// after the first user input is taken, this takes the next one
   refresh();// refreshes the page to move the player if the next spot is empty
@@ -96,6 +118,3 @@ int main(void)
  endwin();
  return 0;
 }
-
-
-

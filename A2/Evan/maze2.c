@@ -3,7 +3,7 @@
 #include<ncurses.h>
 #include<unistd.h>
 #include"maze2.h"
-void maze(void)
+void maze2(void)
 {
  initscr(); // initialized the suer input
  WINDOW *win=newwin(15,15,0,0);// makes the boarder
