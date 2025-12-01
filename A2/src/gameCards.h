@@ -9,5 +9,6 @@ void quitCard(WINDOW *win);
 void level1Card(WINDOW *win);
 void level2Card(WINDOW *win);
 void retryCard(WINDOW *win);
+void pauseCard(WINDOW *win);
 
 #endif

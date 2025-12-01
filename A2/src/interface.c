@@ -14,24 +14,83 @@ void title_screen() {
     titleCard(titlewin);
     wrefresh(titlewin);
 
-    wgetch(titlewin);   // FIXED
+    wgetch(titlewin);
     delwin(titlewin);
 }
 
-int quitScreen(WINDOW *win) {
+int quitScreen(WINDOW *parent)
+{
+    WINDOW *q = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
+    
+    quitCard(q);
+    wrefresh(q);
+
+    int ch;
+    while ((ch = wgetch(q))) {
+
+        if (ch == 'y' || ch == 'Y') {
+            delwin(q);
+            return 1;   // YES, quit
+        }
+
+        if (ch == 'n' || ch == 'N') {
+            delwin(q);
+            touchwin(parent);
+            wrefresh(parent);
+            return 0;   // NO, return to menu without deleting the menu
+        }
+    }
+
+    return 0;
+}
+
+
+
+void pause_screen(void) {
+    WINDOW *pausewin = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
+    pauseCard(pausewin);
+    wrefresh(pausewin);
+    
+    wgetch(pausewin);
+    delwin(pausewin);
+}
+
+int handle_pause_menu(WINDOW *gamewin)
+{
+    wrefresh(gamewin);
+
     while (1) {
-        werase(win);
-        box(win, '-', '/');
-        quitCard(win); 
+        WINDOW *pausewin = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
+        pauseCard(pausewin);
+        wrefresh(pausewin);
 
-        char ch = wgetch(win);  // FIXED
+        int choice = wgetch(pausewin);
+        delwin(pausewin);
 
-        if (ch == 'y' || ch == 'Y')
-            return 1;
-        if (ch == 'n' || ch == 'N')
-            return 0;
+        if (choice == 'p' || choice == 'P') {
+            touchwin(gamewin);
+            wrefresh(gamewin);
+            return P;
+        }
+
+        else if (choice == 'm' || choice == 'M') {
+            erase();
+            refresh();
+            return MENU;  
+        }
+
+        else if (choice == 'q' || choice == 'Q') {
+            int confirm = quitScreen(gamewin);
+
+            if (confirm == 1) {
+                return QUIT;
+            } else {
+                continue;
+            }
+        }
     }
 }
+
 
 int main_menu() {
     WINDOW *menuwin = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
@@ -43,16 +102,29 @@ int main_menu() {
 
         if (ch == 'p' || ch == 'P') {
             delwin(menuwin);
-            return 1;
+            erase();
+            refresh();
+            return P;
         }
 
         if (ch == 'q' || ch == 'Q') {
             int confirm = quitScreen(menuwin);
-            delwin(menuwin);
-            return confirm ? 0 : 2;
+
+            if (confirm == 1) {
+                delwin(menuwin);
+                erase();
+                refresh();
+                return QUIT;
+            } else {
+                // Stay in menu. Do NOT delete menuwin.
+                touchwin(menuwin);
+                wrefresh(menuwin);
+                continue;
+            }
         }
     }
 }
+
 
 void goodBye(WINDOW *parent) {
     WINDOW *goodbyewin = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
@@ -62,8 +134,7 @@ void goodBye(WINDOW *parent) {
     mvwprintw(goodbyewin, 22, 25, "Goodbye :)");
     wrefresh(goodbyewin);
 
-    // Wait for any key press from the user
     wgetch(goodbyewin);
-
     delwin(goodbyewin);
 }
+

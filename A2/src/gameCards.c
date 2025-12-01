@@ -26,9 +26,9 @@ void titleCard(WINDOW *win) {
 
 // ASCII art for menu
 void menuCard(WINDOW *win) {
-    mvwprintw(win, 7, 15, " __        __                 _________   _______");
-    mvwprintw(win, 8, 15, "|   \\    /   |      /\\       |_____   /  |   ____|");
-    mvwprintw(win, 9, 15, "|    \\  /    |     /  \\          /   /   |  |__");
+    mvwprintw(win,  7, 15, " __        __                 _________   _______");
+    mvwprintw(win,  8, 15, "|   \\    /   |      /\\       |_____   /  |   ____|");
+    mvwprintw(win,  9, 15, "|    \\  /    |     /  \\          /   /   |  |__");
     mvwprintw(win, 10, 15, "|  |  \\/  |  |    /    \\        /   /    |   __|");
     mvwprintw(win, 11, 15, "|  |      |  |   /  /\\  \\      /   /     |  |");
     mvwprintw(win, 12, 15, "|  |      |  |  /  /  \\  \\    /   /___   |  |____");
@@ -99,5 +99,29 @@ void retryCard(WINDOW *win) {
     mvwprintw(win, 21, 20, "|__| |__|  |_______|    |__|    |__| |__|    /___/         |__|");
     
     mvwprintw(win, 26, 48, "(Y/N)");
+    wrefresh(win);
+}
+
+void pauseCard(WINDOW *win) {
+
+    mvwprintw(win,  7, 15, " _________                 __        __    _______ ");
+    mvwprintw(win,  8, 15, "|   ______|       /\\      |   \\    /   |  |   ____|");
+    mvwprintw(win,  9, 15, "|  |             /  \\     |    \\  /    |  |  |__   ");
+    mvwprintw(win, 10, 15, "|  |  _____     /    \\    |  |  \\/  |  |  |   __|  ");
+    mvwprintw(win, 11, 15, "|  | |__   |   /  /\\  \\   |  |      |  |  |  |     ");
+    mvwprintw(win, 12, 15, "|  |____|  |  /  /  \\  \\  |  |      |  |  |  |____ ");
+    mvwprintw(win, 13, 15, "|__________| /__/    \\__\\ |__|      |__|  |_______|");
+    
+    mvwprintw(win, 15, 20, " ______                 __    __    _________    _______    _____");
+    mvwprintw(win, 16, 20, "|      \\      /\\       |  |  |  |  \\   ______|  |   ____|  |     \\");
+    mvwprintw(win, 17, 20, "|  |0|  |    /  \\      |  |  |  |   \\   \\       |  |__     |  |\\  \\");
+    mvwprintw(win, 18, 20, "|   ___/    /    \\     |  |  |  |    \\   \\      |   __|    |  | \\  |");
+    mvwprintw(win, 19, 20, "|  |       /  /\\  \\    |  |  |  |     \\   \\     |  |       |  | /  |");
+    mvwprintw(win, 20, 20, "|  |      /  /  \\  \\   |  \\__/  |   ___\\   \\    |  |____   |  |/  /");
+    mvwprintw(win, 21, 20, "|__|     /__/    \\__\\   \\______/   |________\\   |_______|  |_____/");
+
+    mvwprintw(win, 26, 40, "Press (P) to resume");
+    mvwprintw(win, 28, 40, "Press (M) to enter main menu");
+    mvwprintw(win, 30, 40, "Press (Q) to exit game");
     wrefresh(win);
 }
