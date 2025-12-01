@@ -12,10 +12,12 @@ int second_level_maze(void)
     refresh();
 
     WINDOW *l2 = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
+    int player_moves = 280;
 
     mvwprintw(l2, 2, 2, "Use arrow keys to move");
     mvwprintw(l2, 3, 2, "Press P to pause the game");
-    mvwprintw(l2, 4, 2, "Reach '$' to proceed to the next level");
+    mvwprintw(l2, 4, 2, "Reach '$' before running out of moves to win");
+    mvwprintw(l2, 5, 2, "Moves left: %d", player_moves);
 
     WINDOW *npc_win = npc_init(HEIGHT_MAX - 2, WIDTH_MAX - 2);
     draw_dave_face(npc_win);
@@ -31,6 +33,7 @@ int second_level_maze(void)
 
     m = make_player(start_y + 1, start_x + 1, l2);
 
+
     ExitPoint ep = create_exit_point(start_y, start_x, HEIGHT_MAZE2, WIDTH_MAZE2);
     draw_exit_point(l2, ep);
 
@@ -41,36 +44,43 @@ int second_level_maze(void)
               "If you don't complete the maze, I will blow it up!",
               NULL);
 
-    ch = wgetch(l2);
-
     while (1)
     {
         chtype next;
-
+        ch = wgetch(l2);
         if (ch == KEY_RIGHT)
         {
             next = mvwinch(l2, m.y, m.x + 1) & A_CHARTEXT;
-            if (next == ' ' || next == '$')
+            if (next == ' ' || next == '$') {
                 m = move_right(m);
+                player_moves -= 1;
+            }
         }
         else if (ch == KEY_LEFT)
         {
             next = mvwinch(l2, m.y, m.x - 1) & A_CHARTEXT;
-            if (next == ' ' || next == '$')
+            if (next == ' ' || next == '$') {
                 m = move_left(m);
+                player_moves -= 1;
+            }
         }
         else if (ch == KEY_UP)
         {
             next = mvwinch(l2, m.y - 1, m.x) & A_CHARTEXT;
-            if (next == ' ' || next == '$')
+            if (next == ' ' || next == '$') {
                 m = move_up(m);
+                player_moves -= 1;
+            }
         }
         else if (ch == KEY_DOWN)
         {
             next = mvwinch(l2, m.y + 1, m.x) & A_CHARTEXT;
-            if (next == ' ' || next == '$')
+            if (next == ' ' || next == '$') {
                 m = move_down(m);
+                player_moves -= 1;
+            }
         }
+
         else if (ch == 'p' || ch == 'P')
         {
             int pause_result = 0;
@@ -97,16 +107,38 @@ int second_level_maze(void)
             }
         }
 
-
+        mvwprintw(l2, 5, 2, "Moves left: %3d", player_moves); 
         wrefresh(l2);
-        ch = wgetch(l2);
+
+        if (player_moves <= 0)
+        {
+            werase(l2);
+            wrefresh(l2);
+
+            dave_says(npc_win,
+                    "You are out of moves and now you will go kaboom !!!",
+                    "Retry if you must but you'll fail again hahahahahaha",
+                    NULL);
+
+            delwin(l2);
+            refresh();
+            int retry_choice = handle_retry(l2);
+            if (retry_choice == MENU) {
+                return MENU;
+            }
+
+            else if (retry_choice == RETRY) {
+                return RETRY;
+            }
+            
+        }
 
         if (reached_exit(m.y, m.x, ep))
         {
             dave_says(npc_win,
-                      "You found the exit!",
-                      "You can finally leave the maze.",
-                      NULL);
+                    "You found the exit!",
+                    "You can finally leave the maze.",
+                    NULL);
 
             wrefresh(l2);
             wgetch(l2);
@@ -115,10 +147,6 @@ int second_level_maze(void)
             return 2;
         }
     }
-
-    delwin(npc_win);
-    delwin(l2);
-    return 0;
 }
 
 int level2Phase(void) {
@@ -142,6 +170,9 @@ int level2Phase(void) {
     }
     else if (res == NEXT) {
         return NEXT;
+    }
+    else if (res == RETRY) {
+        return level2Phase(); // R E C U R S I O N
     }
 
     else {
