@@ -11,13 +11,12 @@
 #define QUIT 333
 #define P 123
 #define NEXT 456
-#define RETRY 100
 
 WINDOW *make_window(int h, int w, int y, int x);
 void title_screen(void);
 int main_menu(void);
+void pause_screen(void);
 int handle_pause_menu(WINDOW *gamewin);
-int handle_retry(WINDOW *gamewin);
 int quitScreen(WINDOW *parent);
 void goodBye(WINDOW *parent);
 #endif

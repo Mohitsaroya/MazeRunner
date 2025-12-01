@@ -45,6 +45,16 @@ int quitScreen(WINDOW *parent)
 }
 
 
+
+void pause_screen(void) {
+    WINDOW *pausewin = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
+    pauseCard(pausewin);
+    wrefresh(pausewin);
+    
+    wgetch(pausewin);
+    delwin(pausewin);
+}
+
 int handle_pause_menu(WINDOW *gamewin)
 {
     wrefresh(gamewin);
@@ -113,31 +123,6 @@ int main_menu() {
             }
         }
     }
-}
-
-int handle_retry(WINDOW *gamewin) {
-
-    while(1) {
-        WINDOW *retrywin = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
-        retryCard(retrywin);
-        wrefresh(retrywin);
-
-        int choice = wgetch(retrywin);
-        delwin(retrywin);
-
-        if (choice == 'y' || choice == 'Y') {
-            return RETRY;
-        }
-
-        else if (choice == 'n' || choice == 'N') {
-            erase();
-            refresh();
-            return MENU;
-        }
-
-    }
-    
-
 }
 
 
