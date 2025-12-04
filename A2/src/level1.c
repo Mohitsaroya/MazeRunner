@@ -41,10 +41,10 @@ int first_level_maze(void)
               "I've trapped you in this maze! Find a way to escape if you can...",
               NULL);
 
-    ch = wgetch(l1);
 
     while (1) {
         chtype next;
+        ch = wgetch(l1);
 
         if (ch == KEY_RIGHT) {
             next = mvwinch(l1, m.y, m.x + 1) & A_CHARTEXT;
@@ -65,6 +65,21 @@ int first_level_maze(void)
             next = mvwinch(l1, m.y + 1, m.x) & A_CHARTEXT;
             if (next == ' ' || next == '$')
                 m = move_down(m);
+        }
+
+        if (reached_exit(m.y, m.x, ep)) {
+            dave_says(npc_win,
+                      "You found the exit!",
+                      "You can finally leave the maze. But I have something else planned for you...",
+                      NULL);
+            mvwprintw(l1, 2, 65, "Press 'x' to open the next maze");
+            wrefresh(l1);
+            while(1) {
+                int next_ch = wgetch(l1);
+                if (next_ch == 'x' || next_ch == 'X') {
+                    return NEXT;
+                } 
+            }
         }
 
         else if (ch == 'p' || ch == 'P')
@@ -93,21 +108,7 @@ int first_level_maze(void)
                 }
             }
 
-
-
-        wrefresh(l1);
-        ch = wgetch(l1);
-
-        if (reached_exit(m.y, m.x, ep)) {
-            dave_says(npc_win,
-                      "You found the exit!",
-                      "You can finally leave the maze. But I have something else planned for you...",
-                      NULL);
-
-            wrefresh(l1);
-            wgetch(l1);
-            return NEXT;
-        }
+        
     }
 
     delwin(npc_win);
