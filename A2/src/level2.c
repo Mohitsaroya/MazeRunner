@@ -130,7 +130,6 @@ int second_level_maze(void)
             else if (retry_choice == RETRY) {
                 return RETRY;
             }
-            
         }
 
         if (reached_exit(m.y, m.x, ep))
@@ -139,12 +138,16 @@ int second_level_maze(void)
                     "You found the exit!",
                     "You can finally leave the maze.",
                     NULL);
-
+            mvwprintw(l2, 2, 65, "Press 'x' to end game");
             wrefresh(l2);
-            wgetch(l2);
-            delwin(npc_win);
-            delwin(l2);
-            return 2;
+            while(1) {
+                int next_ch = wgetch(l2);
+                if (next_ch == 'x' || next_ch == 'X') {
+                    delwin(npc_win);
+                    delwin(l2);
+                    return 2;
+                }
+            }
         }
     }
 }

@@ -72,11 +72,14 @@ int first_level_maze(void)
                       "You found the exit!",
                       "You can finally leave the maze. But I have something else planned for you...",
                       NULL);
-            mvwprintw(l1, 2, 54, "Press 'x' to open the next maze");
-
+            mvwprintw(l1, 2, 65, "Press 'x' to open the next maze");
             wrefresh(l1);
-            wgetch(l1);
-            return NEXT;
+            while(1) {
+                int next_ch = wgetch(l1);
+                if (next_ch == 'x' || next_ch == 'X') {
+                    return NEXT;
+                } 
+            }
         }
 
         else if (ch == 'p' || ch == 'P')
