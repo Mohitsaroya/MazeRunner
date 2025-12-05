@@ -1,0 +1,50 @@
+/*************************
+* @File movement.h
+* @Brief Public interface for the movement of the player
+* @Author Evan Wong
+* @Date Dec.4,2025
+************************/
+#ifndef MOVEMENT_H
+#define MOVEMENT_H
+
+#include <ncurses.h>
+/**
+* @Brief this structure keeps track of th movement of the player
+*/
+typedef struct {
+    int x;
+    int y;
+    WINDOW *win;
+} movement;
+/**
+* @Brief this makes the player character
+* @param y and x coordinates and window function
+* @Return m(saves the x and y coordinates of the player)
+*/
+movement make_player(int y, int x, WINDOW *win);
+/**
+* @Brief moves the player to the right
+* @param m allows access to the x and y coordinates movement
+* @return m with the updated values
+*/
+movement move_right(movement m);
+/**
+* @Brief moves player to the left
+* @param m allows acces to the x and y coordinates movement
+* @return m with the updated values
+*/
+movement move_left(movement m);
+/**
+* @Brief moves player up
+* @param m allows acces to the x and y coordinates movement
+* @return m with the updated values
+*/
+movement move_up(movement m);
+/**
+* @Brief moves player down
+* @param m allows access to the x and y coordinates movement
+* @return m with the updated values
+*/
+movement move_down(movement m);
+
+#endif
