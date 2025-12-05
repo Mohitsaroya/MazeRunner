@@ -67,14 +67,14 @@ This compiles the project and produces an executable.
 ## Project Structure
 
 ```
-A2
+.
 ├── Doxyfile
 ├── README.md
 ├── bin
 │   └── appGame
 ├── doc
-|   ├── html/
-|   └── latex/
+│   ├── html/
+│   └── latex/
 └── src
     ├── Makefile
     ├── gameCards.c
