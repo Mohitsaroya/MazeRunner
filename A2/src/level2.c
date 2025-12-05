@@ -62,9 +62,10 @@ int second_level_maze(void) {
                 (tx == npc_x2 && ty == npc_y2))) {
 
                 chtype next = mvwinch(l2, ty, tx) & A_CHARTEXT;
-                if (next == ' ' || next == '$')
+                if (next == ' ' || next == '$') {
                     m = move_right(m);
                     player_moves -= 1;
+                }       
             }
         }
         else if (ch == KEY_LEFT) {
@@ -74,9 +75,10 @@ int second_level_maze(void) {
                 (tx == npc_x2 && ty == npc_y2))) {
 
                 chtype next = mvwinch(l2, ty, tx) & A_CHARTEXT;
-                if (next == ' ' || next == '$')
+                if (next == ' ' || next == '$') {
                     m = move_left(m);
                     player_moves -= 1;
+                }   
             }
         }
         else if (ch == KEY_UP) {
@@ -86,9 +88,10 @@ int second_level_maze(void) {
                 (tx == npc_x2 && ty == npc_y2))) {
 
                 chtype next = mvwinch(l2, ty, tx) & A_CHARTEXT;
-                if (next == ' ' || next == '$')
+                if (next == ' ' || next == '$') {
                     m = move_up(m);
                     player_moves -= 1;
+                }   
             }
         }
         else if (ch == KEY_DOWN) {
@@ -98,9 +101,10 @@ int second_level_maze(void) {
                 (tx == npc_x2 && ty == npc_y2))) {
 
                 chtype next = mvwinch(l2, ty, tx) & A_CHARTEXT;
-                if (next == ' ' || next == '$')
+                if (next == ' ' || next == '$') {
                     m = move_down(m);
                     player_moves -= 1;
+                } 
             }
         }
 

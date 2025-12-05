@@ -140,6 +140,7 @@ void level2Card(WINDOW *win) {
  * @param win ncurses window to draw the retry prompt into.
  */
 void retryCard(WINDOW *win) {
+    mvwprintw(win, 10, 37, "You have run out of moves!");
     mvwprintw(win, 15, 20, " ______     _______    ______    ______    ___       __   _____");
     mvwprintw(win, 16, 20, "|      \\   |   ____|  |__  __|  |      \\   \\  \\    /  /  |__   \\");
     mvwprintw(win, 17, 20, "|  |0|  |  |  |__       |  |    |  |0|  |   \\  \\  /  /      \\   |");
