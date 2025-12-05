@@ -17,14 +17,14 @@ int first_level_maze(void)
     erase();// wipes the screen
     refresh();
 
-    WINDOW *l1 = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);//makes the borader around the game
+    WINDOW *l1 = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);//makes the boarder around the game
 
-    mvwprintw(l1, 2, 2, "Use arrow keys to move");// creaes commands for the game
+    mvwprintw(l1, 2, 2, "Use arrow keys to move");// creates commands for the game
     mvwprintw(l1, 3, 2, "Press P to pause the game");
     mvwprintw(l1, 4, 2, "Reach '$' to proceed to the next level");
 
 
-    WINDOW *npc_win = npc_init(HEIGHT_MAX-2, WIDTH_MAX-2);//borader around the npc text
+    WINDOW *npc_win = npc_init(HEIGHT_MAX-2, WIDTH_MAX-2);//boarder around the npc text
     draw_dave_face(npc_win);// makes the npc face
     //used to save the user inputs and character movements
     int ch;
@@ -82,7 +82,7 @@ int first_level_maze(void)
             wrefresh(l1);
             while(1) {
                 int next_ch = wgetch(l1);
-                if (next_ch == 'x' || next_ch == 'X') {//character needed to leave the maze
+                if (next_ch == 'x' || next_ch == 'X') {//character needed to leave the maze by pressing x
                     return NEXT;
                 } 
             }
@@ -150,3 +150,4 @@ int level1Phase(void) {
         return MENU;
     }
 }
+
