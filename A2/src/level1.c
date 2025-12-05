@@ -6,8 +6,7 @@
 #include "gameCards.h"
 #include "npc.h"
 
-int first_level_maze(void)
-{
+int first_level_maze(void) {
     erase();
     refresh();
 
@@ -137,8 +136,7 @@ int first_level_maze(void)
             }
         }
 
-        else if (ch == 'p' || ch == 'P')
-        {
+        else if (ch == 'p' || ch == 'P') {
             int pause_result = 0;
                 while (1) {
                     pause_result = handle_pause_menu(l1); // blocks until valid option
