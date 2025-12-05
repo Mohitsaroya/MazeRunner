@@ -7,11 +7,28 @@ const char *dave_face[] = {
     " (O_O) "
 };
 
+const char *lost_player[] = {
+    "*"
+};
+
+int lost_state = 0;
+
 void draw_dave_face(WINDOW *npc_win) {
     for (int i = 0; i < DAVE_HEIGHT; i++) {
         mvwprintw(npc_win, i + 1, 2, "%s", dave_face[i]);
     }
     wrefresh(npc_win);
+}
+
+void draw_lost_npc (WINDOW *mazewin, int first_y, int second_y, int fixed_x, int player_input) {
+    if (player_input) {
+        lost_state = !lost_state;
+    }
+    mvwprintw(mazewin, first_y,  fixed_x, " ");
+    mvwprintw(mazewin, second_y, fixed_x, " ");
+    int y = (lost_state == 0)? first_y : second_y;
+    mvwprintw(mazewin, y, fixed_x, "%s", lost_player[0]);
+    wrefresh(mazewin);
 }
 
 

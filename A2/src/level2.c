@@ -43,42 +43,87 @@ int second_level_maze(void)
               "Hi, I'm dave and I'm evil muhehehehe",
               "If you don't complete the maze, I will blow it up!",
               NULL);
+    
+    int lost_npc_y1 =  start_y + 5;
+    int lost_npc_y2 = start_y + 6;
+    int lost_npc_x = start_x + 50;
 
     while (1)
     {
-        chtype next;
         ch = wgetch(l2);
-        if (ch == KEY_RIGHT)
-        {
-            next = mvwinch(l2, m.y, m.x + 1) & A_CHARTEXT;
-            if (next == ' ' || next == '$') {
-                m = move_right(m);
-                player_moves -= 1;
+        int npc_y1 = lost_npc_y1;
+        int npc_x1 = lost_npc_x;
+
+        int npc_y2 = lost_npc_y2;
+        int npc_x2 = lost_npc_x;
+
+        if (ch == KEY_RIGHT) {
+            int tx = m.x + 1, ty = m.y;
+            player_moves -= 1;
+            /* block stepping into either NPC tile */
+            if (!((tx == npc_x1 && ty == npc_y1) ||
+                (tx == npc_x2 && ty == npc_y2))) {
+
+                chtype next = mvwinch(l2, ty, tx) & A_CHARTEXT;
+                if (next == ' ' || next == '$')
+                    m = move_right(m);
             }
         }
-        else if (ch == KEY_LEFT)
-        {
-            next = mvwinch(l2, m.y, m.x - 1) & A_CHARTEXT;
-            if (next == ' ' || next == '$') {
-                m = move_left(m);
-                player_moves -= 1;
+        else if (ch == KEY_LEFT) {
+            int tx = m.x - 1, ty = m.y;
+            player_moves -= 1;
+            if (!((tx == npc_x1 && ty == npc_y1) ||
+                (tx == npc_x2 && ty == npc_y2))) {
+
+                chtype next = mvwinch(l2, ty, tx) & A_CHARTEXT;
+                if (next == ' ' || next == '$')
+                    m = move_left(m);
             }
         }
-        else if (ch == KEY_UP)
-        {
-            next = mvwinch(l2, m.y - 1, m.x) & A_CHARTEXT;
-            if (next == ' ' || next == '$') {
-                m = move_up(m);
-                player_moves -= 1;
+        else if (ch == KEY_UP) {
+            int tx = m.x, ty = m.y - 1;
+            player_moves -= 1;
+            if (!((tx == npc_x1 && ty == npc_y1) ||
+                (tx == npc_x2 && ty == npc_y2))) {
+
+                chtype next = mvwinch(l2, ty, tx) & A_CHARTEXT;
+                if (next == ' ' || next == '$')
+                    m = move_up(m);
             }
         }
-        else if (ch == KEY_DOWN)
-        {
-            next = mvwinch(l2, m.y + 1, m.x) & A_CHARTEXT;
-            if (next == ' ' || next == '$') {
-                m = move_down(m);
-                player_moves -= 1;
+        else if (ch == KEY_DOWN) {
+            int tx = m.x, ty = m.y + 1;
+            player_moves -= 1;
+            if (!((tx == npc_x1 && ty == npc_y1) ||
+                (tx == npc_x2 && ty == npc_y2))) {
+
+                chtype next = mvwinch(l2, ty, tx) & A_CHARTEXT;
+                if (next == ' ' || next == '$')
+                    m = move_down(m);
             }
+        }
+
+        draw_lost_npc(
+            l2,
+            lost_npc_y1,
+            lost_npc_y2,
+            lost_npc_x,
+            ch
+        );
+
+        if ((m.y == npc_y1 && m.x == npc_x1 + 1) || 
+            (m.y == npc_y1 && m.x == npc_x1 - 1) ||
+            (m.y == npc_y1 + 1 && m.x == npc_x1) ||
+            (m.y == npc_y1 - 1 && m.x == npc_x1) ||
+            (m.y == npc_y2 && m.x == npc_x2 + 1) || 
+            (m.y == npc_y2 && m.x == npc_x2 - 1) ||
+            (m.y == npc_y2 + 1 && m.x == npc_x2) ||
+            (m.y == npc_y2 - 1 && m.x == npc_x2)) {
+            dave_says(npc_win,
+                    "Hey! Stay back! That's the lost NPC.",
+                    "Don't get too close... He has gone mad",
+                    "For years, he has tried to get out of the maze but I put him back in here"
+                );
         }
 
         else if (ch == 'p' || ch == 'P')

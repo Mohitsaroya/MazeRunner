@@ -40,31 +40,87 @@ int first_level_maze(void)
               "Hi I'm dave and I'm evil muhehehehe",
               "I've trapped you in this maze! Find a way to escape if you can...",
               NULL);
-
-
+    
+    int lost_npc_y1 =  start_y + 5;
+    int lost_npc_y2 = start_y + 6;
+    int lost_npc_x = start_x + 20;
+    
     while (1) {
-        chtype next;
         ch = wgetch(l1);
 
+        int npc_y1 = lost_npc_y1;
+        int npc_x1 = lost_npc_x;
+
+        int npc_y2 = lost_npc_y2;
+        int npc_x2 = lost_npc_x;
+
         if (ch == KEY_RIGHT) {
-            next = mvwinch(l1, m.y, m.x + 1) & A_CHARTEXT;
-            if (next == ' ' || next == '$')
-                m = move_right(m);
+            int tx = m.x + 1, ty = m.y;
+
+            /* block stepping into either NPC tile */
+            if (!((tx == npc_x1 && ty == npc_y1) ||
+                (tx == npc_x2 && ty == npc_y2))) {
+
+                chtype next = mvwinch(l1, ty, tx) & A_CHARTEXT;
+                if (next == ' ' || next == '$')
+                    m = move_right(m);
+            }
         }
         else if (ch == KEY_LEFT) {
-            next = mvwinch(l1, m.y, m.x - 1) & A_CHARTEXT;
-            if (next == ' ' || next == '$')
-                m = move_left(m);
+            int tx = m.x - 1, ty = m.y;
+
+            if (!((tx == npc_x1 && ty == npc_y1) ||
+                (tx == npc_x2 && ty == npc_y2))) {
+
+                chtype next = mvwinch(l1, ty, tx) & A_CHARTEXT;
+                if (next == ' ' || next == '$')
+                    m = move_left(m);
+            }
         }
         else if (ch == KEY_UP) {
-            next = mvwinch(l1, m.y - 1, m.x) & A_CHARTEXT;
-            if (next == ' ' || next == '$')
-                m = move_up(m);
+            int tx = m.x, ty = m.y - 1;
+
+            if (!((tx == npc_x1 && ty == npc_y1) ||
+                (tx == npc_x2 && ty == npc_y2))) {
+
+                chtype next = mvwinch(l1, ty, tx) & A_CHARTEXT;
+                if (next == ' ' || next == '$')
+                    m = move_up(m);
+            }
         }
         else if (ch == KEY_DOWN) {
-            next = mvwinch(l1, m.y + 1, m.x) & A_CHARTEXT;
-            if (next == ' ' || next == '$')
-                m = move_down(m);
+            int tx = m.x, ty = m.y + 1;
+
+            if (!((tx == npc_x1 && ty == npc_y1) ||
+                (tx == npc_x2 && ty == npc_y2))) {
+
+                chtype next = mvwinch(l1, ty, tx) & A_CHARTEXT;
+                if (next == ' ' || next == '$')
+                    m = move_down(m);
+            }
+        }
+
+        draw_lost_npc(
+            l1,
+            lost_npc_y1,
+            lost_npc_y2,
+            lost_npc_x,
+            ch
+        );
+
+        if ((m.y == npc_y1 && m.x == npc_x1 + 1) || 
+            (m.y == npc_y1 && m.x == npc_x1 - 1) ||
+            (m.y == npc_y1 + 1 && m.x == npc_x1) ||
+            (m.y == npc_y1 - 1 && m.x == npc_x1) ||
+            (m.y == npc_y2 && m.x == npc_x2 + 1) || 
+            (m.y == npc_y2 && m.x == npc_x2 - 1) ||
+            (m.y == npc_y2 + 1 && m.x == npc_x2) ||
+            (m.y == npc_y2 - 1 && m.x == npc_x2)) {
+            dave_says(npc_win,
+                    "Hey! Stay back! That's the lost NPC.",
+                    "Don't get too close... He has gone mad",
+                    "For years, he has tried to get out of the maze but I put him back in here"
+                );
         }
 
         if (reached_exit(m.y, m.x, ep)) {
@@ -107,9 +163,7 @@ int first_level_maze(void)
                     }
                 }
             }
-
-        
-    }
+        }
 
     delwin(npc_win);
     delwin(l1);
