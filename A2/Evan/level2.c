@@ -1,3 +1,9 @@
+/*********************************
+* @File level2.c
+* @Brief Definition of the function of level2.h
+* @Author Evan Wong
+* @Date dec.4,2025
+********************************/
 #include <ncurses.h>
 #include "maze.h"
 #include "level2.h"
@@ -8,47 +14,47 @@
 
 int second_level_maze(void)
 {
-    erase();
+    erase();// wipes the scren
     refresh();
 
-    WINDOW *l2 = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
+    WINDOW *l2 = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);//makes the boarder around the game
     int player_moves = 280;
 
-    mvwprintw(l2, 2, 2, "Use arrow keys to move");
+    mvwprintw(l2, 2, 2, "Use arrow keys to move");// creates commands instructions for the game
     mvwprintw(l2, 3, 2, "Press P to pause the game");
     mvwprintw(l2, 4, 2, "Reach '$' before running out of moves to win");
     mvwprintw(l2, 5, 2, "Moves left: %d", player_moves);
 
-    WINDOW *npc_win = npc_init(HEIGHT_MAX - 2, WIDTH_MAX - 2);
-    draw_dave_face(npc_win);
-
+    WINDOW *npc_win = npc_init(HEIGHT_MAX - 2, WIDTH_MAX - 2);// boarder around the npc text
+    draw_dave_face(npc_win);// makes the npc face
+    // used to save the user inputs and character movements
     int ch;
     movement m;
 
     int start_y = (HEIGHT_MAX - HEIGHT_MAZE2) / 2;
     int start_x = (WIDTH_MAX - WIDTH_MAZE2) / 2;
 
-    draw_maze(l2, HEIGHT_MAZE2, WIDTH_MAZE2, start_y, start_x);
-    maze2(l2, start_y, start_x);
+    draw_maze(l2, HEIGHT_MAZE2, WIDTH_MAZE2, start_y, start_x); // makes abox
+    maze2(l2, start_y, start_x);// fills the box with maze objects
 
-    m = make_player(start_y + 1, start_x + 1, l2);
+    m = make_player(start_y + 1, start_x + 1, l2);//used to make the player character
 
 
-    ExitPoint ep = create_exit_point(start_y, start_x, HEIGHT_MAZE2, WIDTH_MAZE2);
-    draw_exit_point(l2, ep);
+    ExitPoint ep = create_exit_point(start_y, start_x, HEIGHT_MAZE2, WIDTH_MAZE2);// creates an argument that allows the player to leave the maze
+    draw_exit_point(l2, ep);// makes the exit $
 
-    keypad(l2, TRUE);
+    keypad(l2, TRUE);//allows the usage of special keys
 
     dave_says(npc_win,
               "Hi, I'm dave and I'm evil muhehehehe",
               "If you don't complete the maze, I will blow it up!",
-              NULL);
+              NULL);// what the npc says
 
     while (1)
     {
         chtype next;
-        ch = wgetch(l2);
-        if (ch == KEY_RIGHT)
+        ch = wgetch(l2);//saves user inputs
+        if (ch == KEY_RIGHT)// all the KEY moves the character, delete the character was originally in, and saves the movement
         {
             next = mvwinch(l2, m.y, m.x + 1) & A_CHARTEXT;
             if (next == ' ' || next == '$') {
@@ -84,7 +90,7 @@ int second_level_maze(void)
         else if (ch == 'p' || ch == 'P')
         {
             int pause_result = 0;
-            while (1) {
+            while (1) {// this while loop opens up a pause screen and excute function depending on what was pressed
                 pause_result = handle_pause_menu(l2); // blocks until valid option
 
                 if (pause_result == P) {   // Resume
@@ -110,7 +116,7 @@ int second_level_maze(void)
         mvwprintw(l2, 5, 2, "Moves left: %3d", player_moves); 
         wrefresh(l2);
 
-        if (player_moves <= 0)
+        if (player_moves <= 0)// if the player move count go to 0, the user loses and will have to retry the maze again
         {
             werase(l2);
             wrefresh(l2);
@@ -120,7 +126,7 @@ int second_level_maze(void)
                     "Retry if you must but you'll fail again hahahahahaha",
                     NULL);
 
-            delwin(l2);
+            delwin(l2);// deletes the win
             refresh();
             int retry_choice = handle_retry(l2);
             if (retry_choice == MENU) {
@@ -142,9 +148,9 @@ int second_level_maze(void)
             wrefresh(l2);
             while(1) {
                 int next_ch = wgetch(l2);
-                if (next_ch == 'x' || next_ch == 'X') {
+                if (next_ch == 'x' || next_ch == 'X') {//character needed to leave the maze by pressing x
                     delwin(npc_win);
-                    delwin(l2);
+                    delwin(l2);// deletes the win
                     return 2;
                 }
             }
@@ -157,13 +163,13 @@ int level2Phase(void) {
     refresh();
 
     WINDOW *level2Win = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
-    level2Card(level2Win);
+    level2Card(level2Win);// calls for the level 2 splash screen
     getch();
     delwin(level2Win);
 
     refresh();
 
-    int res = second_level_maze();
+    int res = second_level_maze();// this calls second_leveelmaze() to make the game
 
     if (res == MENU) {
         return MENU;
