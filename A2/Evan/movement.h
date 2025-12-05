@@ -18,32 +18,32 @@ typedef struct {
 } movement;
 /**
 * @Brief this makes the player character
-* @param y and x coordinates and window function
+* @Param y and x coordinates and window function
 * @Return m(saves the x and y coordinates of the player)
 */
 movement make_player(int y, int x, WINDOW *win);
 /**
 * @Brief moves the player to the right
-* @param m allows access to the x and y coordinates movement
-* @return m with the updated values
+* @Param m allows access to the x and y coordinates movement
+* @Return m with the updated values
 */
 movement move_right(movement m);
 /**
 * @Brief moves player to the left
-* @param m allows acces to the x and y coordinates movement
-* @return m with the updated values
+* @Param m allows acces to the x and y coordinates movement
+* @Return m with the updated values
 */
 movement move_left(movement m);
 /**
 * @Brief moves player up
-* @param m allows acces to the x and y coordinates movement
-* @return m with the updated values
+* @Param m allows acces to the x and y coordinates movement
+* @Return m with the updated values
 */
 movement move_up(movement m);
 /**
 * @Brief moves player down
-* @param m allows access to the x and y coordinates movement
-* @return m with the updated values
+* @Param m allows access to the x and y coordinates movement
+* @Return m with the updated values
 */
 movement move_down(movement m);
 
