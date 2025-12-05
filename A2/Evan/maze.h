@@ -56,7 +56,7 @@ void draw_exit_point(WINDOW *win, ExitPoint exit);
 /**
 * @Brief argument on if the player madee it to the exit
 * @Param y and x coordinates of the player and ExitPoint exit for access on ep
-& @return True or false argument if player y and x and exit y and x are the same
+& @Return True or false argument if player y and x and exit y and x are the same
 */
 int reached_exit(int player_y, int player_x, ExitPoint exit);
 
