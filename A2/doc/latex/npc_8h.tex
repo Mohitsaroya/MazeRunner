@@ -1,0 +1,258 @@
+\doxysection{src/npc.h File Reference}
+\hypertarget{npc_8h}{}\label{npc_8h}\index{src/npc.h@{src/npc.h}}
+
+
+Non-\/player character (NPC) utilities and drawing helpers.  
+
+
+{\ttfamily \#include $<$ncurses.\+h$>$}\newline
+Include dependency graph for npc.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{npc_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{npc_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{npc_8h_afe105ee96c69cda26c0b892b4bdab338}{DAVE\+\_\+\+HEIGHT}}~2
+\begin{DoxyCompactList}\small\item\em Height in rows for Dave\textquotesingle{}s face artwork. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{npc_8h_a44273a2234eefdf70f5d0724e9755bce}{DAVE\+\_\+\+WIDTH}}~7
+\begin{DoxyCompactList}\small\item\em Width in columns for Dave\textquotesingle{}s face artwork. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+WINDOW \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{npc_8h_af011a511c7381bc975cdf0f9abfaa70e}{npc\+\_\+init}} (int parent\+\_\+height, int parent\+\_\+width)
+\begin{DoxyCompactList}\small\item\em Initialize an NPC window sized relative to the parent. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{npc_8h_a939e3cbc5b5d640ee3d412ebf015fdde}{draw\+\_\+dave\+\_\+face}} (WINDOW \texorpdfstring{$\ast$}{*}npc\+\_\+win)
+\begin{DoxyCompactList}\small\item\em Draw Dave\textquotesingle{}s small ASCII face inside {\ttfamily npc\+\_\+win}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{npc_8h_aff61194b18e39de9f284e07e1b3150f1}{draw\+\_\+lost\+\_\+npc}} (WINDOW \texorpdfstring{$\ast$}{*}mazewin, int first\+\_\+y, int second\+\_\+y, int fixed\+\_\+x, int player\+\_\+input)
+\begin{DoxyCompactList}\small\item\em Draw a "{}lost"{} NPC at the specified coordinates inside {\ttfamily mazewin}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{npc_8h_a70a8439c19280d0780c0972d87ba33d5}{dave\+\_\+says}} (WINDOW \texorpdfstring{$\ast$}{*}npc\+\_\+win, const char \texorpdfstring{$\ast$}{*}line1, const char \texorpdfstring{$\ast$}{*}line2, const char \texorpdfstring{$\ast$}{*}line3)
+\begin{DoxyCompactList}\small\item\em Display up to three lines of dialog in the NPC window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{npc_8h_ade77fe84138f92b98aee09db4efab88d}{dave\+\_\+face}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em ASCII-\/art for Dave\textquotesingle{}s face (array of C strings). \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{npc_8h_a8d4d422876611bac3f9aa5032aa3be6e}{lost\+\_\+player}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Lines used when an NPC indicates the player is lost. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{npc_8h_ad31b58937102672c22e7aa4df9c38a95}{lost\+\_\+state}}
+\begin{DoxyCompactList}\small\item\em State flag used by NPC dialogue/behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Non-\/player character (NPC) utilities and drawing helpers. 
+
+\begin{DoxyAuthor}{Author}
+Mohit Saroya Declares layout constants, NPC art data and functions used to initialize an NPC window and draw NPC content such as Dave\textquotesingle{}s face, a "{}lost"{} NPC, and dialog lines. 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{npc_8h_afe105ee96c69cda26c0b892b4bdab338}\label{npc_8h_afe105ee96c69cda26c0b892b4bdab338} 
+\index{npc.h@{npc.h}!DAVE\_HEIGHT@{DAVE\_HEIGHT}}
+\index{DAVE\_HEIGHT@{DAVE\_HEIGHT}!npc.h@{npc.h}}
+\doxysubsubsection{\texorpdfstring{DAVE\_HEIGHT}{DAVE\_HEIGHT}}
+{\footnotesize\ttfamily \#define DAVE\+\_\+\+HEIGHT~2}
+
+
+
+Height in rows for Dave\textquotesingle{}s face artwork. 
+
+\Hypertarget{npc_8h_a44273a2234eefdf70f5d0724e9755bce}\label{npc_8h_a44273a2234eefdf70f5d0724e9755bce} 
+\index{npc.h@{npc.h}!DAVE\_WIDTH@{DAVE\_WIDTH}}
+\index{DAVE\_WIDTH@{DAVE\_WIDTH}!npc.h@{npc.h}}
+\doxysubsubsection{\texorpdfstring{DAVE\_WIDTH}{DAVE\_WIDTH}}
+{\footnotesize\ttfamily \#define DAVE\+\_\+\+WIDTH~7}
+
+
+
+Width in columns for Dave\textquotesingle{}s face artwork. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{npc_8h_a70a8439c19280d0780c0972d87ba33d5}\label{npc_8h_a70a8439c19280d0780c0972d87ba33d5} 
+\index{npc.h@{npc.h}!dave\_says@{dave\_says}}
+\index{dave\_says@{dave\_says}!npc.h@{npc.h}}
+\doxysubsubsection{\texorpdfstring{dave\_says()}{dave\_says()}}
+{\footnotesize\ttfamily void dave\+\_\+says (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{npc\+\_\+win,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{line1,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{line2,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{line3 }\end{DoxyParamCaption})}
+
+
+
+Display up to three lines of dialog in the NPC window. 
+
+Each of {\ttfamily line1}, {\ttfamily line2} and {\ttfamily line3} may be a C string or NULL. The function formats and prints the provided lines inside {\ttfamily npc\+\_\+win}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em npc\+\_\+win} & Window used to display dialog. \\
+\hline
+{\em line1} & First line of dialog (or NULL). \\
+\hline
+{\em line2} & Second line of dialog (or NULL). \\
+\hline
+{\em line3} & Third line of dialog (or NULL).\\
+\hline
+\end{DoxyParams}
+Display up to three lines of dialog in the NPC window.
+
+The function clears the NPC window, draws a box, renders Dave\textquotesingle{}s face and then prints the provided text lines to the right of the face area. Any of {\ttfamily line1}/{\ttfamily line2}/{\ttfamily line3} may be NULL to skip that line.
+
+
+\begin{DoxyParams}{Parameters}
+{\em npc\+\_\+win} & Window used to display dialog. \\
+\hline
+{\em line1} & First line of dialog (or NULL). \\
+\hline
+{\em line2} & Second line of dialog (or NULL). \\
+\hline
+{\em line3} & Third line of dialog (or NULL). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{npc_8h_a939e3cbc5b5d640ee3d412ebf015fdde}\label{npc_8h_a939e3cbc5b5d640ee3d412ebf015fdde} 
+\index{npc.h@{npc.h}!draw\_dave\_face@{draw\_dave\_face}}
+\index{draw\_dave\_face@{draw\_dave\_face}!npc.h@{npc.h}}
+\doxysubsubsection{\texorpdfstring{draw\_dave\_face()}{draw\_dave\_face()}}
+{\footnotesize\ttfamily void draw\+\_\+dave\+\_\+face (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{npc\+\_\+win }\end{DoxyParamCaption})}
+
+
+
+Draw Dave\textquotesingle{}s small ASCII face inside {\ttfamily npc\+\_\+win}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em npc\+\_\+win} & Window to draw the face into.\\
+\hline
+\end{DoxyParams}
+Draw Dave\textquotesingle{}s small ASCII face inside {\ttfamily npc\+\_\+win}.
+
+The face artwork is defined in {\ttfamily dave\+\_\+face} and drawn starting at row 1, column 2 of {\ttfamily npc\+\_\+win}. The window is refreshed after drawing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em npc\+\_\+win} & ncurses window to draw the face into. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{npc_8h_aff61194b18e39de9f284e07e1b3150f1}\label{npc_8h_aff61194b18e39de9f284e07e1b3150f1} 
+\index{npc.h@{npc.h}!draw\_lost\_npc@{draw\_lost\_npc}}
+\index{draw\_lost\_npc@{draw\_lost\_npc}!npc.h@{npc.h}}
+\doxysubsubsection{\texorpdfstring{draw\_lost\_npc()}{draw\_lost\_npc()}}
+{\footnotesize\ttfamily void draw\+\_\+lost\+\_\+npc (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{mazewin,  }\item[{int}]{first\+\_\+y,  }\item[{int}]{second\+\_\+y,  }\item[{int}]{fixed\+\_\+x,  }\item[{int}]{player\+\_\+input }\end{DoxyParamCaption})}
+
+
+
+Draw a "{}lost"{} NPC at the specified coordinates inside {\ttfamily mazewin}. 
+
+This helper draws two-\/line artwork at rows {\ttfamily first\+\_\+y} and {\ttfamily second\+\_\+y} and a fixed column {\ttfamily fixed\+\_\+x}. {\ttfamily player\+\_\+input} can be used to vary the drawing depending on player actions (for example, to animate or flip the art).
+
+
+\begin{DoxyParams}{Parameters}
+{\em mazewin} & Parent window where the NPC should be drawn. \\
+\hline
+{\em first\+\_\+y} & Row index for the first line of the NPC art. \\
+\hline
+{\em second\+\_\+y} & Row index for the second line of the NPC art. \\
+\hline
+{\em fixed\+\_\+x} & Column index where the art should be anchored. \\
+\hline
+{\em player\+\_\+input} & Input/state value from the player to vary the drawing.\\
+\hline
+\end{DoxyParams}
+Draw a "{}lost"{} NPC at the specified coordinates inside {\ttfamily mazewin}.
+
+The function optionally toggles the {\ttfamily lost\+\_\+state} when {\ttfamily player\+\_\+input} is non-\/zero to animate the indicator between {\ttfamily first\+\_\+y} and {\ttfamily second\+\_\+y} rows. It clears previous characters at the anchor column before drawing the current indicator and refreshes the parent window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mazewin} & Parent maze window where the indicator should be drawn. \\
+\hline
+{\em first\+\_\+y} & Row index for the first indicator position. \\
+\hline
+{\em second\+\_\+y} & Row index for the second indicator position. \\
+\hline
+{\em fixed\+\_\+x} & Column position to draw the indicator. \\
+\hline
+{\em player\+\_\+input} & Non-\/zero to toggle animation state, zero to leave it. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{npc_8h_af011a511c7381bc975cdf0f9abfaa70e}\label{npc_8h_af011a511c7381bc975cdf0f9abfaa70e} 
+\index{npc.h@{npc.h}!npc\_init@{npc\_init}}
+\index{npc\_init@{npc\_init}!npc.h@{npc.h}}
+\doxysubsubsection{\texorpdfstring{npc\_init()}{npc\_init()}}
+{\footnotesize\ttfamily WINDOW \texorpdfstring{$\ast$}{*} npc\+\_\+init (\begin{DoxyParamCaption}\item[{int}]{parent\+\_\+height,  }\item[{int}]{parent\+\_\+width }\end{DoxyParamCaption})}
+
+
+
+Initialize an NPC window sized relative to the parent. 
+
+Allocates and returns a new ncurses {\ttfamily WINDOW} suitable for drawing NPC art/dialog. The window size is computed from {\ttfamily parent\+\_\+height} and {\ttfamily parent\+\_\+width} (caller still owns and should eventually destroy the window).
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent\+\_\+height} & Height (rows) of the parent region or terminal. \\
+\hline
+{\em parent\+\_\+width} & Width (columns) of the parent region or terminal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+WINDOW\texorpdfstring{$\ast$}{*} Pointer to the newly created NPC window (or NULL on error).
+\end{DoxyReturn}
+Initialize an NPC window sized relative to the parent.
+
+The dialog height is computed as approximately 15\% of the parent height and is positioned near the bottom of the parent region. The returned window is boxed and refreshed before being returned. Caller is responsible for destroying the window when no longer needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent\+\_\+height} & Height (rows) of the parent region or terminal. \\
+\hline
+{\em parent\+\_\+width} & Width (columns) of the parent region or terminal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+WINDOW\texorpdfstring{$\ast$}{*} Newly created npc window, or NULL on allocation failure. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{npc_8h_ade77fe84138f92b98aee09db4efab88d}\label{npc_8h_ade77fe84138f92b98aee09db4efab88d} 
+\index{npc.h@{npc.h}!dave\_face@{dave\_face}}
+\index{dave\_face@{dave\_face}!npc.h@{npc.h}}
+\doxysubsubsection{\texorpdfstring{dave\_face}{dave\_face}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} dave\+\_\+face\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+ASCII-\/art for Dave\textquotesingle{}s face (array of C strings). 
+
+\Hypertarget{npc_8h_a8d4d422876611bac3f9aa5032aa3be6e}\label{npc_8h_a8d4d422876611bac3f9aa5032aa3be6e} 
+\index{npc.h@{npc.h}!lost\_player@{lost\_player}}
+\index{lost\_player@{lost\_player}!npc.h@{npc.h}}
+\doxysubsubsection{\texorpdfstring{lost\_player}{lost\_player}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} lost\+\_\+player\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Lines used when an NPC indicates the player is lost. 
+
+\Hypertarget{npc_8h_ad31b58937102672c22e7aa4df9c38a95}\label{npc_8h_ad31b58937102672c22e7aa4df9c38a95} 
+\index{npc.h@{npc.h}!lost\_state@{lost\_state}}
+\index{lost\_state@{lost\_state}!npc.h@{npc.h}}
+\doxysubsubsection{\texorpdfstring{lost\_state}{lost\_state}}
+{\footnotesize\ttfamily int lost\+\_\+state\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+State flag used by NPC dialogue/behavior. 
+

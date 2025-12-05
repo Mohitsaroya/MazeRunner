@@ -1,0 +1,50 @@
+\doxysection{src/main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{src/main.c@{src/main.c}}
+
+
+Program entry point and top-\/level control flow for Maze\+Runner.  
+
+
+{\ttfamily \#include $<$ncurses.\+h$>$}\newline
+{\ttfamily \#include "{}interface.\+h"{}}\newline
+{\ttfamily \#include "{}level1.\+h"{}}\newline
+{\ttfamily \#include "{}level2.\+h"{}}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Program entry point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Program entry point and top-\/level control flow for Maze\+Runner. 
+
+\begin{DoxyAuthor}{Author}
+Mohit Saroya Initializes the ncurses environment, displays the title screen, and runs the main menu loop. The main loop calls the level phases ({\ttfamily level1\+Phase}, {\ttfamily level2\+Phase}) and responds to their return codes ({\ttfamily NEXT}, {\ttfamily MENU}, {\ttfamily QUIT}) to progress, return to menu, or quit. 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Program entry point. 
+
+Initializes ncurses, presents the title and main menu, and coordinates level execution. The function ensures a clean ncurses teardown via {\ttfamily endwin()} and displays a goodbye screen before exiting.
+
+\begin{DoxyReturn}{Returns}
+int Returns 0 on normal termination. 
+\end{DoxyReturn}

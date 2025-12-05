@@ -1,0 +1,9 @@
+<map id="src/npc.h" name="src/npc.h">
+<area shape="rect" id="Node000001" title="Non&#45;player character (NPC) utilities and drawing helpers." alt="" coords="133,5,213,31"/>
+<area shape="rect" id="Node000002" href="$level1_8c.html" title=" " alt="" coords="5,79,101,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,40,74,81,72,76,141,35"/>
+<area shape="rect" id="Node000003" href="$level2_8c.html" title=" " alt="" coords="125,79,221,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,44,176,79,171,79,171,44"/>
+<area shape="rect" id="Node000004" href="$npc_8c.html" title="NPC drawing and dialog helpers for MazeRunner." alt="" coords="246,79,325,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="205,36,268,76,266,81,202,40"/>
+</map>

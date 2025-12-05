@@ -1,6 +1,22 @@
+/**
+ * @file gameCards.c
+ * @brief Implementation of UI "card" drawing functions used by MazeRunner.
+ * @author Mohit Saroya
+ * Each function draws a specific screen into the provided ncurses `WINDOW`.
+ */
+
 #include <ncurses.h>
 #include "gameCards.h"
 
+/**
+ * @brief Draw the title card into `win` and refresh the window.
+ *
+ * Renders ASCII-art title text and a prompt to continue. This function does
+ * not consume input itself; the caller may wait for a key press using
+ * `wgetch` if desired.
+ *
+ * @param win ncurses window to draw the title into.
+ */
 void titleCard(WINDOW *win) {
     mvwprintw(win, 10, 15, " __        __                 _________   _______");
     mvwprintw(win, 11, 15, "|   \\    /   |      /\\       |_____   /  |   ____|");
@@ -23,6 +39,15 @@ void titleCard(WINDOW *win) {
     wrefresh(win);
 }
 
+/**
+ * @brief Draw the main menu card into `win`.
+ *
+ * Displays ASCII-art and labels for available actions (play, quit). The
+ * function refreshes `win` after drawing; input handling is performed by the
+ * caller.
+ *
+ * @param win ncurses window to draw the menu into.
+ */
 void menuCard(WINDOW *win) {
     mvwprintw(win,  7, 15, " __        __                 _________   _______");
     mvwprintw(win,  8, 15, "|   \\    /   |      /\\       |_____   /  |   ____|");
@@ -45,6 +70,14 @@ void menuCard(WINDOW *win) {
     wrefresh(win);
 }
 
+/**
+ * @brief Draw a quit confirmation card into `win`.
+ *
+ * Presents a large "QUIT" label and a small "(Y/N)" prompt. Caller should
+ * handle the user's keypress to determine whether to quit.
+ *
+ * @param win ncurses window to draw the confirmation into.
+ */
 void quitCard(WINDOW *win) {
     mvwprintw(win, 15, 25, " ________    __    __    ______    ______    _____");
     mvwprintw(win, 16, 25, "/   __   \\  |  |  |  |  |__  __|  |__  __|  |__   \\");
@@ -60,6 +93,12 @@ void quitCard(WINDOW *win) {
     
 }
 
+/**
+ * @brief Draw the level 1 information card into `win`.
+ *
+ * Shows level title and a prompt to continue. The function refreshes `win`.
+ * @param win ncurses window to draw the level card into.
+ */
 void level1Card(WINDOW *win) {
     mvwprintw(win, 15, 17, " __         _______    __     __    _______    __         __________");
     mvwprintw(win, 16, 17, "|  |       |   ____|  |  |   /  /  |   ____|  |  |       |___    ___|");
@@ -73,6 +112,12 @@ void level1Card(WINDOW *win) {
     wrefresh(win);
 }
 
+/**
+ * @brief Draw the level 2 information card into `win`.
+ *
+ * Shows level title and a prompt to continue. The function refreshes `win`.
+ * @param win ncurses window to draw the level card into.
+ */
 void level2Card(WINDOW *win) {
     mvwprintw(win, 15, 15, " __         _______    __     __    _______    __         ______________");
     mvwprintw(win, 16, 15, "|  |       |   ____|  |  |   /  /  |   ____|  |  |       |___    _    __|");
@@ -86,6 +131,14 @@ void level2Card(WINDOW *win) {
     wrefresh(win);
 }
 
+/**
+ * @brief Draw a retry prompt card into `win`.
+ *
+ * Displays a retry message with a "(Y/N)" prompt. The caller should handle
+ * the user's choice.
+ *
+ * @param win ncurses window to draw the retry prompt into.
+ */
 void retryCard(WINDOW *win) {
     mvwprintw(win, 15, 20, " ______     _______    ______    ______    ___       __   _____");
     mvwprintw(win, 16, 20, "|      \\   |   ____|  |__  __|  |      \\   \\  \\    /  /  |__   \\");
@@ -99,6 +152,14 @@ void retryCard(WINDOW *win) {
     wrefresh(win);
 }
 
+/**
+ * @brief Draw the pause screen card into `win`.
+ *
+ * Presents pause instructions and key hints (resume, main menu, exit). The
+ * function refreshes `win` after drawing.
+ *
+ * @param win ncurses window to draw the pause card into.
+ */
 void pauseCard(WINDOW *win) {
 
     mvwprintw(win,  7, 15, " _________                 __        __    _______ ");

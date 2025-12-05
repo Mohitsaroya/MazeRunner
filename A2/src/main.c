@@ -1,8 +1,27 @@
+/**
+ * @file main.c
+ * @brief Program entry point and top-level control flow for MazeRunner.
+ * @author Mohit Saroya
+ * Initializes the ncurses environment, displays the title screen, and
+ * runs the main menu loop. The main loop calls the level phases
+ * (`level1Phase`, `level2Phase`) and responds to their return codes
+ * (`NEXT`, `MENU`, `QUIT`) to progress, return to menu, or quit.
+ */
+
 #include <ncurses.h>
 #include "interface.h"
 #include "level1.h"
 #include "level2.h"
 
+/**
+ * @brief Program entry point.
+ *
+ * Initializes ncurses, presents the title and main menu, and coordinates
+ * level execution. The function ensures a clean ncurses teardown via
+ * `endwin()` and displays a goodbye screen before exiting.
+ *
+ * @return int Returns 0 on normal termination.
+ */
 int main(void) {
     // Initiallizing the game
     initscr();

@@ -1,0 +1,11 @@
+<map id="src/interface.c" name="src/interface.c">
+<area shape="rect" id="Node000001" title="Implementation of high&#45;level ncurses UI and menu handling functions." alt="" coords="10,5,124,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="25,152,109,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="52,33,29,53,11,80,9,97,15,113,41,142,37,146,10,116,4,97,6,78,25,49,48,29"/>
+<area shape="rect" id="Node000003" href="$interface_8h.html" title="High&#45;level ncurses UI helpers and menu handling for MazeRunner." alt="" coords="21,79,113,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="70,31,70,65,64,65,64,31"/>
+<area shape="rect" id="Node000004" href="$gameCards_8h.html" title="Functions that draw various UI &quot;cards&quot; used by the game." alt="" coords="137,79,245,104"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="88,28,160,69,158,74,86,33"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="70,104,70,138,64,138,64,104"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="172,106,100,147,98,143,170,102"/>
+</map>

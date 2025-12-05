@@ -57,7 +57,6 @@ int first_level_maze(void)
         if (ch == KEY_RIGHT) {
             int tx = m.x + 1, ty = m.y;
 
-            /* block stepping into either NPC tile */
             if (!((tx == npc_x1 && ty == npc_y1) ||
                 (tx == npc_x2 && ty == npc_y2))) {
 

@@ -1,0 +1,187 @@
+\doxysection{src/interface.c File Reference}
+\hypertarget{interface_8c}{}\label{interface_8c}\index{src/interface.c@{src/interface.c}}
+
+
+Implementation of high-\/level ncurses UI and menu handling functions.  
+
+
+{\ttfamily \#include $<$ncurses.\+h$>$}\newline
+{\ttfamily \#include "{}interface.\+h"{}}\newline
+{\ttfamily \#include "{}game\+Cards.\+h"{}}\newline
+Include dependency graph for interface.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{interface_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+WINDOW \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{interface_8c_aff356029eddf6123b934d890b2259b5a}{make\+\_\+window}} (int h, int w, int y, int x)
+\begin{DoxyCompactList}\small\item\em Create and return a boxed ncurses window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8c_a650bea29ebe34fb440967eb0617df827}{title\+\_\+screen}} ()
+\begin{DoxyCompactList}\small\item\em Display the title screen and wait for a key press. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interface_8c_a6820372449921205c1c471756e616b56}{quit\+Screen}} (WINDOW \texorpdfstring{$\ast$}{*}parent)
+\begin{DoxyCompactList}\small\item\em Display a quit confirmation prompt and return user choice. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interface_8c_a00b7f592d04d6b504528bed93b878c6b}{handle\+\_\+pause\+\_\+menu}} (WINDOW \texorpdfstring{$\ast$}{*}gamewin)
+\begin{DoxyCompactList}\small\item\em Handle the in-\/game pause menu flow. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interface_8c_a7fe3adb8b69baff33af24e4a3a9c5048}{main\+\_\+menu}} ()
+\begin{DoxyCompactList}\small\item\em Display the main menu and handle user selection. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interface_8c_aaada437d87d84621bc1f3f3cb81f0640}{handle\+\_\+retry}} (WINDOW \texorpdfstring{$\ast$}{*}gamewin)
+\begin{DoxyCompactList}\small\item\em Display a retry prompt and handle the player\textquotesingle{}s decision. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_8c_a6c26e55708f4a50b98128ebb0cf4d161}{good\+Bye}} (WINDOW \texorpdfstring{$\ast$}{*}parent)
+\begin{DoxyCompactList}\small\item\em Display a goodbye screen and wait for a key press. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of high-\/level ncurses UI and menu handling functions. 
+
+\begin{DoxyAuthor}{Author}
+Mohit Saroya Provides window creation, title/menu/pause/retry screens, quit confirmation, and goodbye message display using ncurses and the game\+Cards module. 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{interface_8c_a6c26e55708f4a50b98128ebb0cf4d161}\label{interface_8c_a6c26e55708f4a50b98128ebb0cf4d161} 
+\index{interface.c@{interface.c}!goodBye@{goodBye}}
+\index{goodBye@{goodBye}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{goodBye()}{goodBye()}}
+{\footnotesize\ttfamily void good\+Bye (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{parent }\end{DoxyParamCaption})}
+
+
+
+Display a goodbye screen and wait for a key press. 
+
+Show a goodbye screen and wait for key press.
+
+Creates a temporary window with a goodbye message, waits for any key press, and cleans up before returning.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Parent window used as a reference for positioning. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{interface_8c_a00b7f592d04d6b504528bed93b878c6b}\label{interface_8c_a00b7f592d04d6b504528bed93b878c6b} 
+\index{interface.c@{interface.c}!handle\_pause\_menu@{handle\_pause\_menu}}
+\index{handle\_pause\_menu@{handle\_pause\_menu}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{handle\_pause\_menu()}{handle\_pause\_menu()}}
+{\footnotesize\ttfamily int handle\+\_\+pause\+\_\+menu (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{gamewin }\end{DoxyParamCaption})}
+
+
+
+Handle the in-\/game pause menu flow. 
+
+Handle the in-\/game pause menu.
+
+Displays the pause card in a loop, handling user input (P=resume, M=main menu, Q=quit). Returns appropriate decision codes as defined in \doxylink{interface_8h}{interface.\+h}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gamewin} & Game window to restore/refresh when leaving pause. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Decision code\+: {\ttfamily P} (resume), {\ttfamily MENU} (back to menu), {\ttfamily QUIT} (quit game). 
+\end{DoxyReturn}
+\Hypertarget{interface_8c_aaada437d87d84621bc1f3f3cb81f0640}\label{interface_8c_aaada437d87d84621bc1f3f3cb81f0640} 
+\index{interface.c@{interface.c}!handle\_retry@{handle\_retry}}
+\index{handle\_retry@{handle\_retry}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{handle\_retry()}{handle\_retry()}}
+{\footnotesize\ttfamily int handle\+\_\+retry (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{gamewin }\end{DoxyParamCaption})}
+
+
+
+Display a retry prompt and handle the player\textquotesingle{}s decision. 
+
+Display a retry prompt and handle the player\textquotesingle{}s choice.
+
+Shows a retry card asking whether to retry the level. Returns {\ttfamily RETRY} to restart or {\ttfamily MENU} to return to the main menu. Runs in a loop until valid input is received.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gamewin} & Game window used as a reference for UI restoration. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int {\ttfamily RETRY} to retry, {\ttfamily MENU} to return to main menu. 
+\end{DoxyReturn}
+\Hypertarget{interface_8c_a7fe3adb8b69baff33af24e4a3a9c5048}\label{interface_8c_a7fe3adb8b69baff33af24e4a3a9c5048} 
+\index{interface.c@{interface.c}!main\_menu@{main\_menu}}
+\index{main\_menu@{main\_menu}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{main\_menu()}{main\_menu()}}
+{\footnotesize\ttfamily int main\+\_\+menu (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Display the main menu and handle user selection. 
+
+Display the main menu and wait for user selection.
+
+Creates and displays the menu window. Waits for input (P=play, Q=quit). Returns appropriate decision codes as defined in \doxylink{interface_8h}{interface.\+h}.
+
+\begin{DoxyReturn}{Returns}
+int {\ttfamily P} to play, {\ttfamily QUIT} to exit, or {\ttfamily MENU} to stay in the menu. 
+\end{DoxyReturn}
+\Hypertarget{interface_8c_aff356029eddf6123b934d890b2259b5a}\label{interface_8c_aff356029eddf6123b934d890b2259b5a} 
+\index{interface.c@{interface.c}!make\_window@{make\_window}}
+\index{make\_window@{make\_window}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{make\_window()}{make\_window()}}
+{\footnotesize\ttfamily WINDOW \texorpdfstring{$\ast$}{*} make\+\_\+window (\begin{DoxyParamCaption}\item[{int}]{h,  }\item[{int}]{w,  }\item[{int}]{y,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Create and return a boxed ncurses window. 
+
+Allocates a new window of size {\ttfamily h} x {\ttfamily w} at position ({\ttfamily y}, {\ttfamily x}), draws a box border and refreshes before returning.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Height in rows. \\
+\hline
+{\em w} & Width in columns. \\
+\hline
+{\em y} & Upper-\/left row coordinate. \\
+\hline
+{\em x} & Upper-\/left column coordinate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+WINDOW\texorpdfstring{$\ast$}{*} Pointer to the new window. 
+\end{DoxyReturn}
+\Hypertarget{interface_8c_a6820372449921205c1c471756e616b56}\label{interface_8c_a6820372449921205c1c471756e616b56} 
+\index{interface.c@{interface.c}!quitScreen@{quitScreen}}
+\index{quitScreen@{quitScreen}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{quitScreen()}{quitScreen()}}
+{\footnotesize\ttfamily int quit\+Screen (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{parent }\end{DoxyParamCaption})}
+
+
+
+Display a quit confirmation prompt and return user choice. 
+
+Ask the user to confirm quitting the game.
+
+Creates a window with a quit confirmation card. Waits for \textquotesingle{}y\textquotesingle{}/\textquotesingle{}Y\textquotesingle{} (return 1, quit confirmed) or \textquotesingle{}n\textquotesingle{}/\textquotesingle{}N\textquotesingle{} (return 0, don\textquotesingle{}t quit). Refreshes parent window if the user declines.
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Parent window to restore if user declines. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 1 if user confirms quit, 0 otherwise. 
+\end{DoxyReturn}
+\Hypertarget{interface_8c_a650bea29ebe34fb440967eb0617df827}\label{interface_8c_a650bea29ebe34fb440967eb0617df827} 
+\index{interface.c@{interface.c}!title\_screen@{title\_screen}}
+\index{title\_screen@{title\_screen}!interface.c@{interface.c}}
+\doxysubsubsection{\texorpdfstring{title\_screen()}{title\_screen()}}
+{\footnotesize\ttfamily void title\+\_\+screen (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Display the title screen and wait for a key press. 
+
+Display the program title screen.
+
+Creates a full-\/size title window, draws the ASCII-\/art title, and waits for the user to press any key before cleaning up and returning. 

@@ -1,0 +1,130 @@
+\doxysection{src/maze.h File Reference}
+\hypertarget{maze_8h}{}\label{maze_8h}\index{src/maze.h@{src/maze.h}}
+{\ttfamily \#include $<$ncurses.\+h$>$}\newline
+Include dependency graph for maze.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{maze_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{maze_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structExitPoint}{Exit\+Point}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{maze_8h_a7ae9b62cf5efccb126981e6081b8346d}{HEIGHT\+\_\+\+MAZE1}}~20
+\item 
+\#define \mbox{\hyperlink{maze_8h_ab4914305cbdced5c069f7d1312338bfa}{WIDTH\+\_\+\+MAZE1}}~40
+\item 
+\#define \mbox{\hyperlink{maze_8h_a8979368b4f8bd01dc0f73335c001a982}{HEIGHT\+\_\+\+MAZE2}}~28
+\item 
+\#define \mbox{\hyperlink{maze_8h_a65c418891b06c3a9f14ef7f36ea7fc62}{WIDTH\+\_\+\+MAZE2}}~90
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structExitPoint}{Exit\+Point}} \mbox{\hyperlink{maze_8h_a25ce993d1b0662ca87d70e08ffdfa2d0}{Exit\+Point}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{maze_8h_a9cf8d10ec2ab326e632d85b7ad56ebba}{draw\+\_\+maze}} (WINDOW \texorpdfstring{$\ast$}{*}win, int height, int width, int start\+\_\+y, int start\+\_\+x)
+\item 
+void \mbox{\hyperlink{maze_8h_a3ae6abc1cd527347c757301f4f0022be}{maze1}} (WINDOW \texorpdfstring{$\ast$}{*}win, int start\+\_\+y, int start\+\_\+x)
+\item 
+void \mbox{\hyperlink{maze_8h_a522034c549c55f390af2f34c93e0bc57}{maze2}} (WINDOW \texorpdfstring{$\ast$}{*}win, int start\+\_\+y, int start\+\_\+x)
+\item 
+\mbox{\hyperlink{structExitPoint}{Exit\+Point}} \mbox{\hyperlink{maze_8h_aa9ca01bd7f7947fa4d7d948c75364d99}{create\+\_\+exit\+\_\+point}} (int start\+\_\+y, int start\+\_\+x, int maze\+\_\+h, int maze\+\_\+w)
+\item 
+void \mbox{\hyperlink{maze_8h_a22ebb05730376dcb46d3ba25fe886670}{draw\+\_\+exit\+\_\+point}} (WINDOW \texorpdfstring{$\ast$}{*}win, \mbox{\hyperlink{structExitPoint}{Exit\+Point}} exit)
+\item 
+int \mbox{\hyperlink{maze_8h_a33b4fa86e798bc4b081f16b99b613508}{reached\+\_\+exit}} (int player\+\_\+y, int player\+\_\+x, \mbox{\hyperlink{structExitPoint}{Exit\+Point}} exit)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{maze_8h_a7ae9b62cf5efccb126981e6081b8346d}\label{maze_8h_a7ae9b62cf5efccb126981e6081b8346d} 
+\index{maze.h@{maze.h}!HEIGHT\_MAZE1@{HEIGHT\_MAZE1}}
+\index{HEIGHT\_MAZE1@{HEIGHT\_MAZE1}!maze.h@{maze.h}}
+\doxysubsubsection{\texorpdfstring{HEIGHT\_MAZE1}{HEIGHT\_MAZE1}}
+{\footnotesize\ttfamily \#define HEIGHT\+\_\+\+MAZE1~20}
+
+\Hypertarget{maze_8h_a8979368b4f8bd01dc0f73335c001a982}\label{maze_8h_a8979368b4f8bd01dc0f73335c001a982} 
+\index{maze.h@{maze.h}!HEIGHT\_MAZE2@{HEIGHT\_MAZE2}}
+\index{HEIGHT\_MAZE2@{HEIGHT\_MAZE2}!maze.h@{maze.h}}
+\doxysubsubsection{\texorpdfstring{HEIGHT\_MAZE2}{HEIGHT\_MAZE2}}
+{\footnotesize\ttfamily \#define HEIGHT\+\_\+\+MAZE2~28}
+
+\Hypertarget{maze_8h_ab4914305cbdced5c069f7d1312338bfa}\label{maze_8h_ab4914305cbdced5c069f7d1312338bfa} 
+\index{maze.h@{maze.h}!WIDTH\_MAZE1@{WIDTH\_MAZE1}}
+\index{WIDTH\_MAZE1@{WIDTH\_MAZE1}!maze.h@{maze.h}}
+\doxysubsubsection{\texorpdfstring{WIDTH\_MAZE1}{WIDTH\_MAZE1}}
+{\footnotesize\ttfamily \#define WIDTH\+\_\+\+MAZE1~40}
+
+\Hypertarget{maze_8h_a65c418891b06c3a9f14ef7f36ea7fc62}\label{maze_8h_a65c418891b06c3a9f14ef7f36ea7fc62} 
+\index{maze.h@{maze.h}!WIDTH\_MAZE2@{WIDTH\_MAZE2}}
+\index{WIDTH\_MAZE2@{WIDTH\_MAZE2}!maze.h@{maze.h}}
+\doxysubsubsection{\texorpdfstring{WIDTH\_MAZE2}{WIDTH\_MAZE2}}
+{\footnotesize\ttfamily \#define WIDTH\+\_\+\+MAZE2~90}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{maze_8h_a25ce993d1b0662ca87d70e08ffdfa2d0}\label{maze_8h_a25ce993d1b0662ca87d70e08ffdfa2d0} 
+\index{maze.h@{maze.h}!ExitPoint@{ExitPoint}}
+\index{ExitPoint@{ExitPoint}!maze.h@{maze.h}}
+\doxysubsubsection{\texorpdfstring{ExitPoint}{ExitPoint}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structExitPoint}{Exit\+Point}} \mbox{\hyperlink{structExitPoint}{Exit\+Point}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{maze_8h_aa9ca01bd7f7947fa4d7d948c75364d99}\label{maze_8h_aa9ca01bd7f7947fa4d7d948c75364d99} 
+\index{maze.h@{maze.h}!create\_exit\_point@{create\_exit\_point}}
+\index{create\_exit\_point@{create\_exit\_point}!maze.h@{maze.h}}
+\doxysubsubsection{\texorpdfstring{create\_exit\_point()}{create\_exit\_point()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structExitPoint}{Exit\+Point}} create\+\_\+exit\+\_\+point (\begin{DoxyParamCaption}\item[{int}]{start\+\_\+y,  }\item[{int}]{start\+\_\+x,  }\item[{int}]{maze\+\_\+h,  }\item[{int}]{maze\+\_\+w }\end{DoxyParamCaption})}
+
+\Hypertarget{maze_8h_a22ebb05730376dcb46d3ba25fe886670}\label{maze_8h_a22ebb05730376dcb46d3ba25fe886670} 
+\index{maze.h@{maze.h}!draw\_exit\_point@{draw\_exit\_point}}
+\index{draw\_exit\_point@{draw\_exit\_point}!maze.h@{maze.h}}
+\doxysubsubsection{\texorpdfstring{draw\_exit\_point()}{draw\_exit\_point()}}
+{\footnotesize\ttfamily void draw\+\_\+exit\+\_\+point (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{win,  }\item[{\mbox{\hyperlink{structExitPoint}{Exit\+Point}}}]{exit }\end{DoxyParamCaption})}
+
+\Hypertarget{maze_8h_a9cf8d10ec2ab326e632d85b7ad56ebba}\label{maze_8h_a9cf8d10ec2ab326e632d85b7ad56ebba} 
+\index{maze.h@{maze.h}!draw\_maze@{draw\_maze}}
+\index{draw\_maze@{draw\_maze}!maze.h@{maze.h}}
+\doxysubsubsection{\texorpdfstring{draw\_maze()}{draw\_maze()}}
+{\footnotesize\ttfamily void draw\+\_\+maze (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{win,  }\item[{int}]{height,  }\item[{int}]{width,  }\item[{int}]{start\+\_\+y,  }\item[{int}]{start\+\_\+x }\end{DoxyParamCaption})}
+
+\Hypertarget{maze_8h_a3ae6abc1cd527347c757301f4f0022be}\label{maze_8h_a3ae6abc1cd527347c757301f4f0022be} 
+\index{maze.h@{maze.h}!maze1@{maze1}}
+\index{maze1@{maze1}!maze.h@{maze.h}}
+\doxysubsubsection{\texorpdfstring{maze1()}{maze1()}}
+{\footnotesize\ttfamily void maze1 (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{win,  }\item[{int}]{start\+\_\+y,  }\item[{int}]{start\+\_\+x }\end{DoxyParamCaption})}
+
+\Hypertarget{maze_8h_a522034c549c55f390af2f34c93e0bc57}\label{maze_8h_a522034c549c55f390af2f34c93e0bc57} 
+\index{maze.h@{maze.h}!maze2@{maze2}}
+\index{maze2@{maze2}!maze.h@{maze.h}}
+\doxysubsubsection{\texorpdfstring{maze2()}{maze2()}}
+{\footnotesize\ttfamily void maze2 (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{win,  }\item[{int}]{start\+\_\+y,  }\item[{int}]{start\+\_\+x }\end{DoxyParamCaption})}
+
+\Hypertarget{maze_8h_a33b4fa86e798bc4b081f16b99b613508}\label{maze_8h_a33b4fa86e798bc4b081f16b99b613508} 
+\index{maze.h@{maze.h}!reached\_exit@{reached\_exit}}
+\index{reached\_exit@{reached\_exit}!maze.h@{maze.h}}
+\doxysubsubsection{\texorpdfstring{reached\_exit()}{reached\_exit()}}
+{\footnotesize\ttfamily int reached\+\_\+exit (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+y,  }\item[{int}]{player\+\_\+x,  }\item[{\mbox{\hyperlink{structExitPoint}{Exit\+Point}}}]{exit }\end{DoxyParamCaption})}
+
