@@ -102,23 +102,25 @@ From the repository root, type into the terminal\+:
 \hline
 \PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Key   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Action    }\\\cline{1-2}
 \endhead
+{\bfseries{Arrow Keys}}   &Move Player (in-\/game)    \\\cline{1-2}
 {\bfseries{P}}   &Play / Start Game    \\\cline{1-2}
 {\bfseries{Q}}   &Quit (with confirmation)    \\\cline{1-2}
-{\bfseries{Arrow Keys}}   &Move Player (in-\/game)    \\\cline{1-2}
 {\bfseries{P}}   &Pause / Resume    \\\cline{1-2}
-{\bfseries{M}}   &Main Menu (from pause)    \\\cline{1-2}
-{\bfseries{Y/N}}   &Confirm/\+Deny (in prompts)   \\\cline{1-2}
+{\bfseries{M}}   &Main Menu (from pause)   \\\cline{1-2}
 \end{longtabu}
 \hypertarget{index_autotoc_md9}{}\doxysection{\texorpdfstring{Code Documentation}{Code Documentation}}\label{index_autotoc_md9}
 All public interfaces and implementations include Doxygen-\/style documentation blocks. Key modules\+:
 
 
 \begin{DoxyItemize}
-\item {\ttfamily \doxylink{interface_8h}{interface.\+h}/c}\+: High-\/level UI helpers (window creation, menu handling, pause/retry flows)
 \item {\ttfamily \doxylink{gameCards_8h}{game\+Cards.\+h}/c}\+: Rendering of title, menu, pause, and level screens
+\item {\ttfamily \doxylink{interface_8h}{interface.\+h}/c}\+: High-\/level UI helpers (window creation, menu handling, pause/retry flows)
+\item {\ttfamily \doxylink{level1_8h}{level1.\+h}/c}\+: Level 1 game loop and logic
+\item {\ttfamily \doxylink{level2_8h}{level2.\+h}/c}\+: level 2 game loop and logic
+\item {\ttfamily \doxylink{main_8c}{main.\+c}}\+: The file that calls other files to keep the game flow simple
 \item {\ttfamily \doxylink{maze_8h}{maze.\+h}/c}\+: Maze drawing and layout logic
 \item {\ttfamily \doxylink{movement_8h}{movement.\+h}/c}\+: Player movement state and direction handling
-\item {\ttfamily \doxylink{level1_8h}{level1.\+h}/c}\+: Level 1 game loop and logic
+\item {\ttfamily \doxylink{npc_8h}{npc.\+h}/c}\+: The NPCs Dave and the lost players
 \end{DoxyItemize}\hypertarget{index_autotoc_md10}{}\doxysection{\texorpdfstring{Building and Testing}{Building and Testing}}\label{index_autotoc_md10}
 To build and run tests or clean the build\+:
 
@@ -135,4 +137,8 @@ To build and run tests or clean the build\+:
 \item Doxygen configuration is optimized for C code ({\ttfamily OPTIMIZE\+\_\+\+OUTPUT\+\_\+\+FOR\+\_\+C = YES}).
 \item The codebase includes inline comments and Doxygen docstrings for maintainability.
 \end{DoxyItemize}\hypertarget{index_autotoc_md12}{}\doxysection{\texorpdfstring{Authors}{Authors}}\label{index_autotoc_md12}
-Mohit Saroya, Evan Wong 
+
+\begin{DoxyItemize}
+\item Mohit Saroya\+: UI, game logic, game flow
+\item Evan Wong\+: Maze design, movement logic 
+\end{DoxyItemize}

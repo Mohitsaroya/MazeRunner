@@ -146,27 +146,28 @@ Game Controls</h1>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Key   </th><th class="markdownTableHeadNone">Action    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>P</b>   </td><td class="markdownTableBodyNone">Play / Start Game    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Q</b>   </td><td class="markdownTableBodyNone">Quit (with confirmation)    </td></tr>
-<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><b>Arrow Keys</b>   </td><td class="markdownTableBodyNone">Move Player (in-game)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>P</b>   </td><td class="markdownTableBodyNone">Play / Start Game    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>Q</b>   </td><td class="markdownTableBodyNone">Quit (with confirmation)    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><b>P</b>   </td><td class="markdownTableBodyNone">Pause / Resume    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>M</b>   </td><td class="markdownTableBodyNone">Main Menu (from pause)    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Y/N</b>   </td><td class="markdownTableBodyNone">Confirm/Deny (in prompts)   </td></tr>
+<td class="markdownTableBodyNone"><b>M</b>   </td><td class="markdownTableBodyNone">Main Menu (from pause)   </td></tr>
 </table>
 <h1><a class="anchor" id="autotoc_md9"></a>
 Code Documentation</h1>
 <p>All public interfaces and implementations include Doxygen-style documentation blocks. Key modules:</p>
 <ul>
-<li><code><a class="el" href="interface_8h.html" title="High-level ncurses UI helpers and menu handling for MazeRunner.">interface.h</a>/c</code>: High-level UI helpers (window creation, menu handling, pause/retry flows)</li>
 <li><code><a class="el" href="gameCards_8h.html" title="Functions that draw various UI &quot;cards&quot; used by the game.">gameCards.h</a>/c</code>: Rendering of title, menu, pause, and level screens</li>
+<li><code><a class="el" href="interface_8h.html" title="High-level ncurses UI helpers and menu handling for MazeRunner.">interface.h</a>/c</code>: High-level UI helpers (window creation, menu handling, pause/retry flows)</li>
+<li><code><a class="el" href="level1_8h.html" title="Public interface for makeing level 1 maze.">level1.h</a>/c</code>: Level 1 game loop and logic</li>
+<li><code><a class="el" href="level2_8h.html" title="Public interface for making second maze level.">level2.h</a>/c</code>: level 2 game loop and logic</li>
+<li><code><a class="el" href="main_8c.html" title="Program entry point and top-level control flow for MazeRunner.">main.c</a></code>: The file that calls other files to keep the game flow simple</li>
 <li><code><a class="el" href="maze_8h.html" title="Public interface for maze creation and utilities.">maze.h</a>/c</code>: Maze drawing and layout logic</li>
 <li><code><a class="el" href="movement_8h.html" title="Public interface for player movement utilities.">movement.h</a>/c</code>: Player movement state and direction handling</li>
-<li><code><a class="el" href="level1_8h.html" title="Public interface for makeing level 1 maze.">level1.h</a>/c</code>: Level 1 game loop and logic</li>
+<li><code><a class="el" href="npc_8h.html" title="Non-player character (NPC) utilities and drawing helpers.">npc.h</a>/c</code>: The NPCs Dave and the lost players</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md10"></a>
 Building and Testing</h1>
@@ -182,7 +183,10 @@ Notes</h1>
 </ul>
 <h1><a class="anchor" id="autotoc_md12"></a>
 Authors</h1>
-<p>Mohit Saroya, Evan Wong </p>
+<ul>
+<li>Mohit Saroya: UI, game logic, game flow</li>
+<li>Evan Wong: Maze design, movement logic </li>
+</ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

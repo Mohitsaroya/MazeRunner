@@ -98,22 +98,24 @@ A2
 
 | Key | Action |
 |-----|--------|
+| **Arrow Keys** | Move Player (in-game) |
 | **P** | Play / Start Game |
 | **Q** | Quit (with confirmation) |
-| **Arrow Keys** | Move Player (in-game) |
 | **P** | Pause / Resume |
 | **M** | Main Menu (from pause) |
-| **Y/N** | Confirm/Deny (in prompts) |
 
 ## Code Documentation
 
 All public interfaces and implementations include Doxygen-style documentation blocks. Key modules:
 
-- `interface.h/c`: High-level UI helpers (window creation, menu handling, pause/retry flows)
 - `gameCards.h/c`: Rendering of title, menu, pause, and level screens
+- `interface.h/c`: High-level UI helpers (window creation, menu handling, pause/retry flows)
+- `level1.h/c`: Level 1 game loop and logic
+- `level2.h/c`: level 2 game loop and logic
+- `main.c`: The file that calls other files to keep the game flow simple
 - `maze.h/c`: Maze drawing and layout logic
 - `movement.h/c`: Player movement state and direction handling
-- `level1.h/c`: Level 1 game loop and logic
+- `npc.h/c`: The NPCs Dave and the lost players
 
 ## Building and Testing
 
@@ -133,4 +135,5 @@ make run        # Compiles and runs the game
 
 ## Authors
 
-Mohit Saroya, Evan Wong
+- Mohit Saroya: UI, game logic, game flow
+- Evan Wong: Maze design, movement logic
