@@ -1,11 +1,13 @@
 /**
  * @file main.c
  * @brief Program entry point and top-level control flow for MazeRunner.
- * @author Mohit Saroya
+ * 
  * Initializes the ncurses environment, displays the title screen, and
  * runs the main menu loop. The main loop calls the level phases
  * (`level1Phase`, `level2Phase`) and responds to their return codes
  * (`NEXT`, `MENU`, `QUIT`) to progress, return to menu, or quit.
+ * 
+ * @author Mohit Saroya
  */
 
 #include <ncurses.h>

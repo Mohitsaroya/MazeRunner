@@ -79,6 +79,9 @@ $(function() {
   <div class="headertitle"><div class="title">maze.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>definitions of the functions in <a class="el" href="maze_8h.html" title="Public interface for maze creation and utilities.">maze.h</a>  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="maze_8h_source.html">maze.h</a>&quot;</code><br />
 <code>#include &lt;ncurses.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -86,8 +89,8 @@ Include dependency graph for maze.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="maze_8c__incl.png" border="0" usemap="#asrc_2maze_8c" alt=""/></div>
 <map name="asrc_2maze_8c" id="asrc_2maze_8c">
-<area shape="rect" title=" " alt="" coords="31,5,123,31"/>
-<area shape="rect" href="maze_8h.html" title=" " alt="" coords="5,79,76,104"/>
+<area shape="rect" title="definitions of the functions in maze.h" alt="" coords="31,5,123,31"/>
+<area shape="rect" href="maze_8h.html" title="Public interface for maze creation and utilities." alt="" coords="5,79,76,104"/>
 <area shape="poly" title=" " alt="" coords="73,32,55,68,50,65,68,30"/>
 <area shape="rect" title=" " alt="" coords="35,152,119,177"/>
 <area shape="poly" title=" " alt="" coords="82,30,89,63,90,104,85,139,80,138,85,104,83,64,77,31"/>
@@ -98,19 +101,30 @@ Include dependency graph for maze.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9cf8d10ec2ab326e632d85b7ad56ebba" id="r_a9cf8d10ec2ab326e632d85b7ad56ebba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="maze_8c.html#a9cf8d10ec2ab326e632d85b7ad56ebba">draw_maze</a> (WINDOW *win, int height, int width, int start_y, int start_x)</td></tr>
+<tr class="memdesc:a9cf8d10ec2ab326e632d85b7ad56ebba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the maze bounding box in <code>win</code>.  <br /></td></tr>
 <tr class="separator:a9cf8d10ec2ab326e632d85b7ad56ebba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ae6abc1cd527347c757301f4f0022be" id="r_a3ae6abc1cd527347c757301f4f0022be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="maze_8c.html#a3ae6abc1cd527347c757301f4f0022be">maze1</a> (WINDOW *win, int start_y, int start_x)</td></tr>
+<tr class="memdesc:a3ae6abc1cd527347c757301f4f0022be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the Level 1 maze layout into <code>win</code>.  <br /></td></tr>
 <tr class="separator:a3ae6abc1cd527347c757301f4f0022be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a522034c549c55f390af2f34c93e0bc57" id="r_a522034c549c55f390af2f34c93e0bc57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="maze_8c.html#a522034c549c55f390af2f34c93e0bc57">maze2</a> (WINDOW *win, int start_y, int start_x)</td></tr>
+<tr class="memdesc:a522034c549c55f390af2f34c93e0bc57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate the Level 2 maze layout into <code>win</code>.  <br /></td></tr>
 <tr class="separator:a522034c549c55f390af2f34c93e0bc57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9ca01bd7f7947fa4d7d948c75364d99" id="r_aa9ca01bd7f7947fa4d7d948c75364d99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structExitPoint.html">ExitPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="maze_8c.html#aa9ca01bd7f7947fa4d7d948c75364d99">create_exit_point</a> (int start_y, int start_x, int maze_h, int maze_w)</td></tr>
+<tr class="memdesc:aa9ca01bd7f7947fa4d7d948c75364d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an <a class="el" href="structExitPoint.html" title="Exit point in a maze.">ExitPoint</a> for a maze placed at <code>start_y,start_x</code>.  <br /></td></tr>
 <tr class="separator:aa9ca01bd7f7947fa4d7d948c75364d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22ebb05730376dcb46d3ba25fe886670" id="r_a22ebb05730376dcb46d3ba25fe886670"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="maze_8c.html#a22ebb05730376dcb46d3ba25fe886670">draw_exit_point</a> (WINDOW *win, <a class="el" href="structExitPoint.html">ExitPoint</a> exit)</td></tr>
+<tr class="memdesc:a22ebb05730376dcb46d3ba25fe886670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the exit marker inside <code>win</code> at the location indicated by <code>exit</code>.  <br /></td></tr>
 <tr class="separator:a22ebb05730376dcb46d3ba25fe886670"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33b4fa86e798bc4b081f16b99b613508" id="r_a33b4fa86e798bc4b081f16b99b613508"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="maze_8c.html#a33b4fa86e798bc4b081f16b99b613508">reached_exit</a> (int player_y, int player_x, <a class="el" href="structExitPoint.html">ExitPoint</a> exit)</td></tr>
+<tr class="memdesc:a33b4fa86e798bc4b081f16b99b613508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the player coordinates match the exit location.  <br /></td></tr>
 <tr class="separator:a33b4fa86e798bc4b081f16b99b613508"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>definitions of the functions in <a class="el" href="maze_8h.html" title="Public interface for maze creation and utilities.">maze.h</a> </p>
+<p>This file contains the implementation of maze drawing and exit point functions.</p>
+<dl class="section author"><dt>Author</dt><dd>Evan Wong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>dec.4,2025 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="aa9ca01bd7f7947fa4d7d948c75364d99" name="aa9ca01bd7f7947fa4d7d948c75364d99"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9ca01bd7f7947fa4d7d948c75364d99">&#9670;&#160;</a></span>create_exit_point()</h2>
 
@@ -149,6 +163,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Create an <a class="el" href="structExitPoint.html" title="Exit point in a maze.">ExitPoint</a> for a maze placed at <code>start_y,start_x</code>. </p>
+<p>Computes the coordinates where the exit marker (typically '$') should be drawn based on the maze's starting position and dimensions. The returned <a class="el" href="structExitPoint.html" title="Exit point in a maze.">ExitPoint</a> contains absolute coordinates relative to the containing window.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start_y</td><td>Top row coordinate of the maze content area. </td></tr>
+    <tr><td class="paramname">start_x</td><td>Left column coordinate of the maze content area. </td></tr>
+    <tr><td class="paramname">maze_h</td><td>Height of the maze content area (rows). </td></tr>
+    <tr><td class="paramname">maze_w</td><td>Width of the maze content area (columns). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structExitPoint.html" title="Exit point in a maze.">ExitPoint</a> Structure with <code>y</code> and <code>x</code> coordinates for the exit. </dd></dl>
+
 </div>
 </div>
 <a id="a22ebb05730376dcb46d3ba25fe886670" name="a22ebb05730376dcb46d3ba25fe886670"></a>
@@ -176,6 +203,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Draw the exit marker inside <code>win</code> at the location indicated by <code>exit</code>. </p>
+<p>Renders the character used to represent the exit (for example '$') at the coordinates contained in <code>exit</code>. This function only draws the marker and does not modify player or NPC state.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">win</td><td>ncurses window where the exit marker will be drawn. </td></tr>
+    <tr><td class="paramname">exit</td><td><a class="el" href="structExitPoint.html" title="Exit point in a maze.">ExitPoint</a> specifying the location for the marker. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -223,6 +260,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Draw the maze bounding box in <code>win</code>. </p>
+<p>Draws a rectangular border for the maze area inside the provided <code>WINDOW</code>. Interior cells are initialized to spaces. This function does not populate level-specific walls or items; those are placed by <code>maze1</code> or <code>maze2</code> after the border is drawn.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">win</td><td>ncurses window in which to draw the maze border. </td></tr>
+    <tr><td class="paramname">height</td><td>Height (number of rows) of the maze area to draw. </td></tr>
+    <tr><td class="paramname">width</td><td>Width (number of columns) of the maze area to draw. </td></tr>
+    <tr><td class="paramname">start_y</td><td>Top row coordinate where the maze area should be placed. </td></tr>
+    <tr><td class="paramname">start_x</td><td>Left column coordinate where the maze area should be placed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a3ae6abc1cd527347c757301f4f0022be" name="a3ae6abc1cd527347c757301f4f0022be"></a>
@@ -256,6 +306,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Populate the Level 1 maze layout into <code>win</code>. </p>
+<p>Places walls, paths and any level-specific decorations into the area that was reserved by <code>draw_maze</code>. Coordinates <code>start_y</code> and <code>start_x</code> indicate the top-left corner of the maze content area inside <code>win</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">win</td><td>ncurses window where the maze content will be drawn. </td></tr>
+    <tr><td class="paramname">start_y</td><td>Top row coordinate of the maze content area. </td></tr>
+    <tr><td class="paramname">start_x</td><td>Left column coordinate of the maze content area. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -291,6 +352,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Populate the Level 2 maze layout into <code>win</code>. </p>
+<p>Similar to <code>maze1</code>, but places level 2 specific walls and regions. This function assumes a border has already been drawn and uses <code>start_y</code> and <code>start_x</code> to position the content inside the provided window.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">win</td><td>ncurses window where the maze content will be drawn. </td></tr>
+    <tr><td class="paramname">start_y</td><td>Top row coordinate of the maze content area. </td></tr>
+    <tr><td class="paramname">start_x</td><td>Left column coordinate of the maze content area. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a33b4fa86e798bc4b081f16b99b613508" name="a33b4fa86e798bc4b081f16b99b613508"></a>
@@ -324,6 +396,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Check whether the player coordinates match the exit location. </p>
+<p>Compares the provided player position with the <code>exit</code> coordinates and returns a non-zero value when they match (player reached the exit) or 0 otherwise.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">player_y</td><td>Player's current row coordinate. </td></tr>
+    <tr><td class="paramname">player_x</td><td>Player's current column coordinate. </td></tr>
+    <tr><td class="paramname">exit</td><td><a class="el" href="structExitPoint.html" title="Exit point in a maze.">ExitPoint</a> to compare against. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if player is at the exit, zero otherwise. </dd></dl>
 
 </div>
 </div>

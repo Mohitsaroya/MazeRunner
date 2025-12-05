@@ -1,7 +1,11 @@
 \doxysection{src/level1.h File Reference}
 \hypertarget{level1_8h}{}\label{level1_8h}\index{src/level1.h@{src/level1.h}}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+
+
+Public interface for makeing level 1 maze.  
+
+
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,9 +16,22 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{level1_8h_a9199d5f4b62d8421d18e2b7f8c16f884}{first\+\_\+level\+\_\+maze}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em first\+\_\+level\+\_\+maze makes the level 1 maze and general gameplay \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{level1_8h_a89e10f3f1216d372285714524c3a1e2a}{level1\+Phase}} (void)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em level1\+Phase calls for the level 1 splash screen and calls for first\+\_\+level\+\_\+maze \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Public interface for makeing level 1 maze. 
+
+This file contains the public interface for level 1 maze functions.
+
+\begin{DoxyAuthor}{Author}
+Evan wong 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Dec.\+4,2025 
+\end{DoxyDate}
 
 
 \doxysubsection{Function Documentation}
@@ -24,9 +41,49 @@ int \mbox{\hyperlink{level1_8h_a89e10f3f1216d372285714524c3a1e2a}{level1\+Phase}
 \doxysubsubsection{\texorpdfstring{first\_level\_maze()}{first\_level\_maze()}}
 {\footnotesize\ttfamily int first\+\_\+level\+\_\+maze (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+
+
+first\+\_\+level\+\_\+maze makes the level 1 maze and general gameplay 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+it return global macros based on if the player wants to quit,menu,next or pause
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void it return global macros based on if the player wants to quit,menu,next or pause 
+\end{DoxyReturn}
 \Hypertarget{level1_8h_a89e10f3f1216d372285714524c3a1e2a}\label{level1_8h_a89e10f3f1216d372285714524c3a1e2a} 
 \index{level1.h@{level1.h}!level1Phase@{level1Phase}}
 \index{level1Phase@{level1Phase}!level1.h@{level1.h}}
 \doxysubsubsection{\texorpdfstring{level1Phase()}{level1Phase()}}
 {\footnotesize\ttfamily int level1\+Phase (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+
+
+level1\+Phase calls for the level 1 splash screen and calls for first\+\_\+level\+\_\+maze 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+it return global macros based on if the player wants to quit,menu, or next
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void it return global macros based on if the player wants to quit,menu, or next 
+\end{DoxyReturn}

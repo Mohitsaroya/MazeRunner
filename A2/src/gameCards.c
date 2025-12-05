@@ -1,8 +1,11 @@
 /**
  * @file gameCards.c
  * @brief Implementation of UI "card" drawing functions used by MazeRunner.
- * @author Mohit Saroya
+ * 
  * Each function draws a specific screen into the provided ncurses `WINDOW`.
+ * 
+ * @author Mohit Saroya
+ 
  */
 
 #include <ncurses.h>

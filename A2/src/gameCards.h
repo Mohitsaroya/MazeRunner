@@ -6,10 +6,13 @@
 /**
  * @file gameCards.h
  * @brief Functions that draw various UI "cards" used by the game.
- * @author Mohit Saroya
+ * 
  * Each function draws a specific screen (title, menu, quit confirmation,
  * level status, retry prompt, pause screen, etc.) into the provided ncurses
  * `WINDOW`.
+ * 
+ * @author Mohit Saroya
+ 
  */
 
 /**

@@ -1,9 +1,11 @@
 /**
  * @file interface.c
  * @brief Implementation of high-level ncurses UI and menu handling functions.
- * @author Mohit Saroya
+ * 
  * Provides window creation, title/menu/pause/retry screens, quit confirmation,
  * and goodbye message display using ncurses and the gameCards module.
+ * 
+ * @author Mohit Saroya
  */
 
 #include <ncurses.h>

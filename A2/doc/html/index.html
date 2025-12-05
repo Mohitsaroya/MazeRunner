@@ -76,10 +76,10 @@ $(function() {
 <div class="textblock"><p><a class="anchor" id="md_README"></a> A terminal-based maze game written in C using ncurses.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Project Overview</h1>
-<p><b>MazeRunner</b> is an interactive maze game where the player navigates through a maze, encounters obstacles, and attempts to reach the exit. The game features a full menu system, pause functionality, level progression, and retry mechanics—all implemented in the terminal using the ncurses library. In the maze you'll find trapped victims of evil person called Dave. Dave has trapped them for years, and if you dont get out, you'll meet the same fate as them; trapped for eternity is dave's mazes, going mad day by day.</p>
+<p><b>MazeRunner</b> is an interactive maze game where the player navigates through a maze, encounters obstacles, and attempts to reach the exit. The game features a full menu system, pause functionality, level progression, and retry mechanics-all implemented in the terminal using the ncurses library. In the maze you'll find trapped victims of evil person called Dave. Dave has trapped them for years, and if you dont get out, you'll meet the same fate as them; trapped for eternity is dave's mazes, going mad day by day.</p>
 <p>The game is divided into 2 levels:</p>
 <p><b>Level 1</b>: players get to interact with 1 NPC, a poor trapped victim of Dave's sadistic nature. You'll have to get to the door with $ sign to reach the exit, but wait, Dave has other plans for you.</p>
-<p><b>Level 2</b>: After you complete level 1, dave will trap you in a separate maze. You will have to exit before time runs out. If you don't, Dave will destroy the maze, but don't worry as you get unlimited retries to finish the level.</p>
+<p><b>Level 2</b>: After you complete level 1, dave will trap you in a separate maze. You will have to exit the maze through another door with $ on it before time runs out. If you don't, Dave will destroy the maze, but don't worry as you get unlimited retries to finish the level.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Features</h1>
 <ul>
@@ -164,28 +164,25 @@ Code Documentation</h1>
 <ul>
 <li><code><a class="el" href="interface_8h.html" title="High-level ncurses UI helpers and menu handling for MazeRunner.">interface.h</a>/c</code>: High-level UI helpers (window creation, menu handling, pause/retry flows)</li>
 <li><code><a class="el" href="gameCards_8h.html" title="Functions that draw various UI &quot;cards&quot; used by the game.">gameCards.h</a>/c</code>: Rendering of title, menu, pause, and level screens</li>
-<li><code><a class="el" href="maze_8h.html">maze.h</a>/c</code>: Maze drawing and layout logic</li>
-<li><code><a class="el" href="movement_8h.html">movement.h</a>/c</code>: Player movement state and direction handling</li>
-<li><code><a class="el" href="level1_8h.html">level1.h</a>/c</code>: Level 1 game loop and logic</li>
+<li><code><a class="el" href="maze_8h.html" title="Public interface for maze creation and utilities.">maze.h</a>/c</code>: Maze drawing and layout logic</li>
+<li><code><a class="el" href="movement_8h.html" title="Public interface for player movement utilities.">movement.h</a>/c</code>: Player movement state and direction handling</li>
+<li><code><a class="el" href="level1_8h.html" title="Public interface for makeing level 1 maze.">level1.h</a>/c</code>: Level 1 game loop and logic</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md10"></a>
-Generating Docs</h2>
-<div class="fragment"><div class="line">make doc</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 Building and Testing</h1>
 <p>To build and run tests or clean the build:</p>
 <div class="fragment"><div class="line">make clean      # Remove object files and executables</div>
 <div class="line">make run        # Compiles and runs the game</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md12"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
 Notes</h1>
 <ul>
 <li>The game uses ncurses for terminal rendering; ensure your terminal supports ncurses.</li>
 <li>Doxygen configuration is optimized for C code (<code>OPTIMIZE_OUTPUT_FOR_C = YES</code>).</li>
 <li>The codebase includes inline comments and Doxygen docstrings for maintainability.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 Authors</h1>
-<p>Mohit Saroya Evan Wong </p>
+<p>Mohit Saroya, Evan Wong </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->

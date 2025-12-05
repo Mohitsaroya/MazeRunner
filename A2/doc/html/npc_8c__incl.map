@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,33,56,70,52,67,88,29"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="59,152,143,177"/>
 <area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="103,31,103,138,98,138,98,31"/>
-<area shape="rect" id="Node000004" href="$maze_8h.html" title=" " alt="" coords="139,79,209,104"/>
+<area shape="rect" id="Node000004" href="$maze_8h.html" title="Public interface for maze creation and utilities." alt="" coords="139,79,209,104"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="115,29,154,67,150,71,111,33"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="47,103,82,140,79,144,43,106"/>
 <area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="164,106,124,144,121,140,160,102"/>

@@ -9,8 +9,7 @@ Program entry point and top-\/level control flow for Maze\+Runner.
 {\ttfamily \#include "{}interface.\+h"{}}\newline
 {\ttfamily \#include "{}level1.\+h"{}}\newline
 {\ttfamily \#include "{}level2.\+h"{}}\newline
-Include dependency graph for main.\+c\+:
-\nopagebreak
+Include dependency graph for main.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,8 +26,10 @@ int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
 \doxysubsection{Detailed Description}
 Program entry point and top-\/level control flow for Maze\+Runner. 
 
+Initializes the ncurses environment, displays the title screen, and runs the main menu loop. The main loop calls the level phases ({\ttfamily level1\+Phase}, {\ttfamily level2\+Phase}) and responds to their return codes ({\ttfamily NEXT}, {\ttfamily MENU}, {\ttfamily QUIT}) to progress, return to menu, or quit.
+
 \begin{DoxyAuthor}{Author}
-Mohit Saroya Initializes the ncurses environment, displays the title screen, and runs the main menu loop. The main loop calls the level phases ({\ttfamily level1\+Phase}, {\ttfamily level2\+Phase}) and responds to their return codes ({\ttfamily NEXT}, {\ttfamily MENU}, {\ttfamily QUIT}) to progress, return to menu, or quit. 
+Mohit Saroya 
 \end{DoxyAuthor}
 
 

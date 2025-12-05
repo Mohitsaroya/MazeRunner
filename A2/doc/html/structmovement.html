@@ -77,6 +77,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Player movement state.  
+ <a href="structmovement.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="movement_8h_source.html">movement.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -88,7 +91,11 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:afcf507b44a55b07dee3f60fb189a2900" id="r_afcf507b44a55b07dee3f60fb189a2900"><td class="memItemLeft" align="right" valign="top">WINDOW *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmovement.html#afcf507b44a55b07dee3f60fb189a2900">win</a></td></tr>
 <tr class="separator:afcf507b44a55b07dee3f60fb189a2900"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Player movement state. </p>
+<p>Stores the player's current coordinates and the ncurses <code>WINDOW</code> where the player is drawn. <code>y</code> is the row and <code>x</code> is the column within <code>win</code>.</p>
+<p>@field x Current column (horizontal) position of the player. @field y Current row (vertical) position of the player. @field win Pointer to the ncurses window used for drawing the player. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="afcf507b44a55b07dee3f60fb189a2900" name="afcf507b44a55b07dee3f60fb189a2900"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afcf507b44a55b07dee3f60fb189a2900">&#9670;&#160;</a></span>win</h2>
 

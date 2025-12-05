@@ -2,6 +2,11 @@
 \hypertarget{structmovement}{}\label{structmovement}\index{movement@{movement}}
 
 
+Player movement state.  
+
+
+
+
 {\ttfamily \#include $<$movement.\+h$>$}
 
 \doxysubsubsection*{Public Attributes}
@@ -14,6 +19,13 @@ int \mbox{\hyperlink{structmovement_af49122c9d7307b2a4f53b46667b9c00f}{y}}
 WINDOW \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structmovement_afcf507b44a55b07dee3f60fb189a2900}{win}}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Player movement state. 
+
+Stores the player\textquotesingle{}s current coordinates and the ncurses {\ttfamily WINDOW} where the player is drawn. {\ttfamily y} is the row and {\ttfamily x} is the column within {\ttfamily win}.
+
+@field x Current column (horizontal) position of the player. @field y Current row (vertical) position of the player. @field win Pointer to the ncurses window used for drawing the player. 
 
 \doxysubsection{Member Data Documentation}
 \Hypertarget{structmovement_afcf507b44a55b07dee3f60fb189a2900}\label{structmovement_afcf507b44a55b07dee3f60fb189a2900} 

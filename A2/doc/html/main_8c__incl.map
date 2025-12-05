@@ -4,9 +4,9 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,33,63,51,46,64,34,80,29,94,28,109,37,139,32,140,23,110,23,93,29,77,43,60,60,47,98,28"/>
 <area shape="rect" id="Node000003" href="$interface_8h.html" title="High&#45;level ncurses UI helpers and menu handling for MazeRunner." alt="" coords="44,79,136,104"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="137,33,109,69,105,66,132,29"/>
-<area shape="rect" id="Node000004" href="$level1_8h.html" title=" " alt="" coords="161,79,235,104"/>
+<area shape="rect" id="Node000004" href="$level1_8h.html" title="Public interface for makeing level 1 maze." alt="" coords="161,79,235,104"/>
 <area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="154,29,183,66,179,69,150,33"/>
-<area shape="rect" id="Node000005" href="$level2_8h.html" title=" " alt="" coords="259,79,334,104"/>
+<area shape="rect" id="Node000005" href="$level2_8h.html" title="Public interface for making second maze level." alt="" coords="259,79,334,104"/>
 <area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="169,28,260,70,258,75,167,33"/>
 <area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="85,106,63,142,59,139,81,103"/>
 </map>

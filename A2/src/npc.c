@@ -1,10 +1,12 @@
 /**
  * @file npc.c
  * @brief NPC drawing and dialog helpers for MazeRunner.
- * @author Mohit Saroya
+ * 
  * Defines ASCII art for a simple NPC (Dave), manages a small NPC window and
  * provides utilities to render the NPC face, a "lost" indicator, and dialog
  * lines.
+ * 
+ * @author Mohit Saroya
  */
 
 #include "npc.h"

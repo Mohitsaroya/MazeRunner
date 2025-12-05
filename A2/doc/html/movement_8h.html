@@ -80,13 +80,16 @@ $(function() {
   <div class="headertitle"><div class="title">movement.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Public interface for player movement utilities.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;ncurses.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for movement.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="movement_8h__incl.png" border="0" usemap="#asrc_2movement_8h" alt=""/></div>
 <map name="asrc_2movement_8h" id="asrc_2movement_8h">
-<area shape="rect" title=" " alt="" coords="5,5,133,31"/>
+<area shape="rect" title="Public interface for player movement utilities." alt="" coords="5,5,133,31"/>
 <area shape="rect" title=" " alt="" coords="27,79,111,104"/>
 <area shape="poly" title=" " alt="" coords="72,31,72,65,67,65,67,31"/>
 </map>
@@ -96,12 +99,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="movement_8h__dep__incl.png" border="0" usemap="#asrc_2movement_8hdep" alt=""/></div>
 <map name="asrc_2movement_8hdep" id="asrc_2movement_8hdep">
-<area shape="rect" title=" " alt="" coords="109,5,237,31"/>
-<area shape="rect" href="level1_8c.html" title=" " alt="" coords="5,79,101,104"/>
+<area shape="rect" title="Public interface for player movement utilities." alt="" coords="109,5,237,31"/>
+<area shape="rect" href="level1_8c.html" title="Definition of the functions in level1.h." alt="" coords="5,79,101,104"/>
 <area shape="poly" title=" " alt="" coords="143,40,74,81,72,76,141,35"/>
-<area shape="rect" href="level2_8c.html" title=" " alt="" coords="125,79,221,104"/>
+<area shape="rect" href="level2_8c.html" title="Definition of the functions in level2.h." alt="" coords="125,79,221,104"/>
 <area shape="poly" title=" " alt="" coords="176,44,176,79,171,79,171,44"/>
-<area shape="rect" href="movement_8c.html" title=" " alt="" coords="246,79,373,104"/>
+<area shape="rect" href="movement_8c.html" title="defintion of the functions in movement.h" alt="" coords="246,79,373,104"/>
 <area shape="poly" title=" " alt="" coords="208,34,288,76,286,81,206,39"/>
 </map>
 </div>
@@ -111,22 +114,33 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmovement.html">movement</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Player movement state.  <a href="structmovement.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a2d7981a2a4b21019b3d4f8ab7b28a231" id="r_a2d7981a2a4b21019b3d4f8ab7b28a231"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmovement.html">movement</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="movement_8h.html#a2d7981a2a4b21019b3d4f8ab7b28a231">make_player</a> (int y, int x, WINDOW *win)</td></tr>
+<tr class="memdesc:a2d7981a2a4b21019b3d4f8ab7b28a231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and draw a player at the specified start coordinates.  <br /></td></tr>
 <tr class="separator:a2d7981a2a4b21019b3d4f8ab7b28a231"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17970553cb7825d61dffe4f6634f7eb0" id="r_a17970553cb7825d61dffe4f6634f7eb0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmovement.html">movement</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="movement_8h.html#a17970553cb7825d61dffe4f6634f7eb0">move_right</a> (<a class="el" href="structmovement.html">movement</a> m)</td></tr>
+<tr class="memdesc:a17970553cb7825d61dffe4f6634f7eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the player one column to the right when possible.  <br /></td></tr>
 <tr class="separator:a17970553cb7825d61dffe4f6634f7eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd42ea7df01aa1abd2832c80f95c73fa" id="r_abd42ea7df01aa1abd2832c80f95c73fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmovement.html">movement</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="movement_8h.html#abd42ea7df01aa1abd2832c80f95c73fa">move_left</a> (<a class="el" href="structmovement.html">movement</a> m)</td></tr>
+<tr class="memdesc:abd42ea7df01aa1abd2832c80f95c73fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the player one column to the left when possible.  <br /></td></tr>
 <tr class="separator:abd42ea7df01aa1abd2832c80f95c73fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adea016cba7dadc794bad136a65af886a" id="r_adea016cba7dadc794bad136a65af886a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmovement.html">movement</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="movement_8h.html#adea016cba7dadc794bad136a65af886a">move_up</a> (<a class="el" href="structmovement.html">movement</a> m)</td></tr>
+<tr class="memdesc:adea016cba7dadc794bad136a65af886a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the player one row up when possible.  <br /></td></tr>
 <tr class="separator:adea016cba7dadc794bad136a65af886a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abba3efbdf907011f7b76ae003a505e23" id="r_abba3efbdf907011f7b76ae003a505e23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmovement.html">movement</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="movement_8h.html#abba3efbdf907011f7b76ae003a505e23">move_down</a> (<a class="el" href="structmovement.html">movement</a> m)</td></tr>
+<tr class="memdesc:abba3efbdf907011f7b76ae003a505e23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the player one row down when possible.  <br /></td></tr>
 <tr class="separator:abba3efbdf907011f7b76ae003a505e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Public interface for player movement utilities. </p>
+<p>Functions and types for creating and updating the player's position in a maze window. Movement helpers update the internal <code>movement</code> structure and are responsible for erasing/redrawing the player glyph in the associated <code>WINDOW</code> when called.</p>
+<dl class="section author"><dt>Author</dt><dd>Evan Wong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>Dec 4, 2025 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a2d7981a2a4b21019b3d4f8ab7b28a231" name="a2d7981a2a4b21019b3d4f8ab7b28a231"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2d7981a2a4b21019b3d4f8ab7b28a231">&#9670;&#160;</a></span>make_player()</h2>
 
@@ -159,6 +173,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Create and draw a player at the specified start coordinates. </p>
+<p>Initializes a <code>movement</code> structure for the player and draws the player glyph at the provided coordinates inside <code>win</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>Start row where the player should be placed. </td></tr>
+    <tr><td class="paramname">x</td><td>Start column where the player should be placed. </td></tr>
+    <tr><td class="paramname">win</td><td>ncurses window in which the player will be drawn. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>movement Initialized movement structure containing the start coordinates and <code>win</code> pointer. </dd></dl>
+
 </div>
 </div>
 <a id="abba3efbdf907011f7b76ae003a505e23" name="abba3efbdf907011f7b76ae003a505e23"></a>
@@ -176,6 +202,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Move the player one row down when possible. </p>
+<p>Updates the <code>y</code> coordinate in <code>m</code> and redraws the player in <code>m.win</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>Current movement state for the player. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>movement Updated movement state after moving down. </dd></dl>
 
 </div>
 </div>
@@ -195,6 +231,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Move the player one column to the left when possible. </p>
+<p>Updates the <code>x</code> coordinate in <code>m</code> and redraws the player in <code>m.win</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>Current movement state for the player. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>movement Updated movement state after moving left. </dd></dl>
+
 </div>
 </div>
 <a id="a17970553cb7825d61dffe4f6634f7eb0" name="a17970553cb7825d61dffe4f6634f7eb0"></a>
@@ -213,6 +259,24 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Move the player one column to the right when possible. </p>
+<p>Updates the <code>x</code> coordinate in <code>m</code> and redraws the player in <code>m.win</code>. This function does not perform collision checks — the caller should ensure the destination cell is walkable before calling, or accept that the function will overwrite the character at the destination.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>Current movement state for the player. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>movement Updated movement state after moving right.</dd></dl>
+<p>Updates the <code>x</code> coordinate in <code>m</code> and redraws the player in <code>m.win</code>. This function assumes the caller has validated that the destination cell is walkable. It clears the previous position and writes the player glyph at the new position.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>Current movement state for the player. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>movement Updated movement state after moving right. </dd></dl>
+
 </div>
 </div>
 <a id="adea016cba7dadc794bad136a65af886a" name="adea016cba7dadc794bad136a65af886a"></a>
@@ -230,6 +294,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Move the player one row up when possible. </p>
+<p>Updates the <code>y</code> coordinate in <code>m</code> and redraws the player in <code>m.win</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>Current movement state for the player. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>movement Updated movement state after moving up. </dd></dl>
 
 </div>
 </div>

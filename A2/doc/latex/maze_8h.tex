@@ -1,16 +1,19 @@
 \doxysection{src/maze.h File Reference}
 \hypertarget{maze_8h}{}\label{maze_8h}\index{src/maze.h@{src/maze.h}}
+
+
+Public interface for maze creation and utilities.  
+
+
 {\ttfamily \#include $<$ncurses.\+h$>$}\newline
-Include dependency graph for maze.\+h\+:
-\nopagebreak
+Include dependency graph for maze.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=150pt]{maze_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,7 +24,7 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structExitPoint}{Exit\+Point}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Exit point in a maze. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -37,22 +40,35 @@ struct \mbox{\hyperlink{structExitPoint}{Exit\+Point}}
 \begin{DoxyCompactItemize}
 \item 
 typedef struct \mbox{\hyperlink{structExitPoint}{Exit\+Point}} \mbox{\hyperlink{maze_8h_a25ce993d1b0662ca87d70e08ffdfa2d0}{Exit\+Point}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Exit point in a maze. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{maze_8h_a9cf8d10ec2ab326e632d85b7ad56ebba}{draw\+\_\+maze}} (WINDOW \texorpdfstring{$\ast$}{*}win, int height, int width, int start\+\_\+y, int start\+\_\+x)
-\item 
+\begin{DoxyCompactList}\small\item\em Draw the maze bounding box in {\ttfamily win}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{maze_8h_a3ae6abc1cd527347c757301f4f0022be}{maze1}} (WINDOW \texorpdfstring{$\ast$}{*}win, int start\+\_\+y, int start\+\_\+x)
-\item 
+\begin{DoxyCompactList}\small\item\em Populate the Level 1 maze layout into {\ttfamily win}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{maze_8h_a522034c549c55f390af2f34c93e0bc57}{maze2}} (WINDOW \texorpdfstring{$\ast$}{*}win, int start\+\_\+y, int start\+\_\+x)
-\item 
+\begin{DoxyCompactList}\small\item\em Populate the Level 2 maze layout into {\ttfamily win}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structExitPoint}{Exit\+Point}} \mbox{\hyperlink{maze_8h_aa9ca01bd7f7947fa4d7d948c75364d99}{create\+\_\+exit\+\_\+point}} (int start\+\_\+y, int start\+\_\+x, int maze\+\_\+h, int maze\+\_\+w)
-\item 
+\begin{DoxyCompactList}\small\item\em Create an \doxylink{structExitPoint}{Exit\+Point} for a maze placed at {\ttfamily start\+\_\+y,start\+\_\+x}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{maze_8h_a22ebb05730376dcb46d3ba25fe886670}{draw\+\_\+exit\+\_\+point}} (WINDOW \texorpdfstring{$\ast$}{*}win, \mbox{\hyperlink{structExitPoint}{Exit\+Point}} exit)
-\item 
+\begin{DoxyCompactList}\small\item\em Draw the exit marker inside {\ttfamily win} at the location indicated by {\ttfamily exit}. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{maze_8h_a33b4fa86e798bc4b081f16b99b613508}{reached\+\_\+exit}} (int player\+\_\+y, int player\+\_\+x, \mbox{\hyperlink{structExitPoint}{Exit\+Point}} exit)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Check whether the player coordinates match the exit location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Public interface for maze creation and utilities. 
+
+This header declares functions and types used to draw mazes, create and render the exit point, and query when the player reaches the exit. The implementations produce ncurses windows that represent maze layouts for different levels.
+
+\begin{DoxyAuthor}{Author}
+Evan Wong 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Dec 4, 2025 
+\end{DoxyDate}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -91,6 +107,19 @@ int \mbox{\hyperlink{maze_8h_a33b4fa86e798bc4b081f16b99b613508}{reached\+\_\+exi
 
 
 
+Exit point in a maze. 
+
+Represents the coordinates of the maze exit relative to the containing window. {\ttfamily y} is the row and {\ttfamily x} is the column where the exit marker is drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & Row (vertical) coordinate of the exit. \\
+\hline
+{\em x} & Column (horizontal) coordinate of the exit. \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Function Documentation}
 \Hypertarget{maze_8h_aa9ca01bd7f7947fa4d7d948c75364d99}\label{maze_8h_aa9ca01bd7f7947fa4d7d948c75364d99} 
 \index{maze.h@{maze.h}!create\_exit\_point@{create\_exit\_point}}
@@ -98,33 +127,195 @@ int \mbox{\hyperlink{maze_8h_a33b4fa86e798bc4b081f16b99b613508}{reached\+\_\+exi
 \doxysubsubsection{\texorpdfstring{create\_exit\_point()}{create\_exit\_point()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structExitPoint}{Exit\+Point}} create\+\_\+exit\+\_\+point (\begin{DoxyParamCaption}\item[{int}]{start\+\_\+y,  }\item[{int}]{start\+\_\+x,  }\item[{int}]{maze\+\_\+h,  }\item[{int}]{maze\+\_\+w }\end{DoxyParamCaption})}
 
+
+
+Create an \doxylink{structExitPoint}{Exit\+Point} for a maze placed at {\ttfamily start\+\_\+y,start\+\_\+x}. 
+
+The function computes the coordinates where the exit marker (e.\+g. \textquotesingle{}\$\textquotesingle{}) should be drawn based on the starting position and maze dimensions. The returned {\ttfamily \doxylink{structExitPoint}{Exit\+Point}} contains the absolute row/column coordinates relative to the containing window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+y} & Top row coordinate of the maze content area. \\
+\hline
+{\em start\+\_\+x} & Left column coordinate of the maze content area. \\
+\hline
+{\em maze\+\_\+h} & Height of the maze content area (rows). \\
+\hline
+{\em maze\+\_\+w} & Width of the maze content area (columns). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structExitPoint}{Exit\+Point} Structure with {\ttfamily y} and {\ttfamily x} coordinates for the exit.
+\end{DoxyReturn}
+Computes the coordinates where the exit marker (typically \textquotesingle{}\$\textquotesingle{}) should be drawn based on the maze\textquotesingle{}s starting position and dimensions. The returned \doxylink{structExitPoint}{Exit\+Point} contains absolute coordinates relative to the containing window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+y} & Top row coordinate of the maze content area. \\
+\hline
+{\em start\+\_\+x} & Left column coordinate of the maze content area. \\
+\hline
+{\em maze\+\_\+h} & Height of the maze content area (rows). \\
+\hline
+{\em maze\+\_\+w} & Width of the maze content area (columns). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structExitPoint}{Exit\+Point} Structure with {\ttfamily y} and {\ttfamily x} coordinates for the exit. 
+\end{DoxyReturn}
 \Hypertarget{maze_8h_a22ebb05730376dcb46d3ba25fe886670}\label{maze_8h_a22ebb05730376dcb46d3ba25fe886670} 
 \index{maze.h@{maze.h}!draw\_exit\_point@{draw\_exit\_point}}
 \index{draw\_exit\_point@{draw\_exit\_point}!maze.h@{maze.h}}
 \doxysubsubsection{\texorpdfstring{draw\_exit\_point()}{draw\_exit\_point()}}
 {\footnotesize\ttfamily void draw\+\_\+exit\+\_\+point (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{win,  }\item[{\mbox{\hyperlink{structExitPoint}{Exit\+Point}}}]{exit }\end{DoxyParamCaption})}
 
+
+
+Draw the exit marker inside {\ttfamily win} at the location indicated by {\ttfamily exit}. 
+
+The function renders the character used to represent the exit (for example \textquotesingle{}\$\textquotesingle{}) at the coordinates contained in {\ttfamily exit}. It is responsible for placing the marker but does not change the player\textquotesingle{}s or NPCs\textquotesingle{} positions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & ncurses window where the exit marker will be drawn. \\
+\hline
+{\em exit} & \doxylink{structExitPoint}{Exit\+Point} specifying the location for the marker.\\
+\hline
+\end{DoxyParams}
+Renders the character used to represent the exit (for example \textquotesingle{}\$\textquotesingle{}) at the coordinates contained in {\ttfamily exit}. This function only draws the marker and does not modify player or NPC state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & ncurses window where the exit marker will be drawn. \\
+\hline
+{\em exit} & \doxylink{structExitPoint}{Exit\+Point} specifying the location for the marker. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{maze_8h_a9cf8d10ec2ab326e632d85b7ad56ebba}\label{maze_8h_a9cf8d10ec2ab326e632d85b7ad56ebba} 
 \index{maze.h@{maze.h}!draw\_maze@{draw\_maze}}
 \index{draw\_maze@{draw\_maze}!maze.h@{maze.h}}
 \doxysubsubsection{\texorpdfstring{draw\_maze()}{draw\_maze()}}
 {\footnotesize\ttfamily void draw\+\_\+maze (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{win,  }\item[{int}]{height,  }\item[{int}]{width,  }\item[{int}]{start\+\_\+y,  }\item[{int}]{start\+\_\+x }\end{DoxyParamCaption})}
 
+
+
+Draw the maze bounding box in {\ttfamily win}. 
+
+The function draws a rectangular box representing the maze area inside the provided {\ttfamily WINDOW}. It does not populate the internal maze cells — that is performed by {\ttfamily maze1}/{\ttfamily maze2} — but prepares borders and any necessary background for the maze content.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & ncurses window in which to draw the maze border. \\
+\hline
+{\em height} & Height (number of rows) of the maze area to draw. \\
+\hline
+{\em width} & Width (number of columns) of the maze area to draw. \\
+\hline
+{\em start\+\_\+y} & Top row coordinate where the maze area should be placed. \\
+\hline
+{\em start\+\_\+x} & Left column coordinate where the maze area should be placed.\\
+\hline
+\end{DoxyParams}
+Draws a rectangular border for the maze area inside the provided {\ttfamily WINDOW}. Interior cells are initialized to spaces. This function does not populate level-\/specific walls or items; those are placed by {\ttfamily maze1} or {\ttfamily maze2} after the border is drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & ncurses window in which to draw the maze border. \\
+\hline
+{\em height} & Height (number of rows) of the maze area to draw. \\
+\hline
+{\em width} & Width (number of columns) of the maze area to draw. \\
+\hline
+{\em start\+\_\+y} & Top row coordinate where the maze area should be placed. \\
+\hline
+{\em start\+\_\+x} & Left column coordinate where the maze area should be placed. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{maze_8h_a3ae6abc1cd527347c757301f4f0022be}\label{maze_8h_a3ae6abc1cd527347c757301f4f0022be} 
 \index{maze.h@{maze.h}!maze1@{maze1}}
 \index{maze1@{maze1}!maze.h@{maze.h}}
 \doxysubsubsection{\texorpdfstring{maze1()}{maze1()}}
 {\footnotesize\ttfamily void maze1 (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{win,  }\item[{int}]{start\+\_\+y,  }\item[{int}]{start\+\_\+x }\end{DoxyParamCaption})}
 
+
+
+Populate the Level 1 maze layout into {\ttfamily win}. 
+
+This function places walls, paths and level-\/specific items into the maze area previously created by {\ttfamily draw\+\_\+maze}. The coordinates {\ttfamily start\+\_\+y} and {\ttfamily start\+\_\+x} indicate the top-\/left corner of the maze content area inside the {\ttfamily win} window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & ncurses window where the maze content will be drawn. \\
+\hline
+{\em start\+\_\+y} & Top row coordinate of the maze content area. \\
+\hline
+{\em start\+\_\+x} & Left column coordinate of the maze content area.\\
+\hline
+\end{DoxyParams}
+Places walls, paths and any level-\/specific decorations into the area that was reserved by {\ttfamily draw\+\_\+maze}. Coordinates {\ttfamily start\+\_\+y} and {\ttfamily start\+\_\+x} indicate the top-\/left corner of the maze content area inside {\ttfamily win}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & ncurses window where the maze content will be drawn. \\
+\hline
+{\em start\+\_\+y} & Top row coordinate of the maze content area. \\
+\hline
+{\em start\+\_\+x} & Left column coordinate of the maze content area. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{maze_8h_a522034c549c55f390af2f34c93e0bc57}\label{maze_8h_a522034c549c55f390af2f34c93e0bc57} 
 \index{maze.h@{maze.h}!maze2@{maze2}}
 \index{maze2@{maze2}!maze.h@{maze.h}}
 \doxysubsubsection{\texorpdfstring{maze2()}{maze2()}}
 {\footnotesize\ttfamily void maze2 (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{win,  }\item[{int}]{start\+\_\+y,  }\item[{int}]{start\+\_\+x }\end{DoxyParamCaption})}
 
+
+
+Populate the Level 2 maze layout into {\ttfamily win}. 
+
+Similar to {\ttfamily maze1} but places level 2 specific walls, items and paths. The function assumes the maze border has already been drawn and uses {\ttfamily start\+\_\+y} and {\ttfamily start\+\_\+x} to position the content.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & ncurses window where the maze content will be drawn. \\
+\hline
+{\em start\+\_\+y} & Top row coordinate of the maze content area. \\
+\hline
+{\em start\+\_\+x} & Left column coordinate of the maze content area.\\
+\hline
+\end{DoxyParams}
+Similar to {\ttfamily maze1}, but places level 2 specific walls and regions. This function assumes a border has already been drawn and uses {\ttfamily start\+\_\+y} and {\ttfamily start\+\_\+x} to position the content inside the provided window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & ncurses window where the maze content will be drawn. \\
+\hline
+{\em start\+\_\+y} & Top row coordinate of the maze content area. \\
+\hline
+{\em start\+\_\+x} & Left column coordinate of the maze content area. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{maze_8h_a33b4fa86e798bc4b081f16b99b613508}\label{maze_8h_a33b4fa86e798bc4b081f16b99b613508} 
 \index{maze.h@{maze.h}!reached\_exit@{reached\_exit}}
 \index{reached\_exit@{reached\_exit}!maze.h@{maze.h}}
 \doxysubsubsection{\texorpdfstring{reached\_exit()}{reached\_exit()}}
 {\footnotesize\ttfamily int reached\+\_\+exit (\begin{DoxyParamCaption}\item[{int}]{player\+\_\+y,  }\item[{int}]{player\+\_\+x,  }\item[{\mbox{\hyperlink{structExitPoint}{Exit\+Point}}}]{exit }\end{DoxyParamCaption})}
 
+
+
+Check whether the player coordinates match the exit location. 
+
+Compares the provided player position with the {\ttfamily exit} coordinates and returns a non-\/zero value when they match (player reached the exit) or 0 otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+\_\+y} & Player\textquotesingle{}s current row coordinate. \\
+\hline
+{\em player\+\_\+x} & Player\textquotesingle{}s current column coordinate. \\
+\hline
+{\em exit} & \doxylink{structExitPoint}{Exit\+Point} to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if player is at the exit, zero otherwise. 
+\end{DoxyReturn}

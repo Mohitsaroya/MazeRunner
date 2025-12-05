@@ -1,7 +1,30 @@
+/**
+* @file maze.c
+* @brief definitions of the functions in maze.h
+*
+* This file contains the implementation of maze drawing and exit point functions.
+*
+* @author Evan Wong
+* @date dec.4,2025
+*/
+
 #include "maze.h"
 #include <ncurses.h>
 
-
+/**
+ * @brief Draw the maze bounding box in `win`.
+ *
+ * Draws a rectangular border for the maze area inside the provided
+ * `WINDOW`. Interior cells are initialized to spaces. This function does not
+ * populate level-specific walls or items; those are placed by `maze1`
+ * or `maze2` after the border is drawn.
+ *
+ * @param win ncurses window in which to draw the maze border.
+ * @param height Height (number of rows) of the maze area to draw.
+ * @param width Width (number of columns) of the maze area to draw.
+ * @param start_y Top row coordinate where the maze area should be placed.
+ * @param start_x Left column coordinate where the maze area should be placed.
+ */
 void draw_maze(WINDOW *win, int height, int width, int start_y, int start_x) {
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
@@ -14,6 +37,17 @@ void draw_maze(WINDOW *win, int height, int width, int start_y, int start_x) {
     wrefresh(win);
 }
 
+/**
+ * @brief Populate the Level 1 maze layout into `win`.
+ *
+ * Places walls, paths and any level-specific decorations into the area that
+ * was reserved by `draw_maze`. Coordinates `start_y` and `start_x` indicate
+ * the top-left corner of the maze content area inside `win`.
+ *
+ * @param win ncurses window where the maze content will be drawn.
+ * @param start_y Top row coordinate of the maze content area.
+ * @param start_x Left column coordinate of the maze content area.
+ */
 void maze1(WINDOW *win, int start_y, int start_x) {
 
     for (int a = 1; a < 5; a++) {
@@ -88,6 +122,17 @@ void maze1(WINDOW *win, int start_y, int start_x) {
     wrefresh(win);
 }
 
+/**
+ * @brief Populate the Level 2 maze layout into `win`.
+ *
+ * Similar to `maze1`, but places level 2 specific walls and regions. This
+ * function assumes a border has already been drawn and uses `start_y` and
+ * `start_x` to position the content inside the provided window.
+ *
+ * @param win ncurses window where the maze content will be drawn.
+ * @param start_y Top row coordinate of the maze content area.
+ * @param start_x Left column coordinate of the maze content area.
+ */
 void maze2(WINDOW *win, int start_y, int start_x) {
 
     for (int a = 2; a < 25; a++) {
@@ -169,6 +214,19 @@ void maze2(WINDOW *win, int start_y, int start_x) {
 
 
 
+/**
+ * @brief Create an ExitPoint for a maze placed at `start_y,start_x`.
+ *
+ * Computes the coordinates where the exit marker (typically '$') should be
+ * drawn based on the maze's starting position and dimensions. The returned
+ * ExitPoint contains absolute coordinates relative to the containing window.
+ *
+ * @param start_y Top row coordinate of the maze content area.
+ * @param start_x Left column coordinate of the maze content area.
+ * @param maze_h Height of the maze content area (rows).
+ * @param maze_w Width of the maze content area (columns).
+ * @return ExitPoint Structure with `y` and `x` coordinates for the exit.
+ */
 ExitPoint create_exit_point(int start_y, int start_x, int maze_h, int maze_w) {
     ExitPoint ep;
 
@@ -178,11 +236,33 @@ ExitPoint create_exit_point(int start_y, int start_x, int maze_h, int maze_w) {
     return ep;
 }
 
+/**
+ * @brief Draw the exit marker inside `win` at the location indicated by `exit`.
+ *
+ * Renders the character used to represent the exit (for example '$') at the
+ * coordinates contained in `exit`. This function only draws the marker and
+ * does not modify player or NPC state.
+ *
+ * @param win ncurses window where the exit marker will be drawn.
+ * @param exit ExitPoint specifying the location for the marker.
+ */
 void draw_exit_point(WINDOW *win, ExitPoint exit) {
     mvwaddch(win, exit.y, exit.x, '$');
     wrefresh(win);
 }
 
+/**
+ * @brief Check whether the player coordinates match the exit location.
+ *
+ * Compares the provided player position with the `exit` coordinates and
+ * returns a non-zero value when they match (player reached the exit) or 0
+ * otherwise.
+ *
+ * @param player_y Player's current row coordinate.
+ * @param player_x Player's current column coordinate.
+ * @param exit ExitPoint to compare against.
+ * @return Non-zero if player is at the exit, zero otherwise.
+ */
 int reached_exit(int player_y, int player_x, ExitPoint exit) {
     return (player_y == exit.y && player_x == exit.x);
 }

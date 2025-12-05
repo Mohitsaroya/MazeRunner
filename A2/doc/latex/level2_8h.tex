@@ -1,7 +1,11 @@
 \doxysection{src/level2.h File Reference}
 \hypertarget{level2_8h}{}\label{level2_8h}\index{src/level2.h@{src/level2.h}}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+
+
+Public interface for making second maze level.  
+
+
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,9 +16,22 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{level2_8h_abd0a8d9981c039643fcd35da53a24515}{second\+\_\+level\+\_\+maze}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em second\+\_\+level\+\_\+maze makes the second level maze and general gameplay \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{level2_8h_ae2adb09eb4a2b11edd28f5a5d2f10f26}{level2\+Phase}} (void)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em level2\+Phase calls for the level2 splash screen and the second\+\_\+level\+\_\+maze \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Public interface for making second maze level. 
+
+This file contains the public interface for level 2 maze functions.
+
+\begin{DoxyAuthor}{Author}
+Evan Wong 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Dec.\+4, 2025 
+\end{DoxyDate}
 
 
 \doxysubsection{Function Documentation}
@@ -24,9 +41,41 @@ int \mbox{\hyperlink{level2_8h_ae2adb09eb4a2b11edd28f5a5d2f10f26}{level2\+Phase}
 \doxysubsubsection{\texorpdfstring{level2Phase()}{level2Phase()}}
 {\footnotesize\ttfamily int level2\+Phase (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+
+
+level2\+Phase calls for the level2 splash screen and the second\+\_\+level\+\_\+maze 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void it return nglobal Macros based on if the player wants to quit,menu or next 
+\end{DoxyReturn}
 \Hypertarget{level2_8h_abd0a8d9981c039643fcd35da53a24515}\label{level2_8h_abd0a8d9981c039643fcd35da53a24515} 
 \index{level2.h@{level2.h}!second\_level\_maze@{second\_level\_maze}}
 \index{second\_level\_maze@{second\_level\_maze}!level2.h@{level2.h}}
 \doxysubsubsection{\texorpdfstring{second\_level\_maze()}{second\_level\_maze()}}
 {\footnotesize\ttfamily int second\+\_\+level\+\_\+maze (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+
+
+second\+\_\+level\+\_\+maze makes the second level maze and general gameplay 
+
+@\+Brief second\+\_\+level\+\_\+maze makes the second level maze and general gameplay 
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void it returns global macros based on if the player wants to quit,menu,next or paue
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void it returns global macros based on if the player wants to quit,menu,next or paue 
+\end{DoxyReturn}

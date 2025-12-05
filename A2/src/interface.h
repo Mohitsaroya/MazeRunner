@@ -6,10 +6,12 @@
 /**
  * @file interface.h
  * @brief High-level ncurses UI helpers and menu handling for MazeRunner.
- * @author Mohit Saroya
+ * 
  * This header exposes functions to create and manage windows, display the
  * title and menu screens, handle pause/retry flows, confirm quitting, and
  * show a goodbye message.
+ * 
+ * @author Mohit Saroya
  */
 
 /** @brief Default maximum window width (columns) used for subwindows. */

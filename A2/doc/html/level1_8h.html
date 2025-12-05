@@ -79,13 +79,16 @@ $(function() {
   <div class="headertitle"><div class="title">level1.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Public interface for makeing level 1 maze.  
+<a href="#details">More...</a></p>
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="level1_8h__dep__incl.png" border="0" usemap="#asrc_2level1_8hdep" alt=""/></div>
 <map name="asrc_2level1_8hdep" id="asrc_2level1_8hdep">
-<area shape="rect" title=" " alt="" coords="63,5,161,31"/>
-<area shape="rect" href="level1_8c.html" title=" " alt="" coords="5,79,101,104"/>
+<area shape="rect" title="Public interface for makeing level 1 maze." alt="" coords="63,5,161,31"/>
+<area shape="rect" href="level1_8c.html" title="Definition of the functions in level1.h." alt="" coords="5,79,101,104"/>
 <area shape="poly" title=" " alt="" coords="96,43,65,80,61,77,92,40"/>
 <area shape="rect" href="main_8c.html" title="Program entry point and top&#45;level control flow for MazeRunner." alt="" coords="126,79,215,104"/>
 <area shape="poly" title=" " alt="" coords="132,40,163,77,159,80,128,43"/>
@@ -97,11 +100,18 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9199d5f4b62d8421d18e2b7f8c16f884" id="r_a9199d5f4b62d8421d18e2b7f8c16f884"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="level1_8h.html#a9199d5f4b62d8421d18e2b7f8c16f884">first_level_maze</a> (void)</td></tr>
+<tr class="memdesc:a9199d5f4b62d8421d18e2b7f8c16f884"><td class="mdescLeft">&#160;</td><td class="mdescRight">first_level_maze makes the level 1 maze and general gameplay  <br /></td></tr>
 <tr class="separator:a9199d5f4b62d8421d18e2b7f8c16f884"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89e10f3f1216d372285714524c3a1e2a" id="r_a89e10f3f1216d372285714524c3a1e2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="level1_8h.html#a89e10f3f1216d372285714524c3a1e2a">level1Phase</a> (void)</td></tr>
+<tr class="memdesc:a89e10f3f1216d372285714524c3a1e2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">level1Phase calls for the level 1 splash screen and calls for first_level_maze  <br /></td></tr>
 <tr class="separator:a89e10f3f1216d372285714524c3a1e2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Public interface for makeing level 1 maze. </p>
+<p>This file contains the public interface for level 1 maze functions.</p>
+<dl class="section author"><dt>Author</dt><dd>Evan wong </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>Dec.4,2025 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a9199d5f4b62d8421d18e2b7f8c16f884" name="a9199d5f4b62d8421d18e2b7f8c16f884"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9199d5f4b62d8421d18e2b7f8c16f884">&#9670;&#160;</a></span>first_level_maze()</h2>
 
@@ -117,6 +127,22 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>first_level_maze makes the level 1 maze and general gameplay </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>it return global macros based on if the player wants to quit,menu,next or pause</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void it return global macros based on if the player wants to quit,menu,next or pause </dd></dl>
 
 </div>
 </div>
@@ -135,6 +161,22 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>level1Phase calls for the level 1 splash screen and calls for first_level_maze </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>it return global macros based on if the player wants to quit,menu, or next</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void it return global macros based on if the player wants to quit,menu, or next </dd></dl>
 
 </div>
 </div>

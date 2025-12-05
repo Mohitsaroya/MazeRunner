@@ -6,10 +6,12 @@
 /**
  * @file npc.h
  * @brief Non-player character (NPC) utilities and drawing helpers.
- * @author Mohit Saroya
+ * 
  * Declares layout constants, NPC art data and functions used to initialize
  * an NPC window and draw NPC content such as Dave's face, a "lost" NPC,
  * and dialog lines.
+ * 
+ * @author Mohit Saroya
  */
 
 /** @brief Height in rows for Dave's face artwork. */

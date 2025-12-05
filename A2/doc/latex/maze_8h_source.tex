@@ -4,30 +4,32 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MAZE\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MAZE\_H}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <ncurses.h>}}
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structExitPoint}{ExitPoint}}\ \{}
-\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structExitPoint_a0db210ee429d900bb3f238a3dbcd873a}{y}};}
-\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structExitPoint_a9070bfdf7111a30492b9cf9a7737cf7a}{x}};}
-\DoxyCodeLine{00008\ \}\ \mbox{\hyperlink{structExitPoint}{ExitPoint}};}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ HEIGHT\_MAZE1\ 20}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ WIDTH\_MAZE1\ 40}}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ HEIGHT\_MAZE2\ 28}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ WIDTH\_MAZE2\ 90}}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{maze_8h_a9cf8d10ec2ab326e632d85b7ad56ebba}{draw\_maze}}(WINDOW\ *win,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ start\_y,\ \textcolor{keywordtype}{int}\ start\_x);}
-\DoxyCodeLine{00017\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{maze_8h_a3ae6abc1cd527347c757301f4f0022be}{maze1}}(WINDOW\ *win,\ \textcolor{keywordtype}{int}\ start\_y,\ \textcolor{keywordtype}{int}\ start\_x);}
-\DoxyCodeLine{00018\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{maze_8h_a522034c549c55f390af2f34c93e0bc57}{maze2}}(WINDOW\ *win,\ \textcolor{keywordtype}{int}\ start\_y,\ \textcolor{keywordtype}{int}\ start\_x);}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \mbox{\hyperlink{structExitPoint}{ExitPoint}}\ \mbox{\hyperlink{maze_8h_aa9ca01bd7f7947fa4d7d948c75364d99}{create\_exit\_point}}(\textcolor{keywordtype}{int}\ start\_y,\ \textcolor{keywordtype}{int}\ start\_x,\ \textcolor{keywordtype}{int}\ maze\_h,\ \textcolor{keywordtype}{int}\ maze\_w);}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{maze_8h_a22ebb05730376dcb46d3ba25fe886670}{draw\_exit\_point}}(WINDOW\ *win,\ \mbox{\hyperlink{structExitPoint}{ExitPoint}}\ exit);}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{maze_8h_a33b4fa86e798bc4b081f16b99b613508}{reached\_exit}}(\textcolor{keywordtype}{int}\ player\_y,\ \textcolor{keywordtype}{int}\ player\_x,\ \mbox{\hyperlink{structExitPoint}{ExitPoint}}\ exit);}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <ncurses.h>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structExitPoint}{ExitPoint}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structExitPoint_a0db210ee429d900bb3f238a3dbcd873a}{y}};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structExitPoint_a9070bfdf7111a30492b9cf9a7737cf7a}{x}};}
+\DoxyCodeLine{00032\ \}\ \mbox{\hyperlink{structExitPoint}{ExitPoint}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ HEIGHT\_MAZE1\ 20}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ WIDTH\_MAZE1\ 40}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ HEIGHT\_MAZE2\ 28}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ WIDTH\_MAZE2\ 90}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{maze_8h_a9cf8d10ec2ab326e632d85b7ad56ebba}{draw\_maze}}(WINDOW\ *win,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ start\_y,\ \textcolor{keywordtype}{int}\ start\_x);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{maze_8h_a3ae6abc1cd527347c757301f4f0022be}{maze1}}(WINDOW\ *win,\ \textcolor{keywordtype}{int}\ start\_y,\ \textcolor{keywordtype}{int}\ start\_x);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{maze_8h_a522034c549c55f390af2f34c93e0bc57}{maze2}}(WINDOW\ *win,\ \textcolor{keywordtype}{int}\ start\_y,\ \textcolor{keywordtype}{int}\ start\_x);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00097\ \mbox{\hyperlink{structExitPoint}{ExitPoint}}\ \mbox{\hyperlink{maze_8h_aa9ca01bd7f7947fa4d7d948c75364d99}{create\_exit\_point}}(\textcolor{keywordtype}{int}\ start\_y,\ \textcolor{keywordtype}{int}\ start\_x,\ \textcolor{keywordtype}{int}\ maze\_h,\ \textcolor{keywordtype}{int}\ maze\_w);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{maze_8h_a22ebb05730376dcb46d3ba25fe886670}{draw\_exit\_point}}(WINDOW\ *win,\ \mbox{\hyperlink{structExitPoint}{ExitPoint}}\ exit);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00123\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{maze_8h_a33b4fa86e798bc4b081f16b99b613508}{reached\_exit}}(\textcolor{keywordtype}{int}\ player\_y,\ \textcolor{keywordtype}{int}\ player\_x,\ \mbox{\hyperlink{structExitPoint}{ExitPoint}}\ exit);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

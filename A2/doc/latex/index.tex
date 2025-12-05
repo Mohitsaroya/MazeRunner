@@ -3,13 +3,13 @@
 \label{index_md_README}%
 \Hypertarget{index_md_README}%
  A terminal-\/based maze game written in C using ncurses.\hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Project Overview}{Project Overview}}\label{index_autotoc_md1}
-{\bfseries{Maze\+Runner}} is an interactive maze game where the player navigates through a maze, encounters obstacles, and attempts to reach the exit. The game features a full menu system, pause functionality, level progression, and retry mechanics—all implemented in the terminal using the ncurses library. In the maze you\textquotesingle{}ll find trapped victims of evil person called Dave. Dave has trapped them for years, and if you dont get out, you\textquotesingle{}ll meet the same fate as them; trapped for eternity is dave\textquotesingle{}s mazes, going mad day by day.
+{\bfseries{Maze\+Runner}} is an interactive maze game where the player navigates through a maze, encounters obstacles, and attempts to reach the exit. The game features a full menu system, pause functionality, level progression, and retry mechanics-\/all implemented in the terminal using the ncurses library. In the maze you\textquotesingle{}ll find trapped victims of evil person called Dave. Dave has trapped them for years, and if you dont get out, you\textquotesingle{}ll meet the same fate as them; trapped for eternity is dave\textquotesingle{}s mazes, going mad day by day.
 
 The game is divided into 2 levels\+:
 
 {\bfseries{Level 1}}\+: players get to interact with 1 NPC, a poor trapped victim of Dave\textquotesingle{}s sadistic nature. You\textquotesingle{}ll have to get to the door with \$ sign to reach the exit, but wait, Dave has other plans for you.
 
-{\bfseries{Level 2}}\+: After you complete level 1, dave will trap you in a separate maze. You will have to exit before time runs out. If you don\textquotesingle{}t, Dave will destroy the maze, but don\textquotesingle{}t worry as you get unlimited retries to finish the level.\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Features}{Features}}\label{index_autotoc_md2}
+{\bfseries{Level 2}}\+: After you complete level 1, dave will trap you in a separate maze. You will have to exit the maze through another door with \$ on it before time runs out. If you don\textquotesingle{}t, Dave will destroy the maze, but don\textquotesingle{}t worry as you get unlimited retries to finish the level.\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Features}{Features}}\label{index_autotoc_md2}
 
 \begin{DoxyItemize}
 \item {\bfseries{Title and Menu Screens}}\+: ASCII-\/art splash screens and intuitive menu navigation.
@@ -119,13 +119,7 @@ All public interfaces and implementations include Doxygen-\/style documentation 
 \item {\ttfamily \doxylink{maze_8h}{maze.\+h}/c}\+: Maze drawing and layout logic
 \item {\ttfamily \doxylink{movement_8h}{movement.\+h}/c}\+: Player movement state and direction handling
 \item {\ttfamily \doxylink{level1_8h}{level1.\+h}/c}\+: Level 1 game loop and logic
-\end{DoxyItemize}\hypertarget{index_autotoc_md10}{}\doxysubsection{\texorpdfstring{Generating Docs}{Generating Docs}}\label{index_autotoc_md10}
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{make\ doc}
-
-\end{DoxyCode}
-\hypertarget{index_autotoc_md11}{}\doxysection{\texorpdfstring{Building and Testing}{Building and Testing}}\label{index_autotoc_md11}
+\end{DoxyItemize}\hypertarget{index_autotoc_md10}{}\doxysection{\texorpdfstring{Building and Testing}{Building and Testing}}\label{index_autotoc_md10}
 To build and run tests or clean the build\+:
 
 
@@ -134,11 +128,11 @@ To build and run tests or clean the build\+:
 \DoxyCodeLine{make\ run\ \ \ \ \ \ \ \ \#\ Compiles\ and\ runs\ the\ game}
 
 \end{DoxyCode}
-\hypertarget{index_autotoc_md12}{}\doxysection{\texorpdfstring{Notes}{Notes}}\label{index_autotoc_md12}
+\hypertarget{index_autotoc_md11}{}\doxysection{\texorpdfstring{Notes}{Notes}}\label{index_autotoc_md11}
 
 \begin{DoxyItemize}
 \item The game uses ncurses for terminal rendering; ensure your terminal supports ncurses.
 \item Doxygen configuration is optimized for C code ({\ttfamily OPTIMIZE\+\_\+\+OUTPUT\+\_\+\+FOR\+\_\+C = YES}).
 \item The codebase includes inline comments and Doxygen docstrings for maintainability.
-\end{DoxyItemize}\hypertarget{index_autotoc_md13}{}\doxysection{\texorpdfstring{Authors}{Authors}}\label{index_autotoc_md13}
-Mohit Saroya Evan Wong 
+\end{DoxyItemize}\hypertarget{index_autotoc_md12}{}\doxysection{\texorpdfstring{Authors}{Authors}}\label{index_autotoc_md12}
+Mohit Saroya, Evan Wong 
