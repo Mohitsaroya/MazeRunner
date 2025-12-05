@@ -14,7 +14,7 @@
 */
 int second_level_maze(void);
 /**
-* @brief level2Phase calls for the level2 splash screen and the second_level_maze
+* @Brief level2Phase calls for the level2 splash screen and the second_level_maze
 * @Param void
 * @Return it return nglobal Macros based on if the player wants to quit,menu or next
 */
