@@ -10,7 +10,7 @@ The game is divided into 2 levels:
 
 **Level 1**: players get to interact with 1 NPC, a poor trapped victim of Dave's sadistic nature. You'll have to get to the door with $ sign to reach the exit, but wait, Dave has other plans for you.
 
-**Level 2**: After you complete level 1, dave will trap you in a separate maze. You will have to exit before time runs out. If you don't, Dave will destroy the maze, but don't worry as you get unlimited retries to finish the level.
+**Level 2**: After you complete level 1, dave will trap you in a separate maze. You will have to exit the maze through another door with $ on it before time runs out. If you don't, Dave will destroy the maze, but don't worry as you get unlimited retries to finish the level.
 
 
 ## Features
