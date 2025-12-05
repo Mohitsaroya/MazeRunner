@@ -6,8 +6,7 @@
 #include "gameCards.h"
 #include "npc.h"
 
-int second_level_maze(void)
-{
+int second_level_maze(void) {
     erase();
     refresh();
 
@@ -48,8 +47,7 @@ int second_level_maze(void)
     int lost_npc_y2 = start_y + 6;
     int lost_npc_x = start_x + 50;
 
-    while (1)
-    {
+    while (1) {
         ch = wgetch(l2);
         int npc_y1 = lost_npc_y1;
         int npc_x1 = lost_npc_x;
@@ -59,47 +57,54 @@ int second_level_maze(void)
 
         if (ch == KEY_RIGHT) {
             int tx = m.x + 1, ty = m.y;
-            player_moves -= 1;
-            /* block stepping into either NPC tile */
+            
             if (!((tx == npc_x1 && ty == npc_y1) ||
                 (tx == npc_x2 && ty == npc_y2))) {
 
                 chtype next = mvwinch(l2, ty, tx) & A_CHARTEXT;
-                if (next == ' ' || next == '$')
+                if (next == ' ' || next == '$') {
                     m = move_right(m);
+                    player_moves -= 1;
+                }       
             }
         }
         else if (ch == KEY_LEFT) {
             int tx = m.x - 1, ty = m.y;
-            player_moves -= 1;
+            
             if (!((tx == npc_x1 && ty == npc_y1) ||
                 (tx == npc_x2 && ty == npc_y2))) {
 
                 chtype next = mvwinch(l2, ty, tx) & A_CHARTEXT;
-                if (next == ' ' || next == '$')
+                if (next == ' ' || next == '$') {
                     m = move_left(m);
+                    player_moves -= 1;
+                }   
             }
         }
         else if (ch == KEY_UP) {
             int tx = m.x, ty = m.y - 1;
-            player_moves -= 1;
+            
             if (!((tx == npc_x1 && ty == npc_y1) ||
                 (tx == npc_x2 && ty == npc_y2))) {
 
                 chtype next = mvwinch(l2, ty, tx) & A_CHARTEXT;
-                if (next == ' ' || next == '$')
+                if (next == ' ' || next == '$') {
                     m = move_up(m);
+                    player_moves -= 1;
+                }   
             }
         }
         else if (ch == KEY_DOWN) {
             int tx = m.x, ty = m.y + 1;
-            player_moves -= 1;
+            
             if (!((tx == npc_x1 && ty == npc_y1) ||
                 (tx == npc_x2 && ty == npc_y2))) {
 
                 chtype next = mvwinch(l2, ty, tx) & A_CHARTEXT;
-                if (next == ' ' || next == '$')
+                if (next == ' ' || next == '$') {
                     m = move_down(m);
+                    player_moves -= 1;
+                } 
             }
         }
 

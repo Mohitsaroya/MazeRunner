@@ -54,8 +54,7 @@ void title_screen() {
  * @param parent Parent window to restore if user declines.
  * @return int 1 if user confirms quit, 0 otherwise.
  */
-int quitScreen(WINDOW *parent)
-{
+int quitScreen(WINDOW *parent) {
     WINDOW *q = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
     
     quitCard(q);
@@ -89,8 +88,7 @@ int quitScreen(WINDOW *parent)
  * @param gamewin Game window to restore/refresh when leaving pause.
  * @return int Decision code: `P` (resume), `MENU` (back to menu), `QUIT` (quit game).
  */
-int handle_pause_menu(WINDOW *gamewin)
-{
+int handle_pause_menu(WINDOW *gamewin) {
     wrefresh(gamewin);
 
     while (1) {
