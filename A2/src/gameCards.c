@@ -1,7 +1,6 @@
 #include <ncurses.h>
 #include "gameCards.h"
 
-// ASCII art for title
 void titleCard(WINDOW *win) {
     mvwprintw(win, 10, 15, " __        __                 _________   _______");
     mvwprintw(win, 11, 15, "|   \\    /   |      /\\       |_____   /  |   ____|");
@@ -24,7 +23,6 @@ void titleCard(WINDOW *win) {
     wrefresh(win);
 }
 
-// ASCII art for menu
 void menuCard(WINDOW *win) {
     mvwprintw(win,  7, 15, " __        __                 _________   _______");
     mvwprintw(win,  8, 15, "|   \\    /   |      /\\       |_____   /  |   ____|");
@@ -47,7 +45,6 @@ void menuCard(WINDOW *win) {
     wrefresh(win);
 }
 
-// ASCII art for quit confirmation
 void quitCard(WINDOW *win) {
     mvwprintw(win, 15, 25, " ________    __    __    ______    ______    _____");
     mvwprintw(win, 16, 25, "/   __   \\  |  |  |  |  |__  __|  |__  __|  |__   \\");
