@@ -1,7 +1,27 @@
+/**
+ * @file interface.c
+ * @brief Implementation of high-level ncurses UI and menu handling functions.
+ * @author Mohit Saroya
+ * Provides window creation, title/menu/pause/retry screens, quit confirmation,
+ * and goodbye message display using ncurses and the gameCards module.
+ */
+
 #include <ncurses.h>
 #include "interface.h"
 #include "gameCards.h"
 
+/**
+ * @brief Create and return a boxed ncurses window.
+ *
+ * Allocates a new window of size `h` x `w` at position (`y`, `x`), draws a
+ * box border and refreshes before returning.
+ *
+ * @param h Height in rows.
+ * @param w Width in columns.
+ * @param y Upper-left row coordinate.
+ * @param x Upper-left column coordinate.
+ * @return WINDOW* Pointer to the new window.
+ */
 WINDOW *make_window(int h, int w, int y, int x) {
     WINDOW *win = newwin(h, w, y, x);
     box(win, '-', '/');
@@ -9,6 +29,12 @@ WINDOW *make_window(int h, int w, int y, int x) {
     return win;
 }
 
+/**
+ * @brief Display the title screen and wait for a key press.
+ *
+ * Creates a full-size title window, draws the ASCII-art title, and waits for
+ * the user to press any key before cleaning up and returning.
+ */
 void title_screen() {
     WINDOW *titlewin = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
     titleCard(titlewin);
@@ -18,6 +44,16 @@ void title_screen() {
     delwin(titlewin);
 }
 
+/**
+ * @brief Display a quit confirmation prompt and return user choice.
+ *
+ * Creates a window with a quit confirmation card. Waits for 'y'/'Y' (return 1,
+ * quit confirmed) or 'n'/'N' (return 0, don't quit). Refreshes parent window
+ * if the user declines.
+ *
+ * @param parent Parent window to restore if user declines.
+ * @return int 1 if user confirms quit, 0 otherwise.
+ */
 int quitScreen(WINDOW *parent)
 {
     WINDOW *q = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
@@ -44,7 +80,15 @@ int quitScreen(WINDOW *parent)
     return 0;
 }
 
-
+/**
+ * @brief Handle the in-game pause menu flow.
+ *
+ * Displays the pause card in a loop, handling user input (P=resume, M=main
+ * menu, Q=quit). Returns appropriate decision codes as defined in interface.h.
+ *
+ * @param gamewin Game window to restore/refresh when leaving pause.
+ * @return int Decision code: `P` (resume), `MENU` (back to menu), `QUIT` (quit game).
+ */
 int handle_pause_menu(WINDOW *gamewin)
 {
     wrefresh(gamewin);
@@ -81,7 +125,14 @@ int handle_pause_menu(WINDOW *gamewin)
     }
 }
 
-
+/**
+ * @brief Display the main menu and handle user selection.
+ *
+ * Creates and displays the menu window. Waits for input (P=play, Q=quit).
+ * Returns appropriate decision codes as defined in interface.h.
+ *
+ * @return int `P` to play, `QUIT` to exit, or `MENU` to stay in the menu.
+ */
 int main_menu() {
     WINDOW *menuwin = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
     menuCard(menuwin);
@@ -115,6 +166,16 @@ int main_menu() {
     }
 }
 
+/**
+ * @brief Display a retry prompt and handle the player's decision.
+ *
+ * Shows a retry card asking whether to retry the level. Returns `RETRY` to
+ * restart or `MENU` to return to the main menu. Runs in a loop until valid
+ * input is received.
+ *
+ * @param gamewin Game window used as a reference for UI restoration.
+ * @return int `RETRY` to retry, `MENU` to return to main menu.
+ */
 int handle_retry(WINDOW *gamewin) {
 
     while(1) {
@@ -141,6 +202,14 @@ int handle_retry(WINDOW *gamewin) {
 }
 
 
+/**
+ * @brief Display a goodbye screen and wait for a key press.
+ *
+ * Creates a temporary window with a goodbye message, waits for any key press,
+ * and cleans up before returning.
+ *
+ * @param parent Parent window used as a reference for positioning.
+ */
 void goodBye(WINDOW *parent) {
     WINDOW *goodbyewin = make_window(HEIGHT_MAX, WIDTH_MAX, BORDER, BORDER);
 

@@ -1,0 +1,144 @@
+\chapter{Maze\+Runner}
+\hypertarget{index}{}\label{index}\index{MazeRunner@{MazeRunner}}
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+ A terminal-\/based maze game written in C using ncurses.\hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Project Overview}{Project Overview}}\label{index_autotoc_md1}
+{\bfseries{Maze\+Runner}} is an interactive maze game where the player navigates through a maze, encounters obstacles, and attempts to reach the exit. The game features a full menu system, pause functionality, level progression, and retry mechanics—all implemented in the terminal using the ncurses library. In the maze you\textquotesingle{}ll find trapped victims of evil person called Dave. Dave has trapped them for years, and if you dont get out, you\textquotesingle{}ll meet the same fate as them; trapped for eternity is dave\textquotesingle{}s mazes, going mad day by day.
+
+The game is divided into 2 levels\+:
+
+{\bfseries{Level 1}}\+: players get to interact with 1 NPC, a poor trapped victim of Dave\textquotesingle{}s sadistic nature. You\textquotesingle{}ll have to get to the door with \$ sign to reach the exit, but wait, Dave has other plans for you.
+
+{\bfseries{Level 2}}\+: After you complete level 1, dave will trap you in a separate maze. You will have to exit before time runs out. If you don\textquotesingle{}t, Dave will destroy the maze, but don\textquotesingle{}t worry as you get unlimited retries to finish the level.\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Features}{Features}}\label{index_autotoc_md2}
+
+\begin{DoxyItemize}
+\item {\bfseries{Title and Menu Screens}}\+: ASCII-\/art splash screens and intuitive menu navigation.
+\item {\bfseries{Multi-\/\+Level Gameplay}}\+: Multiple levels with increasing difficulty.
+\item {\bfseries{Player Movement}}\+: Real-\/time keyboard input for movement (arrow keys).
+\item {\bfseries{Pause Menu}}\+: In-\/game pause with options to resume, return to main menu, or quit.
+\item {\bfseries{Retry Mechanism}}\+: Players can retry a level on failure.
+\item {\bfseries{Quit Confirmation}}\+: Confirmation prompt before exiting the game.
+\item {\bfseries{Documented Codebase}}\+: Comprehensive Doxygen documentation for all public interfaces and implementations.
+\end{DoxyItemize}\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{Requirements}{Requirements}}\label{index_autotoc_md3}
+
+\begin{DoxyItemize}
+\item {\bfseries{C Compiler}} (gcc or clang)
+\item {\bfseries{ncurses Development Library}} ({\ttfamily libncurses-\/dev} on Debian/\+Ubuntu, {\ttfamily ncurses} on mac\+OS via Homebrew)
+\item {\bfseries{GNU Make}}
+\item {\bfseries{Doxygen}} (optional, for generating HTML documentation)
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysubsection{\texorpdfstring{Installing Dependencies}{Installing Dependencies}}\label{index_autotoc_md4}
+{\bfseries{Ubuntu/\+Debian\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ apt-\/get\ install\ build-\/essential\ libncurses-\/dev\ doxygen\ graphviz}
+
+\end{DoxyCode}
+
+
+{\bfseries{mac\+OS (with Homebrew)\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{brew\ install\ ncurses\ doxygen\ graphviz}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md5}{}\doxysection{\texorpdfstring{Running the Game}{Running the Game}}\label{index_autotoc_md5}
+Go to bin folder and write the following to run the game 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./appGame}
+
+\end{DoxyCode}
+
+
+Or from the {\ttfamily src} directory\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ run}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md6}{}\doxysection{\texorpdfstring{Building}{Building}}\label{index_autotoc_md6}
+From the repository root, type into the terminal\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ src}
+\DoxyCodeLine{make}
+
+\end{DoxyCode}
+ This compiles the project and produces an executable.\hypertarget{index_autotoc_md7}{}\doxysection{\texorpdfstring{Project Structure}{Project Structure}}\label{index_autotoc_md7}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{A2}
+\DoxyCodeLine{├──\ Doxyfile}
+\DoxyCodeLine{├──\ README.md}
+\DoxyCodeLine{├──\ bin}
+\DoxyCodeLine{│\ \ \ └──\ appGame}
+\DoxyCodeLine{├──\ doc}
+\DoxyCodeLine{|\ \ \ ├──\ html/}
+\DoxyCodeLine{|\ \ \ └──\ latex/}
+\DoxyCodeLine{└──\ src}
+\DoxyCodeLine{\ \ \ \ ├──\ Makefile}
+\DoxyCodeLine{\ \ \ \ ├──\ gameCards.c}
+\DoxyCodeLine{\ \ \ \ ├──\ gameCards.h}
+\DoxyCodeLine{\ \ \ \ ├──\ interface.c}
+\DoxyCodeLine{\ \ \ \ ├──\ interface.h}
+\DoxyCodeLine{\ \ \ \ ├──\ level1.c}
+\DoxyCodeLine{\ \ \ \ ├──\ level1.h}
+\DoxyCodeLine{\ \ \ \ ├──\ level2.c}
+\DoxyCodeLine{\ \ \ \ ├──\ level2.h}
+\DoxyCodeLine{\ \ \ \ ├──\ main.c}
+\DoxyCodeLine{\ \ \ \ ├──\ maze.c}
+\DoxyCodeLine{\ \ \ \ ├──\ maze.h}
+\DoxyCodeLine{\ \ \ \ ├──\ movement.c}
+\DoxyCodeLine{\ \ \ \ ├──\ movement.h}
+\DoxyCodeLine{\ \ \ \ ├──\ npc.c}
+\DoxyCodeLine{\ \ \ \ └──\ npc.h}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md8}{}\doxysection{\texorpdfstring{Game Controls}{Game Controls}}\label{index_autotoc_md8}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Key   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Action    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Key   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Action    }\\\cline{1-2}
+\endhead
+{\bfseries{P}}   &Play / Start Game    \\\cline{1-2}
+{\bfseries{Q}}   &Quit (with confirmation)    \\\cline{1-2}
+{\bfseries{Arrow Keys}}   &Move Player (in-\/game)    \\\cline{1-2}
+{\bfseries{P}}   &Pause / Resume    \\\cline{1-2}
+{\bfseries{M}}   &Main Menu (from pause)    \\\cline{1-2}
+{\bfseries{Y/N}}   &Confirm/\+Deny (in prompts)   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{index_autotoc_md9}{}\doxysection{\texorpdfstring{Code Documentation}{Code Documentation}}\label{index_autotoc_md9}
+All public interfaces and implementations include Doxygen-\/style documentation blocks. Key modules\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{interface_8h}{interface.\+h}/c}\+: High-\/level UI helpers (window creation, menu handling, pause/retry flows)
+\item {\ttfamily \doxylink{gameCards_8h}{game\+Cards.\+h}/c}\+: Rendering of title, menu, pause, and level screens
+\item {\ttfamily \doxylink{maze_8h}{maze.\+h}/c}\+: Maze drawing and layout logic
+\item {\ttfamily \doxylink{movement_8h}{movement.\+h}/c}\+: Player movement state and direction handling
+\item {\ttfamily \doxylink{level1_8h}{level1.\+h}/c}\+: Level 1 game loop and logic
+\end{DoxyItemize}\hypertarget{index_autotoc_md10}{}\doxysubsection{\texorpdfstring{Generating Docs}{Generating Docs}}\label{index_autotoc_md10}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ doc}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md11}{}\doxysection{\texorpdfstring{Building and Testing}{Building and Testing}}\label{index_autotoc_md11}
+To build and run tests or clean the build\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ clean\ \ \ \ \ \ \#\ Remove\ object\ files\ and\ executables}
+\DoxyCodeLine{make\ run\ \ \ \ \ \ \ \ \#\ Compiles\ and\ runs\ the\ game}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md12}{}\doxysection{\texorpdfstring{Notes}{Notes}}\label{index_autotoc_md12}
+
+\begin{DoxyItemize}
+\item The game uses ncurses for terminal rendering; ensure your terminal supports ncurses.
+\item Doxygen configuration is optimized for C code ({\ttfamily OPTIMIZE\+\_\+\+OUTPUT\+\_\+\+FOR\+\_\+C = YES}).
+\item The codebase includes inline comments and Doxygen docstrings for maintainability.
+\end{DoxyItemize}\hypertarget{index_autotoc_md13}{}\doxysection{\texorpdfstring{Authors}{Authors}}\label{index_autotoc_md13}
+Mohit Saroya Evan Wong 

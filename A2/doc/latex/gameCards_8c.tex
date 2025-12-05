@@ -1,0 +1,170 @@
+\doxysection{src/game\+Cards.c File Reference}
+\hypertarget{gameCards_8c}{}\label{gameCards_8c}\index{src/gameCards.c@{src/gameCards.c}}
+
+
+Implementation of UI "{}card"{} drawing functions used by Maze\+Runner.  
+
+
+{\ttfamily \#include $<$ncurses.\+h$>$}\newline
+{\ttfamily \#include "{}game\+Cards.\+h"{}}\newline
+Include dependency graph for game\+Cards.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{gameCards_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gameCards_8c_a946643060c7bb1e7df1d878898d6a320}{title\+Card}} (WINDOW \texorpdfstring{$\ast$}{*}win)
+\begin{DoxyCompactList}\small\item\em Draw the title card into {\ttfamily win} and refresh the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gameCards_8c_a738ae733ead05462dbee046518ca4691}{menu\+Card}} (WINDOW \texorpdfstring{$\ast$}{*}win)
+\begin{DoxyCompactList}\small\item\em Draw the main menu card into {\ttfamily win}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gameCards_8c_ab0193b8e347c46c9b61f5ce6abc66681}{quit\+Card}} (WINDOW \texorpdfstring{$\ast$}{*}win)
+\begin{DoxyCompactList}\small\item\em Draw a quit confirmation card into {\ttfamily win}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gameCards_8c_a25b4da1b98d7a11b26d77141e27c83f5}{level1\+Card}} (WINDOW \texorpdfstring{$\ast$}{*}win)
+\begin{DoxyCompactList}\small\item\em Draw the level 1 information card into {\ttfamily win}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gameCards_8c_a39bcb7def148f1c8c30a35feed3c301f}{level2\+Card}} (WINDOW \texorpdfstring{$\ast$}{*}win)
+\begin{DoxyCompactList}\small\item\em Draw the level 2 information card into {\ttfamily win}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gameCards_8c_ae33d8e9b2f4ba72b2d2fe71965324750}{retry\+Card}} (WINDOW \texorpdfstring{$\ast$}{*}win)
+\begin{DoxyCompactList}\small\item\em Draw a retry prompt card into {\ttfamily win}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gameCards_8c_a70b23d13118105ec9184efcabe1c70be}{pause\+Card}} (WINDOW \texorpdfstring{$\ast$}{*}win)
+\begin{DoxyCompactList}\small\item\em Draw the pause screen card into {\ttfamily win}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of UI "{}card"{} drawing functions used by Maze\+Runner. 
+
+\begin{DoxyAuthor}{Author}
+Mohit Saroya Each function draws a specific screen into the provided ncurses {\ttfamily WINDOW}. 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gameCards_8c_a25b4da1b98d7a11b26d77141e27c83f5}\label{gameCards_8c_a25b4da1b98d7a11b26d77141e27c83f5} 
+\index{gameCards.c@{gameCards.c}!level1Card@{level1Card}}
+\index{level1Card@{level1Card}!gameCards.c@{gameCards.c}}
+\doxysubsubsection{\texorpdfstring{level1Card()}{level1Card()}}
+{\footnotesize\ttfamily void level1\+Card (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{win }\end{DoxyParamCaption})}
+
+
+
+Draw the level 1 information card into {\ttfamily win}. 
+
+Draw the level 1 status/information card into {\ttfamily win}.
+
+Shows level title and a prompt to continue. The function refreshes {\ttfamily win}. 
+\begin{DoxyParams}{Parameters}
+{\em win} & ncurses window to draw the level card into. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gameCards_8c_a39bcb7def148f1c8c30a35feed3c301f}\label{gameCards_8c_a39bcb7def148f1c8c30a35feed3c301f} 
+\index{gameCards.c@{gameCards.c}!level2Card@{level2Card}}
+\index{level2Card@{level2Card}!gameCards.c@{gameCards.c}}
+\doxysubsubsection{\texorpdfstring{level2Card()}{level2Card()}}
+{\footnotesize\ttfamily void level2\+Card (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{win }\end{DoxyParamCaption})}
+
+
+
+Draw the level 2 information card into {\ttfamily win}. 
+
+Draw the level 2 status/information card into {\ttfamily win}.
+
+Shows level title and a prompt to continue. The function refreshes {\ttfamily win}. 
+\begin{DoxyParams}{Parameters}
+{\em win} & ncurses window to draw the level card into. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gameCards_8c_a738ae733ead05462dbee046518ca4691}\label{gameCards_8c_a738ae733ead05462dbee046518ca4691} 
+\index{gameCards.c@{gameCards.c}!menuCard@{menuCard}}
+\index{menuCard@{menuCard}!gameCards.c@{gameCards.c}}
+\doxysubsubsection{\texorpdfstring{menuCard()}{menuCard()}}
+{\footnotesize\ttfamily void menu\+Card (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{win }\end{DoxyParamCaption})}
+
+
+
+Draw the main menu card into {\ttfamily win}. 
+
+Displays ASCII-\/art and labels for available actions (play, quit). The function refreshes {\ttfamily win} after drawing; input handling is performed by the caller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & ncurses window to draw the menu into. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gameCards_8c_a70b23d13118105ec9184efcabe1c70be}\label{gameCards_8c_a70b23d13118105ec9184efcabe1c70be} 
+\index{gameCards.c@{gameCards.c}!pauseCard@{pauseCard}}
+\index{pauseCard@{pauseCard}!gameCards.c@{gameCards.c}}
+\doxysubsubsection{\texorpdfstring{pauseCard()}{pauseCard()}}
+{\footnotesize\ttfamily void pause\+Card (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{win }\end{DoxyParamCaption})}
+
+
+
+Draw the pause screen card into {\ttfamily win}. 
+
+Presents pause instructions and key hints (resume, main menu, exit). The function refreshes {\ttfamily win} after drawing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & ncurses window to draw the pause card into. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gameCards_8c_ab0193b8e347c46c9b61f5ce6abc66681}\label{gameCards_8c_ab0193b8e347c46c9b61f5ce6abc66681} 
+\index{gameCards.c@{gameCards.c}!quitCard@{quitCard}}
+\index{quitCard@{quitCard}!gameCards.c@{gameCards.c}}
+\doxysubsubsection{\texorpdfstring{quitCard()}{quitCard()}}
+{\footnotesize\ttfamily void quit\+Card (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{win }\end{DoxyParamCaption})}
+
+
+
+Draw a quit confirmation card into {\ttfamily win}. 
+
+Draw the quit confirmation card into {\ttfamily win}.
+
+Presents a large "{}\+QUIT"{} label and a small "{}(\+Y/\+N)"{} prompt. Caller should handle the user\textquotesingle{}s keypress to determine whether to quit.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & ncurses window to draw the confirmation into. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gameCards_8c_ae33d8e9b2f4ba72b2d2fe71965324750}\label{gameCards_8c_ae33d8e9b2f4ba72b2d2fe71965324750} 
+\index{gameCards.c@{gameCards.c}!retryCard@{retryCard}}
+\index{retryCard@{retryCard}!gameCards.c@{gameCards.c}}
+\doxysubsubsection{\texorpdfstring{retryCard()}{retryCard()}}
+{\footnotesize\ttfamily void retry\+Card (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{win }\end{DoxyParamCaption})}
+
+
+
+Draw a retry prompt card into {\ttfamily win}. 
+
+Draw a retry/prompt card into {\ttfamily win}.
+
+Displays a retry message with a "{}(\+Y/\+N)"{} prompt. The caller should handle the user\textquotesingle{}s choice.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & ncurses window to draw the retry prompt into. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gameCards_8c_a946643060c7bb1e7df1d878898d6a320}\label{gameCards_8c_a946643060c7bb1e7df1d878898d6a320} 
+\index{gameCards.c@{gameCards.c}!titleCard@{titleCard}}
+\index{titleCard@{titleCard}!gameCards.c@{gameCards.c}}
+\doxysubsubsection{\texorpdfstring{titleCard()}{titleCard()}}
+{\footnotesize\ttfamily void title\+Card (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{win }\end{DoxyParamCaption})}
+
+
+
+Draw the title card into {\ttfamily win} and refresh the window. 
+
+Draw the title card into {\ttfamily win}.
+
+Renders ASCII-\/art title text and a prompt to continue. This function does not consume input itself; the caller may wait for a key press using {\ttfamily wgetch} if desired.
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & ncurses window to draw the title into. \\
+\hline
+\end{DoxyParams}
